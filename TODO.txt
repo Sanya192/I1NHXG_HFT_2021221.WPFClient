@@ -1,0 +1,18 @@
+TODO
+
+FIRST:
+All project must be in .NET 5.
+Let's pray.
+Finished until 3.1
+
+BeforeMilestone:
+Refactor the whole. The code was built in 2019 and I was insecure about req. It needs a refactor to be buggy less :D
+
+Milestone1:
+WPF app for the CRUD. There could be more functions than the CRUD, but First you must do the must have req nicely.
+
+Milestone2:
+MVC app. A nice ASP.net app should be nice.
+
+Milestone3:
+API with a WPF app.
