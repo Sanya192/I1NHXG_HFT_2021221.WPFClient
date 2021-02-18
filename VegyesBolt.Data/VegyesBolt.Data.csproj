@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>VegyesBolt.Data.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
     <Content Include="Vegyesbolt.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -20,12 +26,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

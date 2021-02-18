@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VegyesBolt.Repository</name>
+    </assembly>
+    <members>
+        <member name="T:VegyesBolt.Repository.IMegyeRepository">
+            <summary>
+            A repository for the Megye Table.
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.Repository.IRepository`1">
+            <summary>
+            The main interface.
+            </summary>
+            <typeparam name="T">A parameter which is needed for alinterfaces.</typeparam>
+        </member>
+        <member name="P:VegyesBolt.Repository.IRepository`1.Elements">
+            <summary>
+            Gets a list containing all elements;.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Repository.IRepository`1.Delete(`0)">
+            <summary>
+            A method to delete an object.
+            </summary>
+            <param name="toDelete">An object which is deleted.</param>
+        </member>
+        <member name="M:VegyesBolt.Repository.IRepository`1.Update(`0)">
+            <summary>
+            Updates an element.
+            </summary>
+            <param name="toUpdate">The old element.</param>
+        </member>
+        <member name="M:VegyesBolt.Repository.IRepository`1.Create(`0)">
+            <summary>
+            Creates an element in the database.
+            </summary>
+            <param name="create">The new element.</param>
+        </member>
+        <member name="T:VegyesBolt.Repository.ITermekekRepository">
+            <summary>
+            The repository for Termekek Table.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Repository.ITermekekRepository.ListByOwner(VegyesBolt.Data.Vasarlok)">
+            <summary>
+            Lists All Product buyed by that owner.
+            </summary>
+            <param name="owner">The owner.</param>
+            <returns>The products.</returns>
+        </member>
+        <member name="M:VegyesBolt.Repository.ITermekekRepository.MostOwnedProduct">
+            <summary>
+            List the most bought product.
+            </summary>
+            <returns>The most bought product.</returns>
+        </member>
+        <member name="T:VegyesBolt.Repository.IVasarlasokRepository">
+            <summary>
+            The repository for Vasarlasok Table.
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.Repository.IVasarlokRepository">
+            <summary>
+            The repository for Vasarlok Table.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Repository.IVasarlokRepository.EbbeAMegyebeKiLakik(VegyesBolt.Data.Megyek)">
+            <summary>
+            List all Customers who lives in that county.
+            </summary>
+            <param name="megye">The county where they live.</param>
+            <returns>Get all Customers who lives in that county.</returns>
+        </member>
+        <member name="T:VegyesBolt.Repository.MegyeRepository">
+            <summary>
+            The reposotory for megye.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Repository.MegyeRepository.Elements">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.MegyeRepository.Create(VegyesBolt.Data.Megyek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.MegyeRepository.Delete(VegyesBolt.Data.Megyek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.MegyeRepository.Update(VegyesBolt.Data.Megyek)">
+            <inheritdoc/>
+        </member>
+        <member name="T:VegyesBolt.Repository.TermekekRepository">
+            <summary>
+            The repositroy for Termekek.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Repository.TermekekRepository.Elements">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.TermekekRepository.Create(VegyesBolt.Data.Termekek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.TermekekRepository.Delete(VegyesBolt.Data.Termekek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.TermekekRepository.ListByOwner(VegyesBolt.Data.Vasarlok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.TermekekRepository.MostOwnedProduct">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.TermekekRepository.Update(VegyesBolt.Data.Termekek)">
+            <inheritdoc/>
+        </member>
+        <member name="T:VegyesBolt.Repository.VasarlasokRepository">
+            <summary>
+            The repository for Vasarlasok.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Repository.VasarlasokRepository.Elements">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.VasarlasokRepository.Create(VegyesBolt.Data.Vasarlasok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.VasarlasokRepository.Delete(VegyesBolt.Data.Vasarlasok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.VasarlasokRepository.Update(VegyesBolt.Data.Vasarlasok)">
+            <inheritdoc/>
+        </member>
+        <member name="T:VegyesBolt.Repository.VasarlokRepository">
+            <summary>
+            The reposotory for Vasarlok.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Repository.VasarlokRepository.Elements">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.VasarlokRepository.Create(VegyesBolt.Data.Vasarlok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.VasarlokRepository.Delete(VegyesBolt.Data.Vasarlok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.VasarlokRepository.EbbeAMegyebeKiLakik(VegyesBolt.Data.Megyek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Repository.VasarlokRepository.Update(VegyesBolt.Data.Vasarlok)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

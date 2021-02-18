@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VegyesBolt.Program</name>
+    </assembly>
+    <members>
+        <member name="T:VegyesBolt.Program.Menu">
+            <summary>
+            The class which handles the menu system.
+            </summary>
+            <summary>
+            The class which handles the menu.
+            This part contains the options enum.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Program.Menu.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.Program.Menu"/> class.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Program.Menu.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.Program.Menu"/> class.
+            </summary>
+            <param name="menuOptions">The settings which uses different text than the enum.</param>
+        </member>
+        <member name="P:VegyesBolt.Program.Menu.OptionsWithString">
+            <summary>
+            Gets the options matched with string values.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Program.Menu.OptionsDescription">
+            <summary>
+            Gets the Options formatted.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Program.Menu.Start">
+            <summary>
+            Starts the menu.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Program.Menu.CreateOptionsWithString">
+            <summary>
+            Creates a dictionary where option values matched with strings.
+            </summary>
+            <returns>The options matched with values.</returns>
+        </member>
+        <member name="T:VegyesBolt.Program.Menu.Options">
+            <summary>
+            The avalaible options for the menu.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.Exit">
+            <summary>
+            The option to leave the menu.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.ListAll">
+            <summary>
+            List everything in the database.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.ListMegyek">
+            <summary>
+            List every County.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.ListTermekek">
+            <summary>
+            List all Products.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.ListVasarlok">
+            <summary>
+            List all buyers.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.ListVasarlasok">
+            <summary>
+            List all purchases.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.AddMegye">
+            <summary>
+            Add a county.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.AddTermek">
+            <summary>
+            Add a product.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.AddVasarlo">
+            <summary>
+            Add a buyer.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.AddVasarlas">
+            <summary>
+            Add a purchase.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.DeleteMegye">
+            <summary>
+            Delete county.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.DeleteTermek">
+            <summary>
+            Delete a product.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.DeleteVasarlo">
+            <summary>
+            Delete a buyer.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.DeleteVasarlasok">
+            <summary>
+            Delete a purchase.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.UpdateMegye">
+            <summary>
+            Updates a megye.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.UpdateTermek">
+            <summary>
+            Updates a Termek.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.UpdateVasarlo">
+            <summary>
+            Updates a Vasarlo.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.UpdateVasarlas">
+            <summary>
+            Updates a Vasarlas.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.ListByOwner">
+            <summary>
+            Ki listázza azokat a termekeket amit már egy tulajdonos megvásárolt.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.MostOwnedProduct">
+            <summary>
+            Ki listázza a legtöbbet vásárolt terméket.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.EbbeAMegyebeLakik">
+            <summary>
+            Ki Listázza ebbe a megyébe ki lakik.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Program.Menu.Options.JavaVegpont">
+            <summary>
+            Ki kér egy bevásárló listát a java végpontol.
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.Program.Program">
+            <summary>
+            The main class, where the magic runs.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Program.Program.Main">
+            <summary>
+            Where the program starts working.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VegyesBolt.Logic.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:VegyesBolt.Logic.Tests.Tests">
+            <summary>
+            The class which contains the Tests.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Logic.Tests.Tests.SelectVasarlok(System.Collections.Generic.List{VegyesBolt.Data.Vasarlok})">
+            <summary>
+            Tests if the getVasarlok is run.
+            </summary>
+            <param name="testData">The testData.</param>
+        </member>
+        <member name="M:VegyesBolt.Logic.Tests.Tests.SelectVasarlo(System.Collections.Generic.List{VegyesBolt.Data.Vasarlok})">
+            <summary>
+            Tests if the getVasarlo is run.
+            </summary>
+            <param name="testData">The testData.</param>
+        </member>
+        <member name="M:VegyesBolt.Logic.Tests.Tests.UpdateVasarlo">
+            <summary>
+            Tests if the update from repo is run and in optimal case it is returning true.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Logic.Tests.Tests.DeleteVasarlo">
+            <summary>
+            Tests if the delete from repo is run and in optimal case it is returning true.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Logic.Tests.Tests.AddVasarlo">
+            <summary>
+            Tests if the create from repo is run and in optimal case it is returning true.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Logic.Tests.Tests.EbbeAMegyebeLakik(System.Collections.Generic.List{VegyesBolt.Data.Vasarlok},VegyesBolt.Data.Megyek)">
+            <summary>
+            Tests if the EbbeAMegyebeLakik IsRunAtleastOnce.
+            </summary>
+            <param name="vasarlok">The vasarlok its returns.</param>
+            <param name="megye">The megye input of the method.</param>
+        </member>
+        <member name="M:VegyesBolt.Logic.Tests.Tests.ListByOwner(System.Collections.Generic.List{VegyesBolt.Data.Termekek},VegyesBolt.Data.Vasarlok)">
+            <summary>
+            Tests the List By owner Method.
+            </summary>
+            <param name="termekek">The lists that the TermekekRepository returns.</param>
+            <param name="vasarlo">The owner.</param>
+        </member>
+        <member name="M:VegyesBolt.Logic.Tests.Tests.MostOwnedProduct(VegyesBolt.Data.Termekek)">
+            <summary>
+            Tests the MostOwnedProduct.
+            </summary>
+            <param name="termek">The termel that the TermekekRepository returns.</param>
+        </member>
+    </members>
+</doc>

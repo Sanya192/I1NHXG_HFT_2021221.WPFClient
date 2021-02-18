@@ -6,11 +6,23 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>VegyesBolt.Logic.Tests.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Moq" Version="4.16.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

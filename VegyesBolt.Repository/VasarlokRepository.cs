@@ -54,7 +54,7 @@ namespace VegyesBolt.Repository
             old.Megye = toUpdate.Megye ?? old.Megye;
             old.MegyeNavigation = toUpdate.MegyeNavigation ?? old.MegyeNavigation;
             old.Nev = toUpdate.Nev ?? old.Nev;
-            old.RegDate =  toUpdate.RegDate;
+            old.RegDate = toUpdate.RegDate;
             old.Vasarlasoks = toUpdate.Vasarlasoks ?? old.Vasarlasoks;
             VegyesBolt.SaveChanges();
         }

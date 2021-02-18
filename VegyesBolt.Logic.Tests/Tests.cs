@@ -1,8 +1,9 @@
-// <copyright file="Tests.cs" company="MSanyi">
+﻿// <copyright file="UnitTest1.cs" company="MSanyi">
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 
-namespace VegyesBolt.Logic.Tests {
+namespace VegyesBolt.Logic.Tests
+{
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -18,7 +19,8 @@ namespace VegyesBolt.Logic.Tests {
     /// The class which contains the Tests.
     /// </summary>
     [TestFixture]
-    internal class Tests {
+    internal class Tests
+    {
         private static readonly object[] VasarloLista = new object[]
         {
             new List<Vasarlok>
@@ -56,10 +58,12 @@ namespace VegyesBolt.Logic.Tests {
         /// <param name="testData">The testData.</param>
         [Test]
         [TestCaseSource("VasarloLista")]
-        public void SelectVasarlok(List<Vasarlok> testData) {
+        public void SelectVasarlok(List<Vasarlok> testData)
+        {
             var repo = new Mock<IVasarlokRepository>();
             repo.SetupGet(p => p.Elements).Returns(testData);
-            var testelt = new Logic {
+            var testelt = new Logic
+            {
                 VasarlokRepository = repo.Object,
             };
             var result = testelt.GetVasarlok();
@@ -72,10 +76,12 @@ namespace VegyesBolt.Logic.Tests {
         /// <param name="testData">The testData.</param>
         [Test]
         [TestCaseSource("VasarloLista")]
-        public void SelectVasarlo(List<Vasarlok> testData) {
+        public void SelectVasarlo(List<Vasarlok> testData)
+        {
             var repo = new Mock<IVasarlokRepository>();
             repo.SetupGet(p => p.Elements).Returns(testData);
-            var testelt = new Logic {
+            var testelt = new Logic
+            {
                 VasarlokRepository = repo.Object,
             };
             var result = testelt.GetVasarlo(0);
@@ -86,7 +92,8 @@ namespace VegyesBolt.Logic.Tests {
         /// Tests if the update from repo is run and in optimal case it is returning true.
         /// </summary>
         [Test]
-        public void UpdateVasarlo() {
+        public void UpdateVasarlo()
+        {
             var repo = new Mock<IVasarlokRepository>();
             var testelt = new Logic();
             var customer = new Vasarlok();
@@ -100,7 +107,8 @@ namespace VegyesBolt.Logic.Tests {
         /// Tests if the delete from repo is run and in optimal case it is returning true.
         /// </summary>
         [Test]
-        public void DeleteVasarlo() {
+        public void DeleteVasarlo()
+        {
             var repo = new Mock<IVasarlokRepository>();
             var testelt = new Logic();
             var customer = new Vasarlok();
@@ -114,7 +122,8 @@ namespace VegyesBolt.Logic.Tests {
         /// Tests if the create from repo is run and in optimal case it is returning true.
         /// </summary>
         [Test]
-        public void AddVasarlo() {
+        public void AddVasarlo()
+        {
             var repo = new Mock<IVasarlokRepository>();
             var testelt = new Logic();
             var customer = new Vasarlok();
@@ -132,7 +141,8 @@ namespace VegyesBolt.Logic.Tests {
         [Test]
         public void EbbeAMegyebeLakik(
             [ValueSource("VasarloLista")] List<Vasarlok> vasarlok,
-            [ValueSource("Megye")] Megyek megye) {
+            [ValueSource("Megye")] Megyek megye)
+        {
             var repo = new Mock<IVasarlokRepository>();
             var testelt = new Logic();
             repo.Setup(p => p.EbbeAMegyebeKiLakik(megye)).Returns(vasarlok);
@@ -149,10 +159,12 @@ namespace VegyesBolt.Logic.Tests {
         [Test]
         public void ListByOwner(
            [ValueSource("TermekLista")] List<Termekek> termekek,
-           [ValueSource("Vasarlo")] Vasarlok vasarlo) {
+           [ValueSource("Vasarlo")] Vasarlok vasarlo)
+        {
             var repo = new Mock<ITermekekRepository>();
             repo.Setup(p => p.ListByOwner(vasarlo)).Returns(termekek);
-            var testelt = new Logic {
+            var testelt = new Logic
+            {
                 TermekekRepository = repo.Object,
             };
             testelt.ListbyOwner(vasarlo);
@@ -165,10 +177,12 @@ namespace VegyesBolt.Logic.Tests {
         /// <param name="termek">The termel that the TermekekRepository returns.</param>
         [Test]
         public void MostOwnedProduct(
-           [ValueSource("Termek")] Termekek termek) {
+           [ValueSource("Termek")] Termekek termek)
+        {
             var repo = new Mock<ITermekekRepository>();
             repo.Setup(p => p.MostOwnedProduct()).Returns(termek);
-            var testelt = new Logic {
+            var testelt = new Logic
+            {
                 TermekekRepository = repo.Object,
             };
             testelt.MostOwnedProduct();

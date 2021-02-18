@@ -39,7 +39,7 @@ namespace VegyesBolt.Repository
             var old = VegyesBolt.Vasarlasoks.Find(new { toUpdate.VasarloId, toUpdate.TermekId });
             old.Mennyiseg = toUpdate.Mennyiseg == null ? old.Mennyiseg : toUpdate.Mennyiseg;
             old.Termek = toUpdate.Termek ?? old.Termek;
-            old.VasarlasDatuma =  toUpdate.VasarlasDatuma;
+            old.VasarlasDatuma = toUpdate.VasarlasDatuma;
             old.Vasarlo = toUpdate.Vasarlo ?? old.Vasarlo;
             VegyesBolt.SaveChanges();
         }

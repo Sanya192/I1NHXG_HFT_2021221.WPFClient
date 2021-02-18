@@ -48,7 +48,7 @@ namespace VegyesBolt.Repository
         /// <inheritdoc/>
         public Termekek MostOwnedProduct()
         {
-            return VegyesBolt.Termekeks.OrderBy(p => p.Vasarlasoks.Count()).First();
+            return VegyesBolt.Termekeks.OrderBy(p => p.Vasarlasoks.Count).First();
         }
 
         /// <inheritdoc/>

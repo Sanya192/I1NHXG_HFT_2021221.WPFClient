@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VegyesBolt.Logic</name>
+    </assembly>
+    <members>
+        <member name="T:VegyesBolt.Logic.ILogic">
+            <summary>
+            The Logic interface.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.GetMegyek">
+            <summary>
+            Gets all Megye.
+            </summary>
+            <returns>Returns every record in string format.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.GetTermekek">
+            <summary>
+            Gets all Termek.
+            </summary>
+            <returns>Returns every record in string format.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.GetVasarlok">
+            <summary>
+            Gets all Vasarlok.
+            </summary>
+            <returns>Returns every record in string format.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.GetVasarlasok">
+            <summary>
+            Gets all Vasarlasok.
+            </summary>
+            <returns>Returns every record in string format.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.GetMegye(System.Int32)">
+            <summary>
+            Gets one Megye.
+            </summary>
+            <param name="id">The id of the record.</param>
+            <returns>A record in string format.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.GetTermek(System.Int32)">
+            <summary>
+            Gets one Termek.
+            </summary>
+            <param name="id">The id of the record.</param>
+            <returns>Returns every record in string format.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.GetVasarlo(System.Int32)">
+            <summary>
+            Gets one Vasarlo.
+            </summary>
+            <param name="id">The id of the record.</param>
+            <returns>Returns every record in string format.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.GetVasarlas(System.Int32)">
+            <summary>
+            Gets one Vasarlas.
+            </summary>
+            <param name="id">The id of the record.</param>
+            <returns>Returns every record in string format.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.CreateMegye(VegyesBolt.Data.Megyek)">
+            <summary>
+            Create a Megye object in the database.
+            </summary>
+            <param name="create">The object to be in the database. </param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.DeleteMegyek(VegyesBolt.Data.Megyek)">
+            <summary>
+            Delete a megyek object.
+            </summary>
+            <param name="delete">The object to be deleted.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.UpdateMegye(VegyesBolt.Data.Megyek)">
+            <summary>
+            Update a Megye record.
+            </summary>
+            <param name="create">Updates a megye record.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.CreateTermek(VegyesBolt.Data.Termekek)">
+            <summary>
+            Creates a Termek.
+            </summary>
+            <param name="create">The new object.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.UpdateTermek(VegyesBolt.Data.Termekek)">
+            <summary>
+            Updates a termek object.
+            </summary>
+            <param name="update">The record which needs to be updated.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.DeleteTermek(VegyesBolt.Data.Termekek)">
+            <summary>
+            Deletes a termek object.
+            </summary>
+            <param name="delete">The object which needs to be deleted.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.ListbyOwner(VegyesBolt.Data.Vasarlok)">
+            <summary>
+            Lists the Products owned by one user.
+            </summary>
+            <param name="owner">The owner.</param>
+            <returns>The products.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.MostOwnedProduct">
+            <summary>
+            Returns the most owned Product.
+            </summary>
+            <returns>The most owned Product.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.CreateVasarlo(VegyesBolt.Data.Vasarlok)">
+            <summary>
+            Creates a new Vasarlok.
+            </summary>
+            <param name="create">The new object.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.UpdateVasarlo(VegyesBolt.Data.Vasarlok)">
+            <summary>
+            Updates a Vasarlo record.
+            </summary>
+            <param name="update">The record which needs to be updated.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.DeleteVasarlo(VegyesBolt.Data.Vasarlok)">
+            <summary>
+            Deletes a Vasarlo record.
+            </summary>
+            <param name="delete">The record which needs to be deleted.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.EbbeAMegyebeLakik(VegyesBolt.Data.Megyek)">
+            <summary>
+            Lists all Users who lives in this county.
+            </summary>
+            <param name="megye">The county.</param>
+            <returns>The users.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.CreateVasarlasok(VegyesBolt.Data.Vasarlasok)">
+            <summary>
+            Creates a new Vasarlas.
+            </summary>
+            <param name="create">The new Vasarlas.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.UpdateVasarlasok(VegyesBolt.Data.Vasarlasok)">
+            <summary>
+            Updates the record.
+            </summary>
+            <param name="update">The record which needs to be updated.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.DeleteVasarlasok(VegyesBolt.Data.Vasarlasok)">
+            <summary>
+            Deletes a Vasarlas.
+            </summary>
+            <param name="delete">The record which needs to be deleted.</param>
+            <returns>If it was succesful returns true.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.ListToString(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Gets a list with custom classes and returns all of the properties values from that item.
+            </summary>
+            <param name="list">The list where the data is stored.</param>
+            <returns>The values of the items.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.ListHeaders(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Get the property names from a list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns>The property names.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.ListAll(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Lists everything about a list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns>Header plus records.</returns>
+        </member>
+        <member name="M:VegyesBolt.Logic.ILogic.ListOne(System.Object)">
+            <summary>
+            Gets an item and list everything about it.
+            </summary>
+            <param name="item">The item.</param>
+            <returns>Headers plus the one record.</returns>
+        </member>
+        <member name="T:VegyesBolt.Logic.Logic">
+            <summary>
+            The Logic repository.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.Logic.Logic"/> class.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Logic.Logic.MegyeRepository">
+            <summary>
+            Sets the Repository used only for dependency Injection.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Logic.Logic.TermekekRepository">
+            <summary>
+            Sets the Repository used only for dependency Injection.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Logic.Logic.VasarlasokRepository">
+            <summary>
+            Sets the Repository used only for dependency Injection.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.Logic.Logic.VasarlokRepository">
+            <summary>
+            Sets the Repository used only for dependency Injection.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.GetMegyek">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.GetTermekek">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.GetVasarlok">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.GetVasarlasok">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.GetMegye(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.GetTermek(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.GetVasarlo(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.GetVasarlas(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.CreateMegye(VegyesBolt.Data.Megyek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.CreateTermek(VegyesBolt.Data.Termekek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.CreateVasarlasok(VegyesBolt.Data.Vasarlasok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.CreateVasarlo(VegyesBolt.Data.Vasarlok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.DeleteMegyek(VegyesBolt.Data.Megyek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.DeleteTermek(VegyesBolt.Data.Termekek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.DeleteVasarlasok(VegyesBolt.Data.Vasarlasok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.DeleteVasarlo(VegyesBolt.Data.Vasarlok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.EbbeAMegyebeLakik(VegyesBolt.Data.Megyek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.ListbyOwner(VegyesBolt.Data.Vasarlok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.MostOwnedProduct">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.UpdateMegye(VegyesBolt.Data.Megyek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.UpdateTermek(VegyesBolt.Data.Termekek)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.UpdateVasarlasok(VegyesBolt.Data.Vasarlasok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.UpdateVasarlo(VegyesBolt.Data.Vasarlok)">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.ListToString(System.Collections.Generic.List{System.Object})">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.ListHeaders(System.Collections.Generic.List{System.Object})">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.ListAll(System.Collections.Generic.List{System.Object})">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Logic.Logic.ListOne(System.Object)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
