@@ -12,11 +12,5 @@ namespace VegyesBolt.Repository
     /// </summary>
     public interface IVasarlokRepository : IRepository<Vasarlok>
     {
-        /// <summary>
-        /// List all Customers who lives in that county.
-        /// </summary>
-        /// <param name="megye">The county where they live.</param>
-        /// <returns>Get all Customers who lives in that county.</returns>
-        List<Vasarlok> EbbeAMegyebeKiLakik(Megyek megye);
     }
 }

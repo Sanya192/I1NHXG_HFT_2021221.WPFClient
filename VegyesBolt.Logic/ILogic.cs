@@ -19,54 +19,54 @@ namespace VegyesBolt.Logic
         /// <summary>
         /// Gets all Megye.
         /// </summary>
-        /// <returns>Returns every record in string format.</returns>
-        string GetMegyek();
+        /// <returns>Returns every record.</returns>
+        List<Megyek> GetMegyek();
 
         /// <summary>
         /// Gets all Termek.
         /// </summary>
-        /// <returns>Returns every record in string format.</returns>
-        string GetTermekek();
+        /// <returns>Returns every record.</returns>
+        List<Termekek> GetTermekek();
 
         /// <summary>
         /// Gets all Vasarlok.
         /// </summary>
-        /// <returns>Returns every record in string format.</returns>
-        string GetVasarlok();
+        /// <returns>Returns every record.</returns>
+        List<Vasarlok> GetVasarlok();
 
         /// <summary>
         /// Gets all Vasarlasok.
         /// </summary>
-        /// <returns>Returns every record in string format.</returns>
-        string GetVasarlasok();
+        /// <returns>Returns every record.</returns>
+        List<Vasarlasok> GetVasarlasok();
 
         /// <summary>
         /// Gets one Megye.
         /// </summary>
         /// <param name="id">The id of the record.</param>
         /// <returns>A record in string format.</returns>
-        string GetMegye(int id);
+        Megyek GetMegye(int id);
 
         /// <summary>
         /// Gets one Termek.
         /// </summary>
         /// <param name="id">The id of the record.</param>
-        /// <returns>Returns every record in string format.</returns>
-        string GetTermek(int id);
+        /// <returns>Returns every record.</returns>
+        Termekek GetTermek(int id);
 
         /// <summary>
         /// Gets one Vasarlo.
         /// </summary>
         /// <param name="id">The id of the record.</param>
-        /// <returns>Returns every record in string format.</returns>
-        string GetVasarlo(int id);
+        /// <returns>Returns every record.</returns>
+        Vasarlok GetVasarlo(int id);
 
         /// <summary>
         /// Gets one Vasarlas.
         /// </summary>
         /// <param name="id">The id of the record.</param>
-        /// <returns>Returns every record in string format.</returns>
-        string GetVasarlas(int id);
+        /// <returns>Returns every record.</returns>
+        Vasarlasok GetVasarlas(int id);
 
         // MegyeCUD
 
@@ -121,13 +121,13 @@ namespace VegyesBolt.Logic
         /// </summary>
         /// <param name="owner">The owner.</param>
         /// <returns>The products.</returns>
-        string ListbyOwner(Vasarlok owner);
+        List<Termekek> ListbyOwner(Vasarlok owner);
 
         /// <summary>
         /// Returns the most owned Product.
         /// </summary>
         /// <returns>The most owned Product.</returns>
-        string MostOwnedProduct();
+        Termekek MostOwnedProduct();
 
         // Vasarlok CUD
 
@@ -157,7 +157,7 @@ namespace VegyesBolt.Logic
         /// </summary>
         /// <param name="megye">The county.</param>
         /// <returns>The users.</returns>
-        string EbbeAMegyebeLakik(Megyek megye);
+        List<Vasarlok> EbbeAMegyebeLakik(Megyek megye);
 
         // Vasarlasok CUD.
 
@@ -181,35 +181,5 @@ namespace VegyesBolt.Logic
         /// <param name="delete">The record which needs to be deleted.</param>
         /// <returns>If it was succesful returns true.</returns>
         bool DeleteVasarlasok(Vasarlasok delete);
-
-        // Additional Methods.
-
-        /// <summary>
-        /// Gets a list with custom classes and returns all of the properties values from that item.
-        /// </summary>
-        /// <param name="list">The list where the data is stored.</param>
-        /// <returns>The values of the items.</returns>
-        string ListToString(List<object> list);
-
-        /// <summary>
-        /// Get the property names from a list.
-        /// </summary>
-        /// <param name="list">The list.</param>
-        /// <returns>The property names.</returns>
-        string ListHeaders(List<object> list);
-
-        /// <summary>
-        /// Lists everything about a list.
-        /// </summary>
-        /// <param name="list">The list.</param>
-        /// <returns>Header plus records.</returns>
-        string ListAll(List<object> list);
-
-        /// <summary>
-        /// Gets an item and list everything about it.
-        /// </summary>
-        /// <param name="item">The item.</param>
-        /// <returns>Headers plus the one record.</returns>
-        string ListOne(object item);
     }
 }

@@ -9,10 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.Repository", "Ve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.Logic", "VegyesBolt.Logic\VegyesBolt.Logic.csproj", "{E8932111-5BD9-4432-9730-9E7EE0F73E16}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.Logic.Tests", "VegyesBolt.Logic.Tests\VegyesBolt.Logic.Tests.csproj", "{E42A2BF3-55A3-4945-B04A-86315EC5AA32}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.Program", "VegyesBolt.Program\VegyesBolt.Program.csproj", "{8C8B470A-E6D3-466A-A989-22C5282CCF1C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F3805604-A234-4F75-BA46-BB131AA9C02B}"
 	ProjectSection(SolutionItems) = preProject
 		stylecop.json = stylecop.json
@@ -37,14 +33,6 @@ Global
 		{E8932111-5BD9-4432-9730-9E7EE0F73E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8932111-5BD9-4432-9730-9E7EE0F73E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8932111-5BD9-4432-9730-9E7EE0F73E16}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E42A2BF3-55A3-4945-B04A-86315EC5AA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E42A2BF3-55A3-4945-B04A-86315EC5AA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E42A2BF3-55A3-4945-B04A-86315EC5AA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E42A2BF3-55A3-4945-B04A-86315EC5AA32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C8B470A-E6D3-466A-A989-22C5282CCF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C8B470A-E6D3-466A-A989-22C5282CCF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C8B470A-E6D3-466A-A989-22C5282CCF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C8B470A-E6D3-466A-A989-22C5282CCF1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

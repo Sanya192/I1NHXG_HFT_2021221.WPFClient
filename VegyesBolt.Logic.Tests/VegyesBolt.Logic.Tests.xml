@@ -36,25 +36,5 @@
             Tests if the create from repo is run and in optimal case it is returning true.
             </summary>
         </member>
-        <member name="M:VegyesBolt.Logic.Tests.Tests.EbbeAMegyebeLakik(System.Collections.Generic.List{VegyesBolt.Data.Vasarlok},VegyesBolt.Data.Megyek)">
-            <summary>
-            Tests if the EbbeAMegyebeLakik IsRunAtleastOnce.
-            </summary>
-            <param name="vasarlok">The vasarlok its returns.</param>
-            <param name="megye">The megye input of the method.</param>
-        </member>
-        <member name="M:VegyesBolt.Logic.Tests.Tests.ListByOwner(System.Collections.Generic.List{VegyesBolt.Data.Termekek},VegyesBolt.Data.Vasarlok)">
-            <summary>
-            Tests the List By owner Method.
-            </summary>
-            <param name="termekek">The lists that the TermekekRepository returns.</param>
-            <param name="vasarlo">The owner.</param>
-        </member>
-        <member name="M:VegyesBolt.Logic.Tests.Tests.MostOwnedProduct(VegyesBolt.Data.Termekek)">
-            <summary>
-            Tests the MostOwnedProduct.
-            </summary>
-            <param name="termek">The termel that the TermekekRepository returns.</param>
-        </member>
     </members>
 </doc>

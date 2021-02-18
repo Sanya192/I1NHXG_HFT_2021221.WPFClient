@@ -40,13 +40,6 @@ namespace VegyesBolt.Repository
         }
 
         /// <inheritdoc/>
-        public List<Vasarlok> EbbeAMegyebeKiLakik(Megyek megye)
-        {
-            var vasarlok = VegyesBolt.Vasarloks.Where(p => p.Megye == megye.Id).ToList();
-            return vasarlok;
-        }
-
-        /// <inheritdoc/>
         public void Update(Vasarlok toUpdate)
         {
             var old = VegyesBolt.Vasarloks.Find(toUpdate.Id);

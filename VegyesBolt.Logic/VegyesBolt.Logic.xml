@@ -13,25 +13,25 @@
             <summary>
             Gets all Megye.
             </summary>
-            <returns>Returns every record in string format.</returns>
+            <returns>Returns every record.</returns>
         </member>
         <member name="M:VegyesBolt.Logic.ILogic.GetTermekek">
             <summary>
             Gets all Termek.
             </summary>
-            <returns>Returns every record in string format.</returns>
+            <returns>Returns every record.</returns>
         </member>
         <member name="M:VegyesBolt.Logic.ILogic.GetVasarlok">
             <summary>
             Gets all Vasarlok.
             </summary>
-            <returns>Returns every record in string format.</returns>
+            <returns>Returns every record.</returns>
         </member>
         <member name="M:VegyesBolt.Logic.ILogic.GetVasarlasok">
             <summary>
             Gets all Vasarlasok.
             </summary>
-            <returns>Returns every record in string format.</returns>
+            <returns>Returns every record.</returns>
         </member>
         <member name="M:VegyesBolt.Logic.ILogic.GetMegye(System.Int32)">
             <summary>
@@ -45,21 +45,21 @@
             Gets one Termek.
             </summary>
             <param name="id">The id of the record.</param>
-            <returns>Returns every record in string format.</returns>
+            <returns>Returns every record.</returns>
         </member>
         <member name="M:VegyesBolt.Logic.ILogic.GetVasarlo(System.Int32)">
             <summary>
             Gets one Vasarlo.
             </summary>
             <param name="id">The id of the record.</param>
-            <returns>Returns every record in string format.</returns>
+            <returns>Returns every record.</returns>
         </member>
         <member name="M:VegyesBolt.Logic.ILogic.GetVasarlas(System.Int32)">
             <summary>
             Gets one Vasarlas.
             </summary>
             <param name="id">The id of the record.</param>
-            <returns>Returns every record in string format.</returns>
+            <returns>Returns every record.</returns>
         </member>
         <member name="M:VegyesBolt.Logic.ILogic.CreateMegye(VegyesBolt.Data.Megyek)">
             <summary>

@@ -9,6 +9,7 @@ Now stylecop.
 
 BeforeMilestone:
 Refactor the logic. Others are good
+Check. Program is broken though.
 
 
 Milestone1:

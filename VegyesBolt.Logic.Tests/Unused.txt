@@ -1,0 +1,56 @@
+﻿
+        /// <summary>
+        /// Tests if the EbbeAMegyebeLakik IsRunAtleastOnce.
+        /// </summary>
+        /// <param name="vasarlok">The vasarlok its returns.</param>
+        /// <param name="megye">The megye input of the method.</param>
+        /*[Test]
+        public void EbbeAMegyebeLakik(
+            [ValueSource("VasarloLista")] List<Vasarlok> vasarlok,
+            [ValueSource("Megye")] Megyek megye)
+        {
+            var repo = new Mock<IVasarlokRepository>();
+            var testelt = new Logic();
+            repo.Setup(p => p.EbbeAMegyebeKiLakik(megye)).Returns(vasarlok);
+            testelt.VasarlokRepository = repo.Object;
+            testelt.EbbeAMegyebeLakik(megye);
+            repo.Verify(p => p.EbbeAMegyebeKiLakik(megye), Times.Once);
+        }*/
+
+        /// <summary>
+        /// Tests the List By owner Method.
+        /// </summary>
+        /// <param name="termekek">The lists that the TermekekRepository returns.</param>
+        /// <param name="vasarlo">The owner.</param>
+        [Test]
+        public void ListByOwner(
+           [ValueSource("TermekLista")] List<Termekek> termekek,
+           [ValueSource("Vasarlo")] Vasarlok vasarlo)
+        {
+            var repo = new Mock<ITermekekRepository>();
+            repo.Setup(p => p.Elements).Returns(termekek);
+            var testelt = new Logic
+            {
+                TermekekRepository = repo.Object,
+            };
+            Assert.AreEqual(testelt.ListbyOwner(vasarlo),vasarlo);
+            // repo.Verify(p => p.(vasarlo));
+        }
+
+        /// <summary>
+        /// Tests the MostOwnedProduct.
+        /// </summary>
+        /// <param name="termek">The termel that the TermekekRepository returns.</param>
+        [Test]
+        public void MostOwnedProduct(
+           [ValueSource("Termek")] Termekek termek)
+        {
+            var repo = new Mock<ITermekekRepository>();
+            repo.Setup(p => p.MostOwnedProduct()).Returns(termek);
+            var testelt = new Logic
+            {
+                TermekekRepository = repo.Object,
+            };
+            testelt.MostOwnedProduct();
+            repo.Verify(p => p.MostOwnedProduct());
+        }

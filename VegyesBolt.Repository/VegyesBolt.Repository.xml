@@ -43,19 +43,6 @@
             The repository for Termekek Table.
             </summary>
         </member>
-        <member name="M:VegyesBolt.Repository.ITermekekRepository.ListByOwner(VegyesBolt.Data.Vasarlok)">
-            <summary>
-            Lists All Product buyed by that owner.
-            </summary>
-            <param name="owner">The owner.</param>
-            <returns>The products.</returns>
-        </member>
-        <member name="M:VegyesBolt.Repository.ITermekekRepository.MostOwnedProduct">
-            <summary>
-            List the most bought product.
-            </summary>
-            <returns>The most bought product.</returns>
-        </member>
         <member name="T:VegyesBolt.Repository.IVasarlasokRepository">
             <summary>
             The repository for Vasarlasok Table.
@@ -65,13 +52,6 @@
             <summary>
             The repository for Vasarlok Table.
             </summary>
-        </member>
-        <member name="M:VegyesBolt.Repository.IVasarlokRepository.EbbeAMegyebeKiLakik(VegyesBolt.Data.Megyek)">
-            <summary>
-            List all Customers who lives in that county.
-            </summary>
-            <param name="megye">The county where they live.</param>
-            <returns>Get all Customers who lives in that county.</returns>
         </member>
         <member name="T:VegyesBolt.Repository.MegyeRepository">
             <summary>
@@ -102,12 +82,6 @@
             <inheritdoc/>
         </member>
         <member name="M:VegyesBolt.Repository.TermekekRepository.Delete(VegyesBolt.Data.Termekek)">
-            <inheritdoc/>
-        </member>
-        <member name="M:VegyesBolt.Repository.TermekekRepository.ListByOwner(VegyesBolt.Data.Vasarlok)">
-            <inheritdoc/>
-        </member>
-        <member name="M:VegyesBolt.Repository.TermekekRepository.MostOwnedProduct">
             <inheritdoc/>
         </member>
         <member name="M:VegyesBolt.Repository.TermekekRepository.Update(VegyesBolt.Data.Termekek)">
@@ -142,9 +116,6 @@
             <inheritdoc/>
         </member>
         <member name="M:VegyesBolt.Repository.VasarlokRepository.Delete(VegyesBolt.Data.Vasarlok)">
-            <inheritdoc/>
-        </member>
-        <member name="M:VegyesBolt.Repository.VasarlokRepository.EbbeAMegyebeKiLakik(VegyesBolt.Data.Megyek)">
             <inheritdoc/>
         </member>
         <member name="M:VegyesBolt.Repository.VasarlokRepository.Update(VegyesBolt.Data.Vasarlok)">

@@ -40,18 +40,6 @@ namespace VegyesBolt.Repository
         }
 
         /// <inheritdoc/>
-        public List<Termekek> ListByOwner(Vasarlok owner)
-        {
-            return VegyesBolt.Termekeks.Where(p => p.Vasarlasoks.Any(x => x.VasarloId == owner.Id)).ToList();
-        }
-
-        /// <inheritdoc/>
-        public Termekek MostOwnedProduct()
-        {
-            return VegyesBolt.Termekeks.OrderBy(p => p.Vasarlasoks.Count).First();
-        }
-
-        /// <inheritdoc/>
         public void Update(Termekek toUpdate)
         {
             var old = VegyesBolt.Termekeks.Find(toUpdate.Id);

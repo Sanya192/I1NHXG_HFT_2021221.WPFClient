@@ -50,39 +50,39 @@ namespace VegyesBolt.Logic
         public IVasarlokRepository VasarlokRepository { private get; set; }
 
         /// <inheritdoc/>
-        public string GetMegyek() => this.ListAll(this.MegyeRepository.Elements.ConvertAll<object>(p => p));
+        public List<Megyek> GetMegyek() => this.MegyeRepository.Elements;
 
         /// <inheritdoc/>
-        public string GetTermekek() => this.ListAll(this.TermekekRepository.Elements.ConvertAll<object>(p => p));
+        public List<Termekek> GetTermekek() => this.TermekekRepository.Elements;
 
         /// <inheritdoc/>
-        public string GetVasarlok() => this.ListAll(this.VasarlokRepository.Elements.ConvertAll<object>(p => p));
+        public List<Vasarlok> GetVasarlok() => this.VasarlokRepository.Elements;
 
         /// <inheritdoc/>
-        public string GetVasarlasok() => this.ListAll(this.VasarlasokRepository.Elements.ConvertAll<object>(p => p));
+        public List<Vasarlasok> GetVasarlasok() => this.VasarlasokRepository.Elements;
 
         /// <inheritdoc/>
-        public string GetMegye(int id)
+        public Megyek GetMegye(int id)
         {
-            return this.ListOne(this.MegyeRepository.Elements[id]);
+            return this.MegyeRepository.Elements[id];
         }
 
         /// <inheritdoc/>
-        public string GetTermek(int id)
+        public Termekek GetTermek(int id)
         {
-            return this.ListOne(this.TermekekRepository.Elements[id]);
+            return this.TermekekRepository.Elements[id];
         }
 
         /// <inheritdoc/>
-        public string GetVasarlo(int id)
+        public Vasarlok GetVasarlo(int id)
         {
-            return this.ListOne(this.VasarlokRepository.Elements[id]);
+            return this.VasarlokRepository.Elements[id];
         }
 
         /// <inheritdoc/>
-        public string GetVasarlas(int id)
+        public Vasarlasok GetVasarlas(int id)
         {
-            return this.ListOne(this.VasarlasokRepository.Elements[id]);
+            return this.VasarlasokRepository.Elements[id];
         }
 
         /// <inheritdoc/>
@@ -206,42 +206,21 @@ namespace VegyesBolt.Logic
         }
 
         /// <inheritdoc/>
-        public string EbbeAMegyebeLakik(Megyek megye)
+        public List<Vasarlok> EbbeAMegyebeLakik(Megyek megye)
         {
-            try
-            {
-                return this.ListAll(this.VasarlokRepository.EbbeAMegyebeKiLakik(megye).ConvertAll<object>(p => p));
-            }
-            catch (Exception)
-            {
-                return "A művelet sikertelen volt, vagy ebbe a megyébe nem lakik senki.";
-            }
+            return this.VasarlokRepository.Elements.Where(p => p.Megye == megye.Id).ToList();
         }
 
         /// <inheritdoc/>
-        public string ListbyOwner(Vasarlok owner)
+        public List<Termekek> ListbyOwner(Vasarlok owner)
         {
-            try
-            {
-                return this.ListAll(this.TermekekRepository.ListByOwner(owner).ConvertAll<object>(p => p));
-            }
-            catch (Exception)
-            {
-                return "A művelet sikertelen volt!";
-            }
+            return this.TermekekRepository.Elements.Where(p => p.Vasarlasoks.Any(x => x.VasarloId == owner.Id)).ToList();
         }
 
         /// <inheritdoc/>
-        public string MostOwnedProduct()
+        public Termekek MostOwnedProduct()
         {
-            try
-            {
-                return this.ListOne(this.TermekekRepository.MostOwnedProduct());
-            }
-            catch (Exception)
-            {
-                return "A művelet sikertelen volt!";
-            }
+            return this.TermekekRepository.Elements.OrderBy(p => p.Vasarlasoks.Count).First();
         }
 
         /// <inheritdoc/>
@@ -302,54 +281,6 @@ namespace VegyesBolt.Logic
             }
 
             return true;
-        }
-
-        /// <inheritdoc/>
-        public string ListToString(List<object> list)
-        {
-            string output = default(string);
-            var type = list.GetType().GetGenericArguments().Single();
-            foreach (var item in list)
-            {
-                foreach (var prop in item.GetType().GetProperties().Where(p => !p.GetMethod.IsVirtual))
-                {
-                    output += prop.GetValue(item) == null ? "null" : prop.GetValue(item).ToString();
-                    output += "\t";
-                }
-
-                output += Environment.NewLine;
-            }
-
-            return output;
-        }
-
-        /// <inheritdoc/>
-        public string ListHeaders(List<object> list)
-        {
-            string output = default(string);
-            var type = list.GetType().GetGenericArguments().Single();
-            var item = list.First();
-            foreach (var prop in item.GetType().GetProperties().Where(p => !p.GetMethod.IsVirtual))
-                {
-                    output += prop.Name;
-                    output += "\t";
-                }
-
-            output += Environment.NewLine;
-            return output;
-        }
-
-        /// <inheritdoc/>
-        public string ListAll(List<object> list)
-        {
-            return this.ListHeaders(list) + "\n" + this.ListToString(list);
-        }
-
-        /// <inheritdoc/>
-        public string ListOne(object item)
-        {
-            var list = new List<object> { item };
-            return this.ListHeaders(list) + "\n" + this.ListToString(list);
         }
     }
 }
