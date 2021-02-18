@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegyesBolt.Data", "VegyesBolt.Data\VegyesBolt.Data.csproj", "{47D1DDA6-7ED1-4A02-8102-396F2A5E2DB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.Data", "VegyesBolt.Data\VegyesBolt.Data.csproj", "{47D1DDA6-7ED1-4A02-8102-396F2A5E2DB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegyesBolt.Repository", "VegyesBolt.Repository\VegyesBolt.Repository.csproj", "{FDEA8C25-A479-4A7F-A808-779A83AA567C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegyesBolt.Logic", "VegyesBolt.Logic\VegyesBolt.Logic.csproj", "{E8932111-5BD9-4432-9730-9E7EE0F73E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegyesBolt.Logic.Tests", "VegyesBolt.Logic.Tests\VegyesBolt.Logic.Tests.csproj", "{E42A2BF3-55A3-4945-B04A-86315EC5AA32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegyesBolt.Program", "VegyesBolt.Program\VegyesBolt.Program.csproj", "{8C8B470A-E6D3-466A-A989-22C5282CCF1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{47D1DDA6-7ED1-4A02-8102-396F2A5E2DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D1DDA6-7ED1-4A02-8102-396F2A5E2DB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D1DDA6-7ED1-4A02-8102-396F2A5E2DB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDEA8C25-A479-4A7F-A808-779A83AA567C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDEA8C25-A479-4A7F-A808-779A83AA567C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDEA8C25-A479-4A7F-A808-779A83AA567C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDEA8C25-A479-4A7F-A808-779A83AA567C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8932111-5BD9-4432-9730-9E7EE0F73E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8932111-5BD9-4432-9730-9E7EE0F73E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8932111-5BD9-4432-9730-9E7EE0F73E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8932111-5BD9-4432-9730-9E7EE0F73E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E42A2BF3-55A3-4945-B04A-86315EC5AA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E42A2BF3-55A3-4945-B04A-86315EC5AA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E42A2BF3-55A3-4945-B04A-86315EC5AA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E42A2BF3-55A3-4945-B04A-86315EC5AA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C8B470A-E6D3-466A-A989-22C5282CCF1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C8B470A-E6D3-466A-A989-22C5282CCF1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C8B470A-E6D3-466A-A989-22C5282CCF1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C8B470A-E6D3-466A-A989-22C5282CCF1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

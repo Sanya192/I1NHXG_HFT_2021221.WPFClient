@@ -1,0 +1,28 @@
+﻿// <copyright file="ITermekekRepository.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
+
+namespace VegyesBolt.Repository
+{
+    using System.Collections.Generic;
+    using VegyesBolt.Data;
+
+    /// <summary>
+    /// The repository for Termekek Table.
+    /// </summary>
+    public interface ITermekekRepository : IRepository<Termekek>
+    {
+        /// <summary>
+        /// Lists All Product buyed by that owner.
+        /// </summary>
+        /// <param name="owner">The owner.</param>
+        /// <returns>The products.</returns>
+        List<Termekek> ListByOwner(Vasarlok owner);
+
+        /// <summary>
+        /// List the most bought product.
+        /// </summary>
+        /// <returns>The most bought product.</returns>
+        Termekek MostOwnedProduct();
+    }
+}
