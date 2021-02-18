@@ -1,5 +1,4 @@
-TODO
-
+TODO:
 FIRST:
 All project must be in .NET 5.
 Let's pray.
