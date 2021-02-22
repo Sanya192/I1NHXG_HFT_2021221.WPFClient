@@ -7,7 +7,7 @@ namespace VegyesBolt.UI.ViewModel
     /// <summary>
     /// An enum which has all of the possible tables.
     /// </summary>
-    internal enum Tables
+    public enum Tables
     {
         /// <summary>
         /// The Megyek table.

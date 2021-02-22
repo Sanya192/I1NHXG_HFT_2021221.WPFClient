@@ -10,7 +10,10 @@
             </summary>
         </member>
         <member name="M:VegyesBolt.Data.Megyek.Header">
-            <inheritdoc/>
+            <summary>
+            A method that returns all of the properties name.
+            </summary>
+            <returns>The properties name.</returns>
         </member>
         <member name="M:VegyesBolt.Data.Megyek.ToString">
             <inheritdoc/>
@@ -56,17 +59,6 @@
         </member>
         <member name="M:VegyesBolt.Data.Vasarlok.ToString">
             <inheritdoc/>
-        </member>
-        <member name="T:VegyesBolt.Data.IDBContent">
-            <summary>
-            An interface for DB content.
-            </summary>
-        </member>
-        <member name="F:VegyesBolt.Data.IDBContent.Header">
-            <summary>
-            A method that returns all of the properties name.
-            </summary>
-            <returns>The properties name.</returns>
         </member>
     </members>
 </doc>

@@ -18,16 +18,16 @@ namespace VegyesBolt.Data
             return $"Név\t" +
                 $"VásárlasDátuma\t" +
                 $"TermékNeve\t" +
-                $"Mennyiség\t";
+                $"Mennyiség";
         }
 
         /// <inheritdoc/>
         public override string ToString()
         {
-            return $"{this.Vasarlo.Nev}\t" +
+            return $"{this.Vasarlo?.Nev}\t" +
                 $"{this.VasarlasDatuma}\t" +
-                $"{this.Termek.TermekNeve}\t" +
-                $"{this.Mennyiseg}\t";
+                $"{this.Termek?.TermekNeve}\t" +
+                $"{this.Mennyiseg}";
         }
     }
 }

@@ -18,6 +18,7 @@ namespace VegyesBolt.UI
     using System.Windows.Media.Imaging;
     using System.Windows.Navigation;
     using System.Windows.Shapes;
+    using VegyesBolt.UI.ViewModel;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml.
@@ -30,6 +31,41 @@ namespace VegyesBolt.UI
         public MainWindow()
         {
             this.InitializeComponent();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindow"/> class.
+        /// </summary>
+        /// <param name="model">The Boltmodel Datacontext.</param>
+        public MainWindow(BoltModel model)
+            : this()
+        {
+            this.DataContext = null;
+            this.DataContext = model;
+        }
+
+        private void MegyeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var sajt = this.DataContext as BoltModel;
+            sajt.SelectedTable = Tables.Megyek;
+        }
+
+        private void VasarloButton_Click(object sender, RoutedEventArgs e)
+        {
+            var sajt = this.DataContext as BoltModel;
+            sajt.SelectedTable = Tables.Vasarlok;
+        }
+
+        private void TermekButton_Click(object sender, RoutedEventArgs e)
+        {
+            var sajt = this.DataContext as BoltModel;
+            sajt.SelectedTable = Tables.Termekek;
+        }
+
+        private void VasarlasButton_Click(object sender, RoutedEventArgs e)
+        {
+            var sajt = this.DataContext as BoltModel;
+            sajt.SelectedTable = Tables.Vasarlasok;
         }
     }
 }

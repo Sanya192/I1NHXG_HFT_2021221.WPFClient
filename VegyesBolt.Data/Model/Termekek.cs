@@ -24,15 +24,15 @@ namespace VegyesBolt.Data
             return $"Név\t" +
                 $"Ára\t" +
                 $"ÁfásÁra\t" +
-                $"Mennyiség\t";
+                $"Mennyiség";
         }
 
         /// <inheritdoc/>
         public override string ToString()
         {
             return $"{this.TermekNeve}\t" +
-                $"{this.Ara}" +
-                $"{this.AfasAra}" +
+                $"{this.Ara}\t" +
+                $"{this.AfasAra}\t" +
                 $"{this.LeltarMennyiseg}";
         }
     }

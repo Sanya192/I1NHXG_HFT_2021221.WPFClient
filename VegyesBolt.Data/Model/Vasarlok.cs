@@ -17,7 +17,7 @@ namespace VegyesBolt.Data
         {
             return $"Név\t" +
                 $"Regisztráció dátuma\t" +
-                $"Email\t";
+                $"Email";
         }
 
         /// <inheritdoc/>
@@ -25,7 +25,7 @@ namespace VegyesBolt.Data
         {
             return $"{this.Nev}\t" +
                 $"{this.RegDate}\t" +
-                $"{this.Email}\t";
+                $"{this.Email}";
         }
     }
 }

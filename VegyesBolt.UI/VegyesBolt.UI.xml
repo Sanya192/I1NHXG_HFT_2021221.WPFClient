@@ -35,6 +35,12 @@
             Initializes a new instance of the <see cref="T:VegyesBolt.UI.MainWindow"/> class.
             </summary>
         </member>
+        <member name="M:VegyesBolt.UI.MainWindow.#ctor(VegyesBolt.UI.ViewModel.BoltModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.MainWindow"/> class.
+            </summary>
+            <param name="model">The Boltmodel Datacontext.</param>
+        </member>
         <member name="M:VegyesBolt.UI.MainWindow.InitializeComponent">
             <summary>
             InitializeComponent
@@ -50,10 +56,25 @@
             Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.BoltModel"/> class.
             </summary>
         </member>
+        <member name="E:VegyesBolt.UI.ViewModel.BoltModel.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.BoltModel.AllCurrentToString">
+            <summary>
+            Gets all of the current items as String.
+            </summary>
+        </member>
         <member name="P:VegyesBolt.UI.ViewModel.BoltModel.SelectedTable">
             <summary>
             Gets or sets the currently selected table.
             </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltModel.OnPropertyChanged(System.String)">
+            <summary>
+            Create the OnPropertyChanged method to raise the event
+            The calling member's name will be used as the parameter.
+            </summary>
+            <param name="name">The property name.</param>
         </member>
         <member name="M:VegyesBolt.UI.ViewModel.BoltModel.ShowAll">
             <summary>
@@ -84,6 +105,36 @@
         <member name="F:VegyesBolt.UI.ViewModel.Tables.Vasarlasok">
             <summary>
             The vasarlasok table.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>

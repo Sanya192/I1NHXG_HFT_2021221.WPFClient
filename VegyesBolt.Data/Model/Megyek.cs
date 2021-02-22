@@ -29,7 +29,7 @@ namespace VegyesBolt.Data
                 $"{this.Szekhely}\t" +
                 $"{this.TelepulesekSzama} db\t" +
                 $"{this.Terulet} km²\t" +
-                $"{this.Nepesseg} fő\t";
+                $"{this.Nepesseg} fő";
         }
     }
 }
