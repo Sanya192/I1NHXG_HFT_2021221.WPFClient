@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VegyesBolt.UI</name>
+    </assembly>
+    <members>
+        <member name="T:VegyesBolt.UI.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.UI.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.MainWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.UI.ViewModel.BoltModel">
+            <summary>
+            The ViewModel For the APP.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.BoltModel"/> class.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.BoltModel.SelectedTable">
+            <summary>
+            Gets or sets the currently selected table.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltModel.ShowAll">
+            <summary>
+            Shows all members of the currently selected table.
+            </summary>
+            <returns>all members of the currently table.</returns>
+        </member>
+        <member name="T:VegyesBolt.UI.ViewModel.Tables">
+            <summary>
+            An enum which has all of the possible tables.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.ViewModel.Tables.Megyek">
+            <summary>
+            The Megyek table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.ViewModel.Tables.Vasarlok">
+            <summary>
+            The Vasarlok table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.ViewModel.Tables.Termekek">
+            <summary>
+            The Termekek table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.ViewModel.Tables.Vasarlasok">
+            <summary>
+            The vasarlasok table.
+            </summary>
+        </member>
+    </members>
+</doc>

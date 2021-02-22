@@ -165,143 +165,103 @@
             <param name="delete">The record which needs to be deleted.</param>
             <returns>If it was succesful returns true.</returns>
         </member>
-        <member name="M:VegyesBolt.Logic.ILogic.ListToString(System.Collections.Generic.List{System.Object})">
-            <summary>
-            Gets a list with custom classes and returns all of the properties values from that item.
-            </summary>
-            <param name="list">The list where the data is stored.</param>
-            <returns>The values of the items.</returns>
-        </member>
-        <member name="M:VegyesBolt.Logic.ILogic.ListHeaders(System.Collections.Generic.List{System.Object})">
-            <summary>
-            Get the property names from a list.
-            </summary>
-            <param name="list">The list.</param>
-            <returns>The property names.</returns>
-        </member>
-        <member name="M:VegyesBolt.Logic.ILogic.ListAll(System.Collections.Generic.List{System.Object})">
-            <summary>
-            Lists everything about a list.
-            </summary>
-            <param name="list">The list.</param>
-            <returns>Header plus records.</returns>
-        </member>
-        <member name="M:VegyesBolt.Logic.ILogic.ListOne(System.Object)">
-            <summary>
-            Gets an item and list everything about it.
-            </summary>
-            <param name="item">The item.</param>
-            <returns>Headers plus the one record.</returns>
-        </member>
-        <member name="T:VegyesBolt.Logic.Logic">
+        <member name="T:VegyesBolt.Logic.Worker">
             <summary>
             The Logic repository.
             </summary>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.#ctor">
+        <member name="M:VegyesBolt.Logic.Worker.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:VegyesBolt.Logic.Logic"/> class.
+            Initializes a new instance of the <see cref="T:VegyesBolt.Logic.Worker"/> class.
             </summary>
         </member>
-        <member name="P:VegyesBolt.Logic.Logic.MegyeRepository">
-            <summary>
-            Sets the Repository used only for dependency Injection.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.Logic.Logic.TermekekRepository">
+        <member name="P:VegyesBolt.Logic.Worker.MegyeRepository">
             <summary>
             Sets the Repository used only for dependency Injection.
             </summary>
         </member>
-        <member name="P:VegyesBolt.Logic.Logic.VasarlasokRepository">
+        <member name="P:VegyesBolt.Logic.Worker.TermekekRepository">
             <summary>
             Sets the Repository used only for dependency Injection.
             </summary>
         </member>
-        <member name="P:VegyesBolt.Logic.Logic.VasarlokRepository">
+        <member name="P:VegyesBolt.Logic.Worker.VasarlasokRepository">
             <summary>
             Sets the Repository used only for dependency Injection.
             </summary>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.GetMegyek">
+        <member name="P:VegyesBolt.Logic.Worker.VasarlokRepository">
+            <summary>
+            Sets the Repository used only for dependency Injection.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Logic.Worker.GetMegyek">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.GetTermekek">
+        <member name="M:VegyesBolt.Logic.Worker.GetTermekek">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.GetVasarlok">
+        <member name="M:VegyesBolt.Logic.Worker.GetVasarlok">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.GetVasarlasok">
+        <member name="M:VegyesBolt.Logic.Worker.GetVasarlasok">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.GetMegye(System.Int32)">
+        <member name="M:VegyesBolt.Logic.Worker.GetMegye(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.GetTermek(System.Int32)">
+        <member name="M:VegyesBolt.Logic.Worker.GetTermek(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.GetVasarlo(System.Int32)">
+        <member name="M:VegyesBolt.Logic.Worker.GetVasarlo(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.GetVasarlas(System.Int32)">
+        <member name="M:VegyesBolt.Logic.Worker.GetVasarlas(System.Int32)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.CreateMegye(VegyesBolt.Data.Megyek)">
+        <member name="M:VegyesBolt.Logic.Worker.CreateMegye(VegyesBolt.Data.Megyek)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.CreateTermek(VegyesBolt.Data.Termekek)">
+        <member name="M:VegyesBolt.Logic.Worker.CreateTermek(VegyesBolt.Data.Termekek)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.CreateVasarlasok(VegyesBolt.Data.Vasarlasok)">
+        <member name="M:VegyesBolt.Logic.Worker.CreateVasarlasok(VegyesBolt.Data.Vasarlasok)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.CreateVasarlo(VegyesBolt.Data.Vasarlok)">
+        <member name="M:VegyesBolt.Logic.Worker.CreateVasarlo(VegyesBolt.Data.Vasarlok)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.DeleteMegyek(VegyesBolt.Data.Megyek)">
+        <member name="M:VegyesBolt.Logic.Worker.DeleteMegyek(VegyesBolt.Data.Megyek)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.DeleteTermek(VegyesBolt.Data.Termekek)">
+        <member name="M:VegyesBolt.Logic.Worker.DeleteTermek(VegyesBolt.Data.Termekek)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.DeleteVasarlasok(VegyesBolt.Data.Vasarlasok)">
+        <member name="M:VegyesBolt.Logic.Worker.DeleteVasarlasok(VegyesBolt.Data.Vasarlasok)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.DeleteVasarlo(VegyesBolt.Data.Vasarlok)">
+        <member name="M:VegyesBolt.Logic.Worker.DeleteVasarlo(VegyesBolt.Data.Vasarlok)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.EbbeAMegyebeLakik(VegyesBolt.Data.Megyek)">
+        <member name="M:VegyesBolt.Logic.Worker.EbbeAMegyebeLakik(VegyesBolt.Data.Megyek)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.ListbyOwner(VegyesBolt.Data.Vasarlok)">
+        <member name="M:VegyesBolt.Logic.Worker.ListbyOwner(VegyesBolt.Data.Vasarlok)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.MostOwnedProduct">
+        <member name="M:VegyesBolt.Logic.Worker.MostOwnedProduct">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.UpdateMegye(VegyesBolt.Data.Megyek)">
+        <member name="M:VegyesBolt.Logic.Worker.UpdateMegye(VegyesBolt.Data.Megyek)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.UpdateTermek(VegyesBolt.Data.Termekek)">
+        <member name="M:VegyesBolt.Logic.Worker.UpdateTermek(VegyesBolt.Data.Termekek)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.UpdateVasarlasok(VegyesBolt.Data.Vasarlasok)">
+        <member name="M:VegyesBolt.Logic.Worker.UpdateVasarlasok(VegyesBolt.Data.Vasarlasok)">
             <inheritdoc/>
         </member>
-        <member name="M:VegyesBolt.Logic.Logic.UpdateVasarlo(VegyesBolt.Data.Vasarlok)">
-            <inheritdoc/>
-        </member>
-        <member name="M:VegyesBolt.Logic.Logic.ListToString(System.Collections.Generic.List{System.Object})">
-            <inheritdoc/>
-        </member>
-        <member name="M:VegyesBolt.Logic.Logic.ListHeaders(System.Collections.Generic.List{System.Object})">
-            <inheritdoc/>
-        </member>
-        <member name="M:VegyesBolt.Logic.Logic.ListAll(System.Collections.Generic.List{System.Object})">
-            <inheritdoc/>
-        </member>
-        <member name="M:VegyesBolt.Logic.Logic.ListOne(System.Object)">
+        <member name="M:VegyesBolt.Logic.Worker.UpdateVasarlo(VegyesBolt.Data.Vasarlok)">
             <inheritdoc/>
         </member>
     </members>

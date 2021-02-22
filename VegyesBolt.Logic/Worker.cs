@@ -1,4 +1,4 @@
-﻿// <copyright file="Logic.cs" company="MSanyi">
+﻿// <copyright file="Worker.cs" company="MSanyi">
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 

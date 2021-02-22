@@ -30,5 +30,6 @@ namespace VegyesBolt.Data
 
         public virtual ICollection<Vasarlasok> Vasarlasoks { get; set; }
     }
+    
 }
 

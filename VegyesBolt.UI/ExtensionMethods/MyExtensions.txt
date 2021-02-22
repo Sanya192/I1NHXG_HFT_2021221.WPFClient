@@ -1,0 +1,150 @@
+﻿/*namespace VegyesBolt.UI.ExtensionMethods
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using VegyesBolt.Data;
+
+    /// <summary>
+    /// A class handling extension methods.
+    /// </summary>
+    public static class MyExtensions
+    {
+        #region Megye
+        /// <summary>
+        /// An extension method for string conversion.
+        /// </summary>
+        /// <param name="megyek">The item which gets converted.</param>
+        /// <returns>A string.</returns>
+        public static string WriteString(this Megyek megyek)
+        {
+            // Question: Do the user needs to see the id?
+            return
+                $"{megyek.Nev}" +
+                $"{megyek.Szekhely}" +
+                $"{megyek.TelepulesekSzama}" +
+                $"{megyek.Terulet}" +
+                $"{megyek.Nepesseg}"
+                ;
+        }
+
+        /// <summary>
+        /// An extension Method for Property Titles.
+        /// </summary>
+        /// <param name="megyek">The variable which property gets converted.</param>
+        /// <returns>A string.</returns>
+        #endregion
+        public static string HeaderString(this Megyek megyek)
+        {
+            // Question: Do the user needs to see the id?
+            return
+                $"Nev" +
+                $"Szekhely" +
+                $"TelepulesekSzama" +
+                $"Terulet" +
+                $"Nepesseg"
+                ;
+        }
+        /// <summary>
+        /// An extension method for string conversion.
+        /// </summary>
+        /// <param name="megyek">The item which gets converted.</param>
+        /// <returns>A string.</returns>
+        public static string WriteString(this Vasarlok megyek)
+        {
+            // Question: Do the user needs to see the id?
+            return
+                $"{megyek.Nev}" +
+                $"{megyek.Szekhely}" +
+                $"{megyek.TelepulesekSzama}" +
+                $"{megyek.Terulet}" +
+                $"{megyek.Nepesseg}"
+                ;
+        }
+
+        /// <summary>
+        /// An extension Method for Property Titles.
+        /// </summary>
+        /// <param name="megyek">The variable which property gets converted.</param>
+        /// <returns>A string.</returns>
+        public static string HeaderString(this Vasarlok megyek)
+        {
+            // Question: Do the user needs to see the id?
+            return
+                $"Nev" +
+                $"Szekhely" +
+                $"TelepulesekSzama" +
+                $"Terulet" +
+                $"Nepesseg"
+                ;
+        }/// <summary>
+         /// An extension method for string conversion.
+         /// </summary>
+         /// <param name="megyek">The item which gets converted.</param>
+         /// <returns>A string.</returns>
+        public static string WriteString(this Termekek megyek)
+        {
+            // Question: Do the user needs to see the id?
+            return
+                $"{megyek.Nev}" +
+                $"{megyek.Szekhely}" +
+                $"{megyek.TelepulesekSzama}" +
+                $"{megyek.Terulet}" +
+                $"{megyek.Nepesseg}"
+                ;
+        }
+
+        /// <summary>
+        /// An extension Method for Property Titles.
+        /// </summary>
+        /// <param name="megyek">The variable which property gets converted.</param>
+        /// <returns>A string.</returns>
+        public static string HeaderString(this Termekek megyek)
+        {8
+            // Question: Do the user needs to see the id?
+            return
+                $"Nev" +
+                $"Szekhely" +
+                $"TelepulesekSzama" +
+                $"Terulet" +
+                $"Nepesseg"
+                ;
+        }/// <summary>
+         /// An extension method for string conversion.
+         /// </summary>
+         /// <param name="megyek">The item which gets converted.</param>
+         /// <returns>A string.</returns>
+        public static string WriteString(this Vasarlasok megyek)
+        {
+            // Question: Do the user needs to see the id?
+            return
+                $"{megyek.Nev}" +
+                $"{megyek.Szekhely}" +
+                $"{megyek.TelepulesekSzama}" +
+                $"{megyek.Terulet}" +
+                $"{megyek.Nepesseg}"
+                ;
+        }
+
+        /// <summary>
+        /// An extension Method for Property Titles.
+        /// </summary>
+        /// <param name="megyek">The variable which property gets converted.</param>
+        /// <returns>A string.</returns>
+        public static string HeaderString(this Vasarlasok megyek)
+        {
+            // Question: Do the user needs to see the id?
+            return
+                $"Nev" +
+                $"Szekhely" +
+                $"TelepulesekSzama" +
+                $"Terulet" +
+                $"Nepesseg"
+                ;
+        }
+
+    }
+}
+*/

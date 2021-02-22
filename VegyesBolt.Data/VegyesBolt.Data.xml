@@ -4,5 +4,69 @@
         <name>VegyesBolt.Data</name>
     </assembly>
     <members>
+        <member name="T:VegyesBolt.Data.Megyek">
+            <summary>
+            A not auto generated part for megyek.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Data.Megyek.Header">
+            <inheritdoc/>
+        </member>
+        <member name="M:VegyesBolt.Data.Megyek.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:VegyesBolt.Data.Termekek">
+            <summary>
+            A not auto generated part for termekek.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Data.Termekek.Header">
+            <summary>
+            A method that returns all of the properties name.
+            </summary>
+            <returns>The properties name.</returns>
+        </member>
+        <member name="M:VegyesBolt.Data.Termekek.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:VegyesBolt.Data.Vasarlasok">
+            <summary>
+            A not auto generated part for Vasarlasok.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Data.Vasarlasok.Header">
+            <summary>
+            A method that returns all of the properties name.
+            </summary>
+            <returns>The properties name.</returns>
+        </member>
+        <member name="M:VegyesBolt.Data.Vasarlasok.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:VegyesBolt.Data.Vasarlok">
+            <summary>
+            A not auto generated part for megyek.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.Data.Vasarlok.Header">
+            <summary>
+            A method that returns all of the properties name.
+            </summary>
+            <returns>The properties name.</returns>
+        </member>
+        <member name="M:VegyesBolt.Data.Vasarlok.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:VegyesBolt.Data.IDBContent">
+            <summary>
+            An interface for DB content.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.Data.IDBContent.Header">
+            <summary>
+            A method that returns all of the properties name.
+            </summary>
+            <returns>The properties name.</returns>
+        </member>
     </members>
 </doc>
