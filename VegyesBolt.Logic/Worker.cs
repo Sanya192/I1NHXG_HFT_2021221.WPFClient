@@ -16,12 +16,12 @@ namespace VegyesBolt.Logic
     /// <summary>
     /// The Logic repository.
     /// </summary>
-    public class Logic : ILogic
+    public class Worker : ILogic
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Logic"/> class.
+        /// Initializes a new instance of the <see cref="Worker"/> class.
         /// </summary>
-        public Logic()
+        public Worker()
         {
             this.MegyeRepository = new MegyeRepository();
             this.TermekekRepository = new TermekekRepository();
