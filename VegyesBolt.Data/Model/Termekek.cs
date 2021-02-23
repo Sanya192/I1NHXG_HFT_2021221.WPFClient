@@ -30,10 +30,10 @@ namespace VegyesBolt.Data
         /// <inheritdoc/>
         public override string ToString()
         {
-            return $"{this.TermekNeve}\t" +
-                $"{this.Ara}\t" +
-                $"{this.AfasAra}\t" +
-                $"{this.LeltarMennyiseg}";
+            return $"{this.TermekNeve}\t"
+                   + $"{this.Ara}\t"
+                   + $"{this.AfasAra}\t"
+                   + $"{this.LeltarMennyiseg}";
         }
     }
 }

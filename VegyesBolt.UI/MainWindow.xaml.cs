@@ -37,7 +37,7 @@ namespace VegyesBolt.UI
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
         /// </summary>
         /// <param name="model">The Boltmodel Datacontext.</param>
-        public MainWindow(BoltModel model)
+        public MainWindow(BoltViewModel model)
             : this()
         {
             this.DataContext = null;
@@ -46,26 +46,32 @@ namespace VegyesBolt.UI
 
         private void MegyeButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltModel;
+            var sajt = this.DataContext as BoltViewModel;
             sajt.SelectedTable = Tables.Megyek;
         }
 
         private void VasarloButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltModel;
+            var sajt = this.DataContext as BoltViewModel;
             sajt.SelectedTable = Tables.Vasarlok;
         }
 
         private void TermekButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltModel;
+            var sajt = this.DataContext as BoltViewModel;
             sajt.SelectedTable = Tables.Termekek;
         }
 
         private void VasarlasButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltModel;
+            var sajt = this.DataContext as BoltViewModel;
             sajt.SelectedTable = Tables.Vasarlasok;
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            var sajt = this.DataContext as BoltViewModel;
+            sajt.DeleteCurrent();
         }
     }
 }

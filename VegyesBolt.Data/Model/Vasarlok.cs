@@ -16,6 +16,7 @@ namespace VegyesBolt.Data
         public static string Header()
         {
             return $"Név\t" +
+                $"Megye\t" +
                 $"Regisztráció dátuma\t" +
                 $"Email";
         }
@@ -23,9 +24,10 @@ namespace VegyesBolt.Data
         /// <inheritdoc/>
         public override string ToString()
         {
-            return $"{this.Nev}\t" +
-                $"{this.RegDate}\t" +
-                $"{this.Email}";
+            return $"{this.Nev}\t"
+                   + $"{(this.Megye == null ? "Hajlektalan" : this.MegyeNavigation?.Nev)}\t"
+                   + $"{this.RegDate}\t"
+                   + $"{this.Email}";
         }
     }
 }

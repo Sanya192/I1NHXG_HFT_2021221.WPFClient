@@ -8,7 +8,7 @@
     mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.DataContext>
-        <viewmodel:BoltModel/>
+        <viewmodel:BoltViewModel/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
@@ -24,13 +24,13 @@
             <Button Grid.Column="3" Content="Vásárlások" Name="VasarlasButton" Click="VasarlasButton_Click"/>
         </UniformGrid>
         <!---->
-        <ListBox Grid.Row="1" ItemsSource="{Binding Path=AllCurrentToString}">
+        <ListBox Grid.Row="1" SelectedIndex="{Binding Path=SelectedItem}" ItemsSource="{Binding Path=AllCurrentToString}">
 
         </ListBox>
         <UniformGrid Grid.Row="2" Columns="3">
             <Button Grid.Column="0" Content="Save" Name="SaveButton"/>
             <Button Grid.Column="1" Content="Update" Name="UpdateButton"/>
-            <Button Grid.Column="2" Content="Delete" Name="DeleteButton"/>
+            <Button Grid.Column="2" Content="Delete" Name="DeleteButton" Click="DeleteButton_Click"/>
         </UniformGrid>
     </Grid>
 </Window>

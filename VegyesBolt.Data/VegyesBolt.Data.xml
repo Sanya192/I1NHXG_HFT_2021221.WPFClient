@@ -9,6 +9,12 @@
             A not auto generated part for megyek.
             </summary>
         </member>
+        <member name="P:VegyesBolt.Data.Megyek.Names">
+            <inheritdoc/>
+        </member>
+        <member name="P:VegyesBolt.Data.Megyek.Value">
+            <inheritdoc/>
+        </member>
         <member name="M:VegyesBolt.Data.Megyek.Header">
             <summary>
             A method that returns all of the properties name.

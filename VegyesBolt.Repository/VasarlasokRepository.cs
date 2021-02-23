@@ -28,8 +28,8 @@ namespace VegyesBolt.Repository
         /// <inheritdoc/>
         public void Delete(Vasarlasok toDelete)
         {
-            var delete = VegyesBolt.Vasarlasoks.Find(new { toDelete.VasarloId, toDelete.TermekId });
-            VegyesBolt.Vasarlasoks.Remove(delete);
+            // var delete = VegyesBolt.Vasarlasoks.Find(toDelete.VasarloId , toDelete.TermekId ,  toDelete.VasarlasDatuma );
+            VegyesBolt.Vasarlasoks.Remove(toDelete);
             VegyesBolt.SaveChanges();
         }
 

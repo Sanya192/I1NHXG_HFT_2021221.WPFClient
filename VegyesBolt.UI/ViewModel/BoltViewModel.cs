@@ -15,18 +15,19 @@ namespace VegyesBolt.UI.ViewModel
     /// <summary>
     /// The ViewModel For the APP.
     /// </summary>
-    public class BoltModel : INotifyPropertyChanged
+    public class BoltViewModel : INotifyPropertyChanged
     {
         private Tables selectedTable;
         private int selectedItem;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BoltModel"/> class.
+        /// Initializes a new instance of the <see cref="BoltViewModel"/> class.
         /// </summary>
-        public BoltModel()
+        public BoltViewModel()
         {
             this.Worker = new Worker();
             this.SelectedTable = Tables.Megyek;
+            this.selectedItem = 0;
         }
 
         /// <inheritdoc/>
@@ -59,6 +60,7 @@ namespace VegyesBolt.UI.ViewModel
             {
                 this.selectedTable = value;
                 this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.AllCurrentToString));
             }
         }
 
@@ -67,9 +69,16 @@ namespace VegyesBolt.UI.ViewModel
         /// </summary>
         public int SelectedItem
         {
-            get => this.selectedItem; set
+            get => this.selectedItem + 1; set
             {
-                this.selectedItem = value;
+                if (value <= 0)
+                {
+                    this.selectedItem = 0;
+                }
+                else
+                {
+                    this.selectedItem = value - 1;
+                }
                 this.OnPropertyChanged();
             }
         }
@@ -92,7 +101,7 @@ namespace VegyesBolt.UI.ViewModel
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AllCurrentToString"));
+            //this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.AllCurrentToString)));
         }
 
         /// <summary>
@@ -123,21 +132,25 @@ namespace VegyesBolt.UI.ViewModel
             };
         }
 
-        private void DeleteCurrent()
+        public void DeleteCurrent()
         {
             switch (this.SelectedTable)
             {
                 case Tables.Megyek:
                     this.Worker.DeleteMegyek(this.Worker.GetMegye(this.selectedItem));
+                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
                     break;
                 case Tables.Vasarlok:
                     this.Worker.DeleteVasarlo(this.Worker.GetVasarlo(this.selectedItem));
+                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
                     break;
                 case Tables.Termekek:
                     this.Worker.DeleteTermek(this.Worker.GetTermek(this.selectedItem));
+                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
                     break;
                 case Tables.Vasarlasok:
                     this.Worker.DeleteVasarlasok(this.Worker.GetVasarlas(this.selectedItem));
+                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
                     break;
                 default:
                     break;

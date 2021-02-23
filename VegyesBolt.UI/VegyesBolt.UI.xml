@@ -22,6 +22,19 @@
             Application Entry Point.
             </summary>
         </member>
+        <member name="T:VegyesBolt.UI.EditWindow">
+            <summary>
+            Interaction logic for EditWindow.xaml
+            </summary>
+            <summary>
+            EditWindow
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.EditWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:VegyesBolt.UI.MainWindow">
             <summary>
             Interaction logic for MainWindow.xaml.
@@ -35,7 +48,7 @@
             Initializes a new instance of the <see cref="T:VegyesBolt.UI.MainWindow"/> class.
             </summary>
         </member>
-        <member name="M:VegyesBolt.UI.MainWindow.#ctor(VegyesBolt.UI.ViewModel.BoltModel)">
+        <member name="M:VegyesBolt.UI.MainWindow.#ctor(VegyesBolt.UI.ViewModel.BoltViewModel)">
             <summary>
             Initializes a new instance of the <see cref="T:VegyesBolt.UI.MainWindow"/> class.
             </summary>
@@ -46,41 +59,56 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:VegyesBolt.UI.ViewModel.BoltModel">
+        <member name="T:VegyesBolt.UI.ViewModel.BoltViewModel">
             <summary>
             The ViewModel For the APP.
             </summary>
         </member>
-        <member name="M:VegyesBolt.UI.ViewModel.BoltModel.#ctor">
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.BoltModel"/> class.
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.BoltViewModel"/> class.
             </summary>
         </member>
-        <member name="E:VegyesBolt.UI.ViewModel.BoltModel.PropertyChanged">
+        <member name="E:VegyesBolt.UI.ViewModel.BoltViewModel.PropertyChanged">
             <inheritdoc/>
         </member>
-        <member name="P:VegyesBolt.UI.ViewModel.BoltModel.AllCurrentToString">
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.AllCurrentToString">
             <summary>
             Gets all of the current items as String.
             </summary>
         </member>
-        <member name="P:VegyesBolt.UI.ViewModel.BoltModel.SelectedTable">
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.SelectedTable">
             <summary>
             Gets or sets the currently selected table.
             </summary>
         </member>
-        <member name="M:VegyesBolt.UI.ViewModel.BoltModel.OnPropertyChanged(System.String)">
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.SelectedItem">
+            <summary>
+            Gets or sets the currently selected item.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.OnPropertyChanged(System.String)">
             <summary>
             Create the OnPropertyChanged method to raise the event
             The calling member's name will be used as the parameter.
             </summary>
             <param name="name">The property name.</param>
         </member>
-        <member name="M:VegyesBolt.UI.ViewModel.BoltModel.ShowAll">
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.ShowAll">
             <summary>
             Shows all members of the currently selected table.
             </summary>
             <returns>all members of the currently table.</returns>
+        </member>
+        <member name="T:VegyesBolt.UI.ViewModel.EditViewModel">
+            <summary>
+            The ViewModel for the edit Vindow.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.EditViewModel.Title">
+            <summary>
+            Gets or sets the Title of the Vindow.
+            </summary>
         </member>
         <member name="T:VegyesBolt.UI.ViewModel.Tables">
             <summary>
