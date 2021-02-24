@@ -2,6 +2,8 @@
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 
+using VegyesBolt.UI.Logic;
+
 namespace VegyesBolt.UI.ViewModel
 {
     using System;
@@ -86,7 +88,7 @@ namespace VegyesBolt.UI.ViewModel
         {
             get
             {
-                return SelectedTable switch
+                return this.SelectedTable switch
                 {
                     Tables.Megyek => Worker.GetMegye(selectedItem),
                     Tables.Vasarlok => Worker.GetVasarlo(selectedItem),

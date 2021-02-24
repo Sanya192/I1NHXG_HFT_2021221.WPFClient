@@ -2,6 +2,8 @@
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 
+using VegyesBolt.UI.Logic;
+
 namespace VegyesBolt.UI
 {
     using System;

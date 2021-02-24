@@ -2,31 +2,31 @@
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 
-namespace VegyesBolt.UI.ViewModel
+namespace VegyesBolt.UI.Logic
 {
     /// <summary>
-    /// An enum which has all of the possible tables.
+    ///     An enum which has all of the possible tables.
     /// </summary>
     public enum Tables
     {
         /// <summary>
-        /// The Megyek table.
+        ///     The Megyek table.
         /// </summary>
         Megyek = 0,
 
         /// <summary>
-        /// The Vasarlok table.
+        ///     The Vasarlok table.
         /// </summary>
         Vasarlok,
 
         /// <summary>
-        /// The Termekek table.
+        ///     The Termekek table.
         /// </summary>
         Termekek,
 
         /// <summary>
-        /// The vasarlasok table.
+        ///     The vasarlasok table.
         /// </summary>
-        Vasarlasok,
+        Vasarlasok
     }
 }

@@ -1,23 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VegyesBolt.Data;
+﻿// <copyright file="Edit.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
 
 namespace VegyesBolt.UI.Logic
 {
-    class Edit
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using VegyesBolt.Data;
+
+    /// <summary>
+    ///     The class which handles the Edit logic.
+    /// </summary>
+    internal class Edit : IEdit
     {
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="Edit" /> class.
+        /// </summary>
+        /// <param name="editableItem">The item that needs to be edited.</param>
         public Edit(object editableItem)
         {
-            EditableItem = editableItem;
-            Mode = EditMode.Update;
+            this.EditableItem = editableItem;
+            this.Mode = EditMode.Update;
         }
 
-        private object EditableItem { get; set; }
-        private object EditedItem { get; set; }
-        private EditMode Mode { get; set; }
+        /// <inheritdoc />
         public List<string> PropNames
         {
             get
@@ -25,99 +32,71 @@ namespace VegyesBolt.UI.Logic
                 // return EditableItem.ToString().Split('\t').ToList();
                 return this.EditableItem switch
                 {
-                    Megyek m => Megyek.Header().Split('\t').ToList(),
-                    Termekek t => Termekek.Header().Split('\t').ToList(),
-                    Vasarlok v => Vasarlok.Header().Split('\t').ToList(),
-                    Vasarlasok v => Vasarlasok.Header().Split('\t').ToList(),
-                    _ => throw new NotImplementedException(),
+                    Megyek => Megyek.Header().Split('\t').ToList(),
+                    Termekek => Termekek.Header().Split('\t').ToList(),
+                    Vasarlok => Vasarlok.Header().Split('\t').ToList(),
+                    Vasarlasok => Vasarlasok.Header().Split('\t').ToList(),
+                    _ => throw new NotImplementedException()
                 };
             }
         }
+
+        /// <summary>
+        ///     Gets or sets a list that returns the property values according to the object.
+        /// </summary>
         public List<object> Values
         {
             get
             {
                 return this.EditableItem switch
                 {
-                    Megyek m => this.MegyeValues(m),
-                    Termekek t => this.TermekValues(t),
-                    Vasarlok v => this.VasarlokValues(v),
-                    Vasarlasok v => this.VasarlasokValues(v),
-                    _ => throw new NotImplementedException(),
+                    Megyek m => EditValues.MegyeValues(input: m),
+                    Termekek t => EditValues.TermekValues(input: t),
+                    Vasarlok v => EditValues.VasarlokValues(input: v),
+                    Vasarlasok v => EditValues.VasarlasokValues(input: v),
+                    _ => throw new NotImplementedException()
                 };
             }
-            set
-            {
-                this.EditedItem = value;
-            }
+
+            set => this.EditedItem = value;
         }
+
+        /// <summary>
+        ///     Gets the Title of the String.
+        /// </summary>
         public string Title
         {
             get
             {
                 return this.EditableItem switch
                 {
-                    Megyek m => "Megye",
-                    Termekek t => "Termek",
-                    Vasarlok v => "Vasarlo",
-                    Vasarlasok v => "Vasarlasok",
-                    _ => throw new NotImplementedException(),
+                    Megyek => "Megye",
+                    Termekek => "Termek",
+                    Vasarlok => "Vasarlo",
+                    Vasarlasok => "Vasarlasok",
+                    _ => throw new NotSupportedException()
                 };
             }
         }
 
+        /// <inheritdoc />
+        public EditMode Mode { get; }
+
+        private object EditableItem { get; }
+
+        private object EditedItem { get; set; }
+
+        /// <inheritdoc />
         public bool Save()
         {
-            switch (EditedItem)
+            switch (this.EditedItem)
             {
                 case Megyek m:
 
                     break;
-                default:
-                    break;
             }
 
             return false;
-        }
-        private List<object> MegyeValues(Megyek input)
-        {
-            return new List<object>
-            {
-                input.Nev,
-                input.Szekhely,
-                input.TelepulesekSzama,
-                input.Terulet,
-                input.Nepesseg,
-            };
-        }
-
-        private List<object> TermekValues(Termekek input)
-        {
-            return new List<object>
-            {
-                input.TermekNeve,
-                input.Ara,
-                input.AfasAra,
-                input.LeltarMennyiseg,
-            };
-        }
-
-        private List<object> VasarlokValues(Vasarlok input)
-        {
-            //throw new NotImplementedException();
-            //
-            // Megye is not well implemented
-            return new List<object>
-            {
-                input.Nev,
-                input.RegDate,
-                input.Email,
-            };
-        }
-
-        private List<object> VasarlasokValues(Vasarlasok input)
-        {
-            throw new NotImplementedException();
         }
     }
 }

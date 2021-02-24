@@ -1,6 +1,6 @@
 ﻿namespace VegyesBolt.UI.Logic
 {
-    enum EditMode
+    public enum EditMode
     {
         Update = 0,
         Add
