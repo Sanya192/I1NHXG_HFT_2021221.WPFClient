@@ -9,19 +9,37 @@ namespace VegyesBolt.UI.ViewModel
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using VegyesBolt.Logic;
+    using VegyesBolt.UI.Logic;
 
     /// <summary>
     /// The ViewModel for the edit Vindow.
     /// </summary>
     public class EditViewModel
     {
+
         /// <summary>
         /// Gets or sets the Title of the Vindow.
         /// </summary>
-        public string Title { get; set; }
+        public string Title { get => Edit?.Title; }
 
-        private object Entity { get; set; }
+        //private object Entity { get; set; }
+        private Edit Edit { get; }
+        private Worker Worker { get; }
 
-        public int MyProperty { get; set; }
+        public EditViewModel()
+        {
+
+        }
+
+        public EditViewModel(object entity) : this()
+        {
+            //this.Entity = entity;
+            this.Edit = new Edit(entity);
+        }
+
+        public List<string> PropNames { get => Edit?.PropNames; }
+
+        public List<object> PropValues { get => Edit?.Values; }
     }
 }

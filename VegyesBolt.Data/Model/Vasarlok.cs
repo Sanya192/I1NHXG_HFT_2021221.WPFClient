@@ -25,7 +25,7 @@ namespace VegyesBolt.Data
         public override string ToString()
         {
             return $"{this.Nev}\t"
-                   + $"{(this.Megye == null ? "Hajlektalan" : this.MegyeNavigation?.Nev)}\t"
+                   + $"{(this.Megye == null ? "Hajléktalan" : this.MegyeNavigation?.Nev)}\t"
                    + $"{this.RegDate}\t"
                    + $"{this.Email}";
         }

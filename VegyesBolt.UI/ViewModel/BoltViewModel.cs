@@ -82,6 +82,20 @@ namespace VegyesBolt.UI.ViewModel
                 this.OnPropertyChanged();
             }
         }
+        public object SelectedObject
+        {
+            get
+            {
+                return SelectedTable switch
+                {
+                    Tables.Megyek => Worker.GetMegye(selectedItem),
+                    Tables.Vasarlok => Worker.GetVasarlo(selectedItem),
+                    Tables.Termekek => Worker.GetTermek(selectedItem),
+                    Tables.Vasarlasok => Worker.GetVasarlas(selectedItem),
+                    _ => throw new NotImplementedException(),
+                };
+            }
+        }
 
         private Worker Worker { get; }
 

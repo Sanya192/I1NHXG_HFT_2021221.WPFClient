@@ -73,5 +73,17 @@ namespace VegyesBolt.UI
             var sajt = this.DataContext as BoltViewModel;
             sajt.DeleteCurrent();
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            var sajt = this.DataContext as BoltViewModel;
+            EditWindow edit = new EditWindow(new EditViewModel(sajt.SelectedObject));
+            edit.Show();
+        }
     }
 }

@@ -28,8 +28,8 @@
 
         </ListBox>
         <UniformGrid Grid.Row="2" Columns="3">
-            <Button Grid.Column="0" Content="Save" Name="SaveButton"/>
-            <Button Grid.Column="1" Content="Update" Name="UpdateButton"/>
+            <Button Grid.Column="0" Content="Add" Name="AddButton" Click="AddButton_Click"/>
+            <Button Grid.Column="1" Content="Update" Name="UpdateButton" Click="UpdateButton_Click"/>
             <Button Grid.Column="2" Content="Delete" Name="DeleteButton" Click="DeleteButton_Click"/>
         </UniformGrid>
     </Grid>

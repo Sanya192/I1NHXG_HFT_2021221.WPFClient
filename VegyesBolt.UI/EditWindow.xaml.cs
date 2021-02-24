@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using VegyesBolt.UI.ViewModel;
 
 namespace VegyesBolt.UI
 {
@@ -22,6 +23,11 @@ namespace VegyesBolt.UI
         public EditWindow()
         {
             InitializeComponent();
+        }
+        public EditWindow(EditViewModel vmodel) :this()
+        {
+            this.DataContext = null;
+            this.DataContext = vmodel;
         }
     }
 }
