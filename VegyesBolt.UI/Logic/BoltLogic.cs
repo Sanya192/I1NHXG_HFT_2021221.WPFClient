@@ -37,11 +37,24 @@
                 return ki;
             }
         }
-        /// <summary>
-        /// Shows all members of the currently selected table.
-        /// </summary>
-        /// <returns>all members of the currently table.</returns>
-        private IEnumerable<object> ShowAll()
+
+        public object SelectedObject
+        {
+            get
+            {
+                return this.SelectedTable switch
+                {
+                    Tables.Megyek => Worker.GetMegye(selectedItem),
+                    Tables.Vasarlok => Worker.GetVasarlo(selectedItem),
+                    Tables.Termekek => Worker.GetTermek(selectedItem),
+                    Tables.Vasarlasok => Worker.GetVasarlas(selectedItem),
+                    _ => throw new NotImplementedException(),
+                };
+            }
+        }
+
+        /// <inheritdoc/>
+        public IEnumerable<object> ShowAll()
         {
             return this.SelectedTable switch
             {
@@ -53,7 +66,8 @@
             };
         }
 
-        private string HeaderOfTheCurrent()
+        /// <inheritdoc/>
+        public string HeaderOfTheCurrent()
         {
             return this.SelectedTable switch
             {
@@ -91,6 +105,26 @@
                 {
                     this.selectedItem = value - 1;
                 }
+            }
+        }
+        public void DeleteCurrent()
+        {
+            switch (this.SelectedTable)
+            {
+                case Tables.Megyek:
+                    this.Worker.DeleteMegyek(this.Worker.GetMegye(this.selectedItem));
+                    break;
+                case Tables.Vasarlok:
+                    this.Worker.DeleteVasarlo(this.Worker.GetVasarlo(this.selectedItem));
+                    break;
+                case Tables.Termekek:
+                    this.Worker.DeleteTermek(this.Worker.GetTermek(this.selectedItem));
+                    break;
+                case Tables.Vasarlasok:
+                    this.Worker.DeleteVasarlasok(this.Worker.GetVasarlas(this.selectedItem));
+                    break;
+                default:
+                    break;
             }
         }
     }

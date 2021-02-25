@@ -27,6 +27,8 @@
         /// </summary>
         public string Title { get; }
 
+        
+
         /// <summary>
         /// Saves the Object.
         /// </summary>

@@ -20,16 +20,14 @@ namespace VegyesBolt.UI.ViewModel
     public class BoltViewModel : INotifyPropertyChanged
     {
         private Tables selectedTable;
-        private int selectedItem;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BoltViewModel"/> class.
         /// </summary>
         public BoltViewModel()
         {
-            this.Worker = new Worker();
+            this.BoltWorker = new BoltLogic();
             this.SelectedTable = Tables.Megyek;
-            this.selectedItem = 0;
         }
 
         /// <inheritdoc/>
@@ -71,43 +69,15 @@ namespace VegyesBolt.UI.ViewModel
         /// </summary>
         public int SelectedItem
         {
-            get => this.selectedItem + 1; set
+            get => this.BoltWorker.SelectedItem; set
             {
-                if (value <= 0)
-                {
-                    this.selectedItem = 0;
-                }
-                else
-                {
-                    this.selectedItem = value - 1;
-                }
+                this.BoltWorker.SelectedItem = value;
                 this.OnPropertyChanged();
             }
         }
-        public object SelectedObject
-        {
-            get
-            {
-                return this.SelectedTable switch
-                {
-                    Tables.Megyek => Worker.GetMegye(selectedItem),
-                    Tables.Vasarlok => Worker.GetVasarlo(selectedItem),
-                    Tables.Termekek => Worker.GetTermek(selectedItem),
-                    Tables.Vasarlasok => Worker.GetVasarlas(selectedItem),
-                    _ => throw new NotImplementedException(),
-                };
-            }
-        }
+        public object SelectedObject => this.BoltWorker.SelectedObject;
 
-        private Worker Worker { get; }
-
-        private List<Megyek> MegyekList { get => this.Worker.GetMegyek(); }
-
-        private List<Vasarlok> VasarlokList { get => this.Worker.GetVasarlok(); }
-
-        private List<Termekek> TermekekList { get => this.Worker.GetTermekek(); }
-
-        private List<Vasarlasok> VasarlasokList { get => this.Worker.GetVasarlasok(); }
+        private BoltLogic BoltWorker { get; }
 
         /// <summary>
         /// Create the OnPropertyChanged method to raise the event
@@ -126,51 +96,18 @@ namespace VegyesBolt.UI.ViewModel
         /// <returns>all members of the currently table.</returns>
         private IEnumerable<object> ShowAll()
         {
-            return this.SelectedTable switch
-            {
-                Tables.Megyek => this.MegyekList,
-                Tables.Vasarlok => this.VasarlokList,
-                Tables.Termekek => this.TermekekList,
-                Tables.Vasarlasok => this.VasarlasokList,
-                _ => throw new NotSupportedException(),
-            };
+            return BoltWorker.ShowAll();
         }
 
         private string HeaderOfTheCurrent()
         {
-            return this.SelectedTable switch
-            {
-                Tables.Megyek => Megyek.Header(),
-                Tables.Vasarlok => Vasarlok.Header(),
-                Tables.Termekek => Termekek.Header(),
-                Tables.Vasarlasok => Vasarlasok.Header(),
-                _ => throw new NotSupportedException(),
-            };
+            return this.BoltWorker.HeaderOfTheCurrent();
         }
 
         public void DeleteCurrent()
         {
-            switch (this.SelectedTable)
-            {
-                case Tables.Megyek:
-                    this.Worker.DeleteMegyek(this.Worker.GetMegye(this.selectedItem));
-                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
-                    break;
-                case Tables.Vasarlok:
-                    this.Worker.DeleteVasarlo(this.Worker.GetVasarlo(this.selectedItem));
-                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
-                    break;
-                case Tables.Termekek:
-                    this.Worker.DeleteTermek(this.Worker.GetTermek(this.selectedItem));
-                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
-                    break;
-                case Tables.Vasarlasok:
-                    this.Worker.DeleteVasarlasok(this.Worker.GetVasarlas(this.selectedItem));
-                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
-                    break;
-                default:
-                    break;
-            }
+            this.BoltWorker.DeleteCurrent();
+            this.OnPropertyChanged(nameof(this.AllCurrentToString));
         }
     }
 }
