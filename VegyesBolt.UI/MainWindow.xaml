@@ -7,7 +7,7 @@
         xmlns:viewmodel="clr-namespace:VegyesBolt.UI.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Activated="Window_GotFocus"
+       
         >
     <Window.DataContext>
         <viewmodel:BoltViewModel/>

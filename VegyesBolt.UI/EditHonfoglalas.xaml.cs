@@ -1,4 +1,8 @@
-﻿namespace VegyesBolt.UI
+﻿// <copyright file="EditHonfoglalas.xaml.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
+
+namespace VegyesBolt.UI
 {
     using System;
     using System.Collections.Generic;
@@ -22,29 +26,36 @@
     /// </summary>
     public partial class EditHonfoglalas : Window
     {
-        HonfoglaloViewModel ViewModel { get; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditHonfoglalas"/> class.
+        /// </summary>
+        /// <param name="megye">The megye which is edited.Optional.</param>
         public EditHonfoglalas(Megyek megye = null)
         {
-            InitializeComponent();
+            this.InitializeComponent();
             if (megye == null)
             {
-                ViewModel = new HonfoglaloViewModel();
+                this.ViewModel = new HonfoglaloViewModel();
             }
             else
             {
-                ViewModel = new HonfoglaloViewModel(megye);
+                this.ViewModel = new HonfoglaloViewModel(megye);
             }
-            this.DataContext = ViewModel;
+
+            this.DataContext = this.ViewModel;
         }
+
+        private HonfoglaloViewModel ViewModel { get; }
+
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.Save();
+            this.ViewModel.Save();
             this.Close();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            ViewModel.Save();
+            this.ViewModel.Save();
             this.Close();
         }
     }

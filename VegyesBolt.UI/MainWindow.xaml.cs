@@ -26,6 +26,8 @@ namespace VegyesBolt.UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private BoltViewModel viewModel;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindow"/> class.
         /// </summary>
@@ -43,45 +45,39 @@ namespace VegyesBolt.UI
         {
             this.DataContext = null;
             this.DataContext = model;
+            this.viewModel = null;
+            this.viewModel = model;
         }
-
-        private bool lostFocus;
 
         private void MegyeButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltViewModel;
-            sajt.SelectedTable = Tables.Megyek;
+            this.viewModel.SelectedTable = Tables.Megyek;
         }
 
         private void VasarloButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltViewModel;
-            sajt.SelectedTable = Tables.Vasarlok;
+            this.viewModel.SelectedTable = Tables.Vasarlok;
         }
 
         private void TermekButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltViewModel;
-            sajt.SelectedTable = Tables.Termekek;
+            this.viewModel.SelectedTable = Tables.Termekek;
         }
 
         private void VasarlasButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltViewModel;
-            sajt.SelectedTable = Tables.Vasarlasok;
+            this.viewModel.SelectedTable = Tables.Vasarlasok;
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltViewModel;
-            sajt.DeleteCurrent();
+            this.viewModel.DeleteCurrent();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             EditHonfoglalas edit = null;
-            var sajt = this.DataContext as BoltViewModel;
-            if (sajt.SelectedTable == Tables.Megyek)
+            if (this.viewModel.SelectedTable == Tables.Megyek)
             {
                 edit = new EditHonfoglalas();
             }
@@ -90,7 +86,7 @@ namespace VegyesBolt.UI
                 MessageBox.Show("Csak a megyéket lehet módosítani.");
             }
 
-            (edit.DataContext as HonfoglaloViewModel).OnSave += sajt.SaveCurrent;
+            (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.SaveCurrent;
             edit?.Show();
         }
 
@@ -100,12 +96,11 @@ namespace VegyesBolt.UI
             EditWindow edit = new EditWindow(new EditViewModel(sajt.SelectedObject));
             edit.Show();*/
             EditHonfoglalas edit = null;
-            var sajt = this.DataContext as BoltViewModel;
-            if (sajt.SelectedTable == Tables.Megyek)
+            if (this.viewModel.SelectedTable == Tables.Megyek)
             {
-                if (sajt.SelectedObject != null)
+                if (this.viewModel.SelectedObject != null)
                 {
-                    edit = new EditHonfoglalas(sajt.SelectedObject as Megyek);
+                    edit = new EditHonfoglalas(this.viewModel.SelectedObject as Megyek);
                 }
                 else
                 {
@@ -116,14 +111,9 @@ namespace VegyesBolt.UI
             {
                 MessageBox.Show("Csak a megyéket lehet módosítani.");
             }
-            (edit.DataContext as HonfoglaloViewModel).OnSave += sajt.SaveCurrent;
-            edit?.Show();
-        }
 
-        private void Window_GotFocus(object sender, EventArgs e)
-        {
-            var sajt = this.DataContext as BoltViewModel;
-            sajt.Refresh();
+            (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.SaveCurrent;
+            edit?.Show();
         }
     }
 }

@@ -79,6 +79,7 @@ namespace VegyesBolt.UI.ViewModel
                 {
                     this.selectedItem = value - 1;
                 }
+
                 this.OnPropertyChanged();
             }
         }
@@ -139,6 +140,11 @@ namespace VegyesBolt.UI.ViewModel
             }
         }
 
+        /// <summary>
+        /// Saves the current megye. Not Implemented for other things.
+        /// </summary>
+        /// <param name="megyek">The edited megye.</param>
+        /// <param name="uje"><see langword="true"/>if its new.</param>
         public void SaveCurrent(Megyek megyek, bool uje)
         {
             if (uje)
@@ -149,12 +155,8 @@ namespace VegyesBolt.UI.ViewModel
             {
                 this.Worker.UpdateMegye(megyek);
             }
-            this.Refresh();
-        }
 
-        public void Refresh()
-        {
-            this.OnPropertyChanged(nameof(this.AllCurrentToString));
+            this.Refresh();
         }
 
         /// <summary>
@@ -165,6 +167,11 @@ namespace VegyesBolt.UI.ViewModel
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        private void Refresh()
+        {
+            this.OnPropertyChanged(nameof(this.AllCurrentToString));
         }
 
         /// <summary>
@@ -194,6 +201,5 @@ namespace VegyesBolt.UI.ViewModel
                 _ => throw new NotSupportedException(),
             };
         }
-
     }
 }

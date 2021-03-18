@@ -24,7 +24,6 @@ namespace VegyesBolt.UI.ViewModel
         {
             this.EditedMegye = new Megyek();
             this.NewMode = true;
-
         }
 
         /// <summary>
@@ -43,12 +42,42 @@ namespace VegyesBolt.UI.ViewModel
             this.Nepesseg = editedMegye.Nepesseg;
             this.Terulet = editedMegye.Terulet;
         }
+
+        /// <summary>
+        /// A delegate for megye Input Events.
+        /// </summary>
+        /// <param name="megye">The edited megye.</param>
+        /// <param name="uje">True if new.</param>
         public delegate void MegyeDelegate(Megyek megye, bool uje);
+
+        /// <summary>
+        /// An event which fires if saved.
+        /// </summary>
         public event MegyeDelegate OnSave;
+
+        /// <summary>
+        /// Gets or sets the edited name.
+        /// </summary>
         public string Nev { get; set; }
+
+        /// <summary>
+        /// Gets or sets the edited szekhely.
+        /// </summary>
         public string Szekhely { get; set; }
+
+        /// <summary>
+        /// Gets or sets the edited town numbers.
+        /// </summary>
         public double? TelepulesekSzama { get; set; }
+
+        /// <summary>
+        /// Gets or sets the edited pops numbers.
+        /// </summary>
         public double? Nepesseg { get; set; }
+
+        /// <summary>
+        /// Gets or sets the edited size.
+        /// </summary>
         public double? Terulet { get; set; }
 
         /// <summary>
@@ -58,6 +87,9 @@ namespace VegyesBolt.UI.ViewModel
 
         private bool NewMode { get; set; }
 
+        /// <summary>
+        /// It saves the thingy.
+        /// </summary>
         public void Save()
         {
             this.EditedMegye.Nev = this.Nev;
@@ -65,6 +97,8 @@ namespace VegyesBolt.UI.ViewModel
             this.EditedMegye.TelepulesekSzama = this.TelepulesekSzama;
             this.EditedMegye.Nepesseg = this.Nepesseg;
             this.EditedMegye.Terulet = this.Terulet;
+
+            // *bang*
             this.OnSave?.Invoke(this.EditedMegye, this.NewMode);
         }
     }

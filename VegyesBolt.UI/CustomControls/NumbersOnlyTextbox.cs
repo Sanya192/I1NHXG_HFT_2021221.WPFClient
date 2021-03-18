@@ -1,4 +1,8 @@
-﻿namespace VegyesBolt.UI.CustomControls
+﻿// <copyright file="NumbersOnlyTextbox.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
+
+namespace VegyesBolt.UI.CustomControls
 {
     using System;
     using System.Collections.Generic;
@@ -26,6 +30,7 @@
             {
                 e.Handled = true;
             }
+
             base.OnPreviewTextInput(e);
         }
     }
