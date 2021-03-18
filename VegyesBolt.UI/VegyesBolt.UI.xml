@@ -22,15 +22,26 @@
             Application Entry Point.
             </summary>
         </member>
-        <member name="T:VegyesBolt.UI.EditWindow">
+        <member name="T:VegyesBolt.UI.CustomControls.NumbersOnlyTextbox">
             <summary>
-            Interaction logic for EditWindow.xaml
-            </summary>
-            <summary>
-            EditWindow
+            A textbox allowing only Numbers.
             </summary>
         </member>
-        <member name="M:VegyesBolt.UI.EditWindow.InitializeComponent">
+        <member name="M:VegyesBolt.UI.CustomControls.NumbersOnlyTextbox.OnPreviewTextInput(System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            If the text is other than what Regex is allows then the event won't proceed.
+            </summary>
+            <param name="e">The input arguments.</param>
+        </member>
+        <member name="T:VegyesBolt.UI.EditHonfoglalas">
+            <summary>
+            Interaction logic for EditHonfoglalas.xaml.
+            </summary>
+            <summary>
+            EditHonfoglalas
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.EditHonfoglalas.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -87,6 +98,16 @@
             Gets or sets the currently selected item.
             </summary>
         </member>
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.SelectedObject">
+            <summary>
+            Gets the currently selected object.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.DeleteCurrent">
+            <summary>
+            Delete the currently selected object.
+            </summary>
+        </member>
         <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.OnPropertyChanged(System.String)">
             <summary>
             Create the OnPropertyChanged method to raise the event
@@ -100,14 +121,27 @@
             </summary>
             <returns>all members of the currently table.</returns>
         </member>
-        <member name="T:VegyesBolt.UI.ViewModel.EditViewModel">
+        <member name="T:VegyesBolt.UI.ViewModel.HonfoglaloViewModel">
             <summary>
-            The ViewModel for the edit Vindow.
+            Ezzel kezeljük a megye tablat.
             </summary>
         </member>
-        <member name="P:VegyesBolt.UI.ViewModel.EditViewModel.Title">
+        <member name="M:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.#ctor">
             <summary>
-            Gets or sets the Title of the Vindow.
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.HonfoglaloViewModel"/> class.
+            The standard method for creating a megye.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.#ctor(VegyesBolt.Data.Megyek)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.HonfoglaloViewModel"/> class.
+            The standard method for editing a megye.
+            </summary>
+            <param name="editedMegye">The megye needs to be edited.</param>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.EditedMegye">
+            <summary>
+            Gets or sets the currently edited megye.
             </summary>
         </member>
         <member name="T:VegyesBolt.UI.ViewModel.Tables">

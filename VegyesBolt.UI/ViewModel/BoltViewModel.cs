@@ -1,4 +1,4 @@
-﻿// <copyright file="BoltModel.cs" company="MSanyi">
+﻿// <copyright file="BoltViewModel.cs" company="MSanyi">
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 
@@ -60,7 +60,7 @@ namespace VegyesBolt.UI.ViewModel
             {
                 this.selectedTable = value;
                 this.OnPropertyChanged();
-                this.OnPropertyChanged(nameof(this.AllCurrentToString));
+                this.Refresh();
             }
         }
 
@@ -82,16 +82,20 @@ namespace VegyesBolt.UI.ViewModel
                 this.OnPropertyChanged();
             }
         }
+
+        /// <summary>
+        /// Gets the currently selected object.
+        /// </summary>
         public object SelectedObject
         {
             get
             {
-                return SelectedTable switch
+                return this.SelectedTable switch
                 {
-                    Tables.Megyek => Worker.GetMegye(selectedItem),
-                    Tables.Vasarlok => Worker.GetVasarlo(selectedItem),
-                    Tables.Termekek => Worker.GetTermek(selectedItem),
-                    Tables.Vasarlasok => Worker.GetVasarlas(selectedItem),
+                    Tables.Megyek => this.Worker.GetMegye(this.selectedItem),
+                    Tables.Vasarlok => this.Worker.GetVasarlo(this.selectedItem),
+                    Tables.Termekek => this.Worker.GetTermek(this.selectedItem),
+                    Tables.Vasarlasok => this.Worker.GetVasarlas(this.selectedItem),
                     _ => throw new NotImplementedException(),
                 };
             }
@@ -108,6 +112,52 @@ namespace VegyesBolt.UI.ViewModel
         private List<Vasarlasok> VasarlasokList { get => this.Worker.GetVasarlasok(); }
 
         /// <summary>
+        /// Delete the currently selected object.
+        /// </summary>
+        public void DeleteCurrent()
+        {
+            switch (this.SelectedTable)
+            {
+                case Tables.Megyek:
+                    this.Worker.DeleteMegyek(this.Worker.GetMegye(this.selectedItem));
+                    this.Refresh();
+                    break;
+                case Tables.Vasarlok:
+                    this.Worker.DeleteVasarlo(this.Worker.GetVasarlo(this.selectedItem));
+                    this.Refresh();
+                    break;
+                case Tables.Termekek:
+                    this.Worker.DeleteTermek(this.Worker.GetTermek(this.selectedItem));
+                    this.Refresh();
+                    break;
+                case Tables.Vasarlasok:
+                    this.Worker.DeleteVasarlasok(this.Worker.GetVasarlas(this.selectedItem));
+                    this.Refresh();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void SaveCurrent(Megyek megyek, bool uje)
+        {
+            if (uje)
+            {
+                this.Worker.CreateMegye(megyek);
+            }
+            else
+            {
+                this.Worker.UpdateMegye(megyek);
+            }
+            this.Refresh();
+        }
+
+        public void Refresh()
+        {
+            this.OnPropertyChanged(nameof(this.AllCurrentToString));
+        }
+
+        /// <summary>
         /// Create the OnPropertyChanged method to raise the event
         /// The calling member's name will be used as the parameter.
         /// </summary>
@@ -115,7 +165,6 @@ namespace VegyesBolt.UI.ViewModel
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-            //this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.AllCurrentToString)));
         }
 
         /// <summary>
@@ -146,29 +195,5 @@ namespace VegyesBolt.UI.ViewModel
             };
         }
 
-        public void DeleteCurrent()
-        {
-            switch (this.SelectedTable)
-            {
-                case Tables.Megyek:
-                    this.Worker.DeleteMegyek(this.Worker.GetMegye(this.selectedItem));
-                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
-                    break;
-                case Tables.Vasarlok:
-                    this.Worker.DeleteVasarlo(this.Worker.GetVasarlo(this.selectedItem));
-                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
-                    break;
-                case Tables.Termekek:
-                    this.Worker.DeleteTermek(this.Worker.GetTermek(this.selectedItem));
-                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
-                    break;
-                case Tables.Vasarlasok:
-                    this.Worker.DeleteVasarlasok(this.Worker.GetVasarlas(this.selectedItem));
-                    this.OnPropertyChanged(nameof(this.AllCurrentToString));
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 }

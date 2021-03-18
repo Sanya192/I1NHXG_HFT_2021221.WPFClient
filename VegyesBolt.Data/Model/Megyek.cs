@@ -2,46 +2,16 @@
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 
-using System.Collections.Generic;
-
 namespace VegyesBolt.Data
 {
+    using System;
+    using System.Collections.Generic;
+
     /// <summary>
     /// A not auto generated part for megyek.
     /// </summary>
     public partial class Megyek
     {
-        /// <inheritdoc/>
-        public List<string> Names
-        {
-            get
-            {
-                return new List<string>
-                {
-                $"Név",
-                $"Székhely",
-                $"TelepülesekSzama",
-                $"Terület",
-                $"Népesség",
-                };
-            }
-        }
-
-        /// <inheritdoc/>
-        public List<object> Value
-        {
-            get
-            {
-                return new List<object>
-                {
-                 this.Nev,
-                 this.Szekhely,
-                 this.TelepulesekSzama,
-                 this.Terulet,
-                 this.Nepesseg,
-                };
-            }
-        }
         /// <summary>
         /// A method that returns all of the properties name.
         /// </summary>

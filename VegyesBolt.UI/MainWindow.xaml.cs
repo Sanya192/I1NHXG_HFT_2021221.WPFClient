@@ -18,6 +18,7 @@ namespace VegyesBolt.UI
     using System.Windows.Media.Imaging;
     using System.Windows.Navigation;
     using System.Windows.Shapes;
+    using VegyesBolt.Data;
     using VegyesBolt.UI.ViewModel;
 
     /// <summary>
@@ -43,6 +44,8 @@ namespace VegyesBolt.UI
             this.DataContext = null;
             this.DataContext = model;
         }
+
+        private bool lostFocus;
 
         private void MegyeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -76,14 +79,51 @@ namespace VegyesBolt.UI
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            EditHonfoglalas edit = null;
+            var sajt = this.DataContext as BoltViewModel;
+            if (sajt.SelectedTable == Tables.Megyek)
+            {
+                edit = new EditHonfoglalas();
+            }
+            else
+            {
+                MessageBox.Show("Csak a megyéket lehet módosítani.");
+            }
 
+            (edit.DataContext as HonfoglaloViewModel).OnSave += sajt.SaveCurrent;
+            edit?.Show();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            var sajt = this.DataContext as BoltViewModel;
+            /*var sajt = this.DataContext as BoltViewModel;
             EditWindow edit = new EditWindow(new EditViewModel(sajt.SelectedObject));
-            edit.Show();
+            edit.Show();*/
+            EditHonfoglalas edit = null;
+            var sajt = this.DataContext as BoltViewModel;
+            if (sajt.SelectedTable == Tables.Megyek)
+            {
+                if (sajt.SelectedObject != null)
+                {
+                    edit = new EditHonfoglalas(sajt.SelectedObject as Megyek);
+                }
+                else
+                {
+                    MessageBox.Show("Jelölj ki egy elemet.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Csak a megyéket lehet módosítani.");
+            }
+            (edit.DataContext as HonfoglaloViewModel).OnSave += sajt.SaveCurrent;
+            edit?.Show();
+        }
+
+        private void Window_GotFocus(object sender, EventArgs e)
+        {
+            var sajt = this.DataContext as BoltViewModel;
+            sajt.Refresh();
         }
     }
 }
