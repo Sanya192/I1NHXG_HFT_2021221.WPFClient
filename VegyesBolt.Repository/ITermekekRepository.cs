@@ -4,7 +4,6 @@
 
 namespace VegyesBolt.Repository
 {
-    using System.Collections.Generic;
     using VegyesBolt.Data;
 
     /// <summary>

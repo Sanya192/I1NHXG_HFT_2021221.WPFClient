@@ -24,20 +24,39 @@
         </member>
         <member name="T:VegyesBolt.UI.EditWindow">
             <summary>
-            Interaction logic for EditWindow.xaml
+            Interaction logic for EditWindow.xaml.
             </summary>
             <summary>
             EditWindow
             </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.EditWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.EditWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.EditWindow.#ctor(VegyesBolt.UI.ViewModel.EditViewModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.EditWindow"/> class.
+            </summary>
+            <param name="vmodel">An alreadyExistingViewModel.</param>
         </member>
         <member name="M:VegyesBolt.UI.EditWindow.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
+        <member name="T:VegyesBolt.UI.Logic.BoltLogic">
+            <inheritdoc />>
+        </member>
         <member name="P:VegyesBolt.UI.Logic.BoltLogic.AllCurrentToString">
             <summary>
             Gets all of the current items as String.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.Logic.BoltLogic.SelectedObject">
+            <summary>
+            Gets the currently Selected object.
             </summary>
         </member>
         <member name="M:VegyesBolt.UI.Logic.BoltLogic.ShowAll">
@@ -56,63 +75,8 @@
             Gets or sets the currently selected item.
             </summary>
         </member>
-        <member name="T:VegyesBolt.UI.Logic.Edit">
-            <summary>
-                The class which handles the Edit logic.
-            </summary>
-        </member>
-        <member name="M:VegyesBolt.UI.Logic.Edit.#ctor(System.Object)">
-            <summary>
-                Initializes a new instance of the <see cref="T:VegyesBolt.UI.Logic.Edit" /> class.
-            </summary>
-            <param name="editableItem">The item that needs to be edited.</param>
-        </member>
-        <member name="P:VegyesBolt.UI.Logic.Edit.PropNames">
-            <inheritdoc />
-        </member>
-        <member name="P:VegyesBolt.UI.Logic.Edit.Values">
-            <summary>
-                Gets or sets a list that returns the property values according to the object.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.UI.Logic.Edit.Title">
-            <summary>
-                Gets the Title of the String.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.UI.Logic.Edit.Mode">
-            <inheritdoc />
-        </member>
-        <member name="M:VegyesBolt.UI.Logic.Edit.Save">
-            <inheritdoc />
-        </member>
-        <member name="M:VegyesBolt.UI.Logic.EditValues.MegyeValues(VegyesBolt.Data.Megyek)">
-            <summary>
-            Creates editable values of a megye object.
-            </summary>
-            <param name="input">The object we want properties of.</param>
-            <returns>An object list with the properties of the megye.</returns>
-        </member>
-        <member name="M:VegyesBolt.UI.Logic.EditValues.TermekValues(VegyesBolt.Data.Termekek)">
-            <summary>
-            Creates editable values of a termek object.
-            </summary>
-            <param name="input">The object we want properties of.</param>
-            <returns>An object list with the properties of the termek.</returns>
-        </member>
-        <member name="M:VegyesBolt.UI.Logic.EditValues.VasarlokValues(VegyesBolt.Data.Vasarlok)">
-            <summary>
-            Creates editable values of a vasarlo object.
-            </summary>
-            <param name="input">The object we want properties of.</param>
-            <returns>An object list with the properties of the vasarlo.</returns>
-        </member>
-        <member name="M:VegyesBolt.UI.Logic.EditValues.VasarlasokValues(VegyesBolt.Data.Vasarlasok)">
-            <summary>
-            Creates editable values of a vásárlás object.
-            </summary>
-            <param name="input">The object we want properties of.</param>
-            <returns>An object list with the properties of the vásárlás.</returns>
+        <member name="M:VegyesBolt.UI.Logic.BoltLogic.DeleteCurrent">
+            <inheritdoc/>
         </member>
         <member name="P:VegyesBolt.UI.Logic.IBoltLogic.AllCurrentToString">
             <summary>
@@ -124,37 +88,6 @@
             Shows all members of the currently selected table.
             </summary>
             <returns>all members of the currently table.</returns>
-        </member>
-        <member name="T:VegyesBolt.UI.Logic.IEdit">
-            <summary>
-                An interface which defines the Edit logic.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.UI.Logic.IEdit.PropNames">
-            <summary>
-                Gets a list that returns the property names according to the object.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.UI.Logic.IEdit.Values">
-            <summary>
-                Gets or sets a list that returns the property values according to the object.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.UI.Logic.IEdit.Mode">
-            <summary>
-                Gets the Edit mode.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.UI.Logic.IEdit.Title">
-            <summary>
-                Gets the Title of the String.
-            </summary>
-        </member>
-        <member name="M:VegyesBolt.UI.Logic.IEdit.Save">
-            <summary>
-            Saves the Object.
-            </summary>
-            <returns>True if the operation completed successfully.</returns>
         </member>
         <member name="T:VegyesBolt.UI.Logic.Tables">
             <summary>
@@ -233,6 +166,11 @@
             Gets or sets the currently selected item.
             </summary>
         </member>
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.SelectedObject">
+            <summary>
+            The currently selected object.
+            </summary>
+        </member>
         <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.OnPropertyChanged(System.String)">
             <summary>
             Create the OnPropertyChanged method to raise the event
@@ -240,11 +178,10 @@
             </summary>
             <param name="name">The property name.</param>
         </member>
-        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.ShowAll">
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.DeleteCurrent">
             <summary>
-            Shows all members of the currently selected table.
+            Delete the Current object.
             </summary>
-            <returns>all members of the currently table.</returns>
         </member>
         <member name="T:VegyesBolt.UI.ViewModel.EditViewModel">
             <summary>

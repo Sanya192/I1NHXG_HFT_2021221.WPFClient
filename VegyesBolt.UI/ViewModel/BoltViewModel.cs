@@ -40,14 +40,7 @@ namespace VegyesBolt.UI.ViewModel
         {
             get
             {
-                var ki = new List<string>();
-                ki.Add(this.HeaderOfTheCurrent());
-                foreach (object item in this.ShowAll())
-                {
-                    ki.Add(item.ToString());
-                }
-
-                return ki;
+                return BoltWorker.AllCurrentToString;
             }
         }
 
@@ -75,6 +68,10 @@ namespace VegyesBolt.UI.ViewModel
                 this.OnPropertyChanged();
             }
         }
+
+        /// <summary>
+        /// The currently selected object.
+        /// </summary>
         public object SelectedObject => this.BoltWorker.SelectedObject;
 
         private BoltLogic BoltWorker { get; }
@@ -91,19 +88,8 @@ namespace VegyesBolt.UI.ViewModel
         }
 
         /// <summary>
-        /// Shows all members of the currently selected table.
+        /// Delete the Current object.
         /// </summary>
-        /// <returns>all members of the currently table.</returns>
-        private IEnumerable<object> ShowAll()
-        {
-            return BoltWorker.ShowAll();
-        }
-
-        private string HeaderOfTheCurrent()
-        {
-            return this.BoltWorker.HeaderOfTheCurrent();
-        }
-
         public void DeleteCurrent()
         {
             this.BoltWorker.DeleteCurrent();

@@ -31,12 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Logic\Edit.cs">
-      <DependentUpon>IEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Update="Logic\EditMode.cs">
-      <DependentUpon>Edit.cs</DependentUpon>
-    </Compile>
     <Compile Update="Logic\BoltLogic.cs">
       <DependentUpon>IBoltLogic.cs</DependentUpon>
     </Compile>

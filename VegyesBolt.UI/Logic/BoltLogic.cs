@@ -1,15 +1,25 @@
-﻿namespace VegyesBolt.UI.Logic
+﻿// <copyright file="BoltLogic.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
+
+namespace VegyesBolt.UI.Logic
 {
     using System;
     using System.Collections.Generic;
     using VegyesBolt.Data;
     using VegyesBolt.Logic;
-    using VegyesBolt.UI.ViewModel;
 
-    public class BoltLogic :IBoltLogic
+    /// <inheritdoc />>
+    public class BoltLogic : IBoltLogic
     {
         private Tables selectedTable;
         private int selectedItem;
+
+        public BoltLogic()
+        {
+            this.Worker = new Worker();
+        }
+
         private Worker Worker { get; }
 
         private List<Megyek> MegyekList { get => this.Worker.GetMegyek(); }
@@ -38,16 +48,19 @@
             }
         }
 
+        /// <summary>
+        /// Gets the currently Selected object.
+        /// </summary>
         public object SelectedObject
         {
             get
             {
                 return this.SelectedTable switch
                 {
-                    Tables.Megyek => Worker.GetMegye(selectedItem),
-                    Tables.Vasarlok => Worker.GetVasarlo(selectedItem),
-                    Tables.Termekek => Worker.GetTermek(selectedItem),
-                    Tables.Vasarlasok => Worker.GetVasarlas(selectedItem),
+                    Tables.Megyek => this.Worker.GetMegye(this.selectedItem),
+                    Tables.Vasarlok => this.Worker.GetVasarlo(this.selectedItem),
+                    Tables.Termekek => this.Worker.GetTermek(this.selectedItem),
+                    Tables.Vasarlasok => this.Worker.GetVasarlas(this.selectedItem),
                     _ => throw new NotImplementedException(),
                 };
             }
@@ -78,7 +91,7 @@
                 _ => throw new NotSupportedException(),
             };
         }
-        
+
         /// <summary>
         /// Gets or sets the currently selected table.
         /// </summary>
@@ -107,6 +120,8 @@
                 }
             }
         }
+
+        /// <inheritdoc/>
         public void DeleteCurrent()
         {
             switch (this.SelectedTable)
@@ -122,8 +137,6 @@
                     break;
                 case Tables.Vasarlasok:
                     this.Worker.DeleteVasarlasok(this.Worker.GetVasarlas(this.selectedItem));
-                    break;
-                default:
                     break;
             }
         }

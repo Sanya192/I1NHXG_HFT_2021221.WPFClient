@@ -21,10 +21,9 @@ namespace VegyesBolt.UI.ViewModel
         /// <summary>
         /// Gets or sets the Title of the Vindow.
         /// </summary>
-        public string Title { get => Edit?.Title; }
+        public string Title { get => ""; }
 
         //private object Entity { get; set; }
-        private Edit Edit { get; }
         private Worker Worker { get; }
 
         public EditViewModel()
@@ -35,11 +34,10 @@ namespace VegyesBolt.UI.ViewModel
         public EditViewModel(object entity) : this()
         {
             //this.Entity = entity;
-            this.Edit = new Edit(entity);
         }
 
-        public List<string> PropNames { get => Edit?.PropNames; }
+        public List<string> PropNames { get => null; }
 
-        public List<object> PropValues { get => Edit?.Values; }
+        public List<object> PropValues { get => null; }
     }
 }
