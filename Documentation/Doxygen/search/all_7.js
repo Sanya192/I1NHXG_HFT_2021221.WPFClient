@@ -1,0 +1,14 @@
+var searchData=
+[
+  ['ilogic_39',['ILogic',['../interface_vegyes_bolt_1_1_logic_1_1_i_logic.html',1,'VegyesBolt::Logic']]],
+  ['imegyerepository_40',['IMegyeRepository',['../interface_vegyes_bolt_1_1_repository_1_1_i_megye_repository.html',1,'VegyesBolt::Repository']]],
+  ['initializecomponent_41',['InitializeComponent',['../class_vegyes_bolt_1_1_u_i_1_1_app.html#a5e47d5f328700d3091ebb55c05855650',1,'VegyesBolt.UI.App.InitializeComponent()'],['../class_vegyes_bolt_1_1_u_i_1_1_app.html#a5e47d5f328700d3091ebb55c05855650',1,'VegyesBolt.UI.App.InitializeComponent()'],['../class_vegyes_bolt_1_1_u_i_1_1_edit_honfoglalas.html#aaca582f7eb0158b3ac4444160dbe1427',1,'VegyesBolt.UI.EditHonfoglalas.InitializeComponent()'],['../class_vegyes_bolt_1_1_u_i_1_1_edit_honfoglalas.html#aaca582f7eb0158b3ac4444160dbe1427',1,'VegyesBolt.UI.EditHonfoglalas.InitializeComponent()'],['../class_vegyes_bolt_1_1_u_i_1_1_edit_window.html#a7824827d7287691cb3ecdeff52d50eed',1,'VegyesBolt.UI.EditWindow.InitializeComponent()'],['../class_vegyes_bolt_1_1_u_i_1_1_main_window.html#aa772d8c859aab68978b6951215db33fc',1,'VegyesBolt.UI.MainWindow.InitializeComponent()'],['../class_vegyes_bolt_1_1_u_i_1_1_main_window.html#aa772d8c859aab68978b6951215db33fc',1,'VegyesBolt.UI.MainWindow.InitializeComponent()'],['../class_vegyes_bolt_1_1_u_i_1_1_app.html#a5e47d5f328700d3091ebb55c05855650',1,'VegyesBolt.UI.App.InitializeComponent()'],['../class_vegyes_bolt_1_1_u_i_1_1_main_window.html#aa772d8c859aab68978b6951215db33fc',1,'VegyesBolt.UI.MainWindow.InitializeComponent()']]],
+  ['irepository_42',['IRepository',['../interface_vegyes_bolt_1_1_repository_1_1_i_repository.html',1,'VegyesBolt::Repository']]],
+  ['irepository_3c_20megyek_20_3e_43',['IRepository&lt; Megyek &gt;',['../interface_vegyes_bolt_1_1_repository_1_1_i_repository.html',1,'VegyesBolt::Repository']]],
+  ['irepository_3c_20termekek_20_3e_44',['IRepository&lt; Termekek &gt;',['../interface_vegyes_bolt_1_1_repository_1_1_i_repository.html',1,'VegyesBolt::Repository']]],
+  ['irepository_3c_20vasarlasok_20_3e_45',['IRepository&lt; Vasarlasok &gt;',['../interface_vegyes_bolt_1_1_repository_1_1_i_repository.html',1,'VegyesBolt::Repository']]],
+  ['irepository_3c_20vasarlok_20_3e_46',['IRepository&lt; Vasarlok &gt;',['../interface_vegyes_bolt_1_1_repository_1_1_i_repository.html',1,'VegyesBolt::Repository']]],
+  ['itermekekrepository_47',['ITermekekRepository',['../interface_vegyes_bolt_1_1_repository_1_1_i_termekek_repository.html',1,'VegyesBolt::Repository']]],
+  ['ivasarlasokrepository_48',['IVasarlasokRepository',['../interface_vegyes_bolt_1_1_repository_1_1_i_vasarlasok_repository.html',1,'VegyesBolt::Repository']]],
+  ['ivasarlokrepository_49',['IVasarlokRepository',['../interface_vegyes_bolt_1_1_repository_1_1_i_vasarlok_repository.html',1,'VegyesBolt::Repository']]]
+];
