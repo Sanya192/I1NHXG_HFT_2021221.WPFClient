@@ -16,7 +16,7 @@ namespace VegyesBolt.Repository
         private static readonly VegyesBoltDatabaseEntities1 VegyesBolt = new VegyesBoltDatabaseEntities1();
 
         /// <inheritdoc/>
-        public List<Termekek> Elements => VegyesBolt.Termekeks.ToList();
+        public IList<Termekek> Elements => VegyesBolt.Termekeks.ToList();
 
         /// <inheritdoc/>
         public void Create(Termekek create)
@@ -42,7 +42,7 @@ namespace VegyesBolt.Repository
         /// <inheritdoc/>
         public void Update(Termekek toUpdate)
         {
-            var old = VegyesBolt.Termekeks.Find(toUpdate.Id);
+            var old = VegyesBolt.Termekeks.Find(toUpdate?.Id);
             old.LeltarMennyiseg = toUpdate.LeltarMennyiseg == null ? old.LeltarMennyiseg : toUpdate.LeltarMennyiseg;
             old.TermekNeve = toUpdate.TermekNeve ?? old.TermekNeve;
             old.Vasarlasoks = toUpdate.Vasarlasoks ?? old.Vasarlasoks;

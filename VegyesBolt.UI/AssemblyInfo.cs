@@ -2,6 +2,7 @@
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 
+using System;
 using System.Windows;
 
 [assembly: ThemeInfo(

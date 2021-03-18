@@ -15,7 +15,7 @@ namespace VegyesBolt.Repository
         /// <summary>
         /// Gets a list containing all elements;.
         /// </summary>
-        List<T> Elements { get; }
+        IList<T> Elements { get; }
 
         /// <summary>
         /// A method to delete an object.

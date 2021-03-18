@@ -27,6 +27,6 @@ namespace VegyesBolt.UI.Logic
         /// <summary>
         ///     The vasarlasok table.
         /// </summary>
-        Vasarlasok
+        Vasarlasok,
     }
 }

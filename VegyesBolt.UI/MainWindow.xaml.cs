@@ -2,8 +2,6 @@
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
 
-using VegyesBolt.UI.Logic;
-
 namespace VegyesBolt.UI
 {
     using System;
@@ -21,6 +19,7 @@ namespace VegyesBolt.UI
     using System.Windows.Navigation;
     using System.Windows.Shapes;
     using VegyesBolt.Data;
+    using VegyesBolt.UI.Logic;
     using VegyesBolt.UI.ViewModel;
 
     /// <summary>

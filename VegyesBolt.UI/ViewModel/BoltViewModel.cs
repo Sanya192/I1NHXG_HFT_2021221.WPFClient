@@ -11,6 +11,7 @@ namespace VegyesBolt.UI.ViewModel
     using System.Text;
     using VegyesBolt.Data;
     using VegyesBolt.Logic;
+    using VegyesBolt.UI.Logic;
 
     /// <summary>
     /// The ViewModel For the APP.
@@ -36,7 +37,7 @@ namespace VegyesBolt.UI.ViewModel
         /// <summary>
         /// Gets all of the current items as String.
         /// </summary>
-        public List<string> AllCurrentToString
+        public IReadOnlyCollection<string> AllCurrentToString
         {
             get
             {
@@ -97,7 +98,7 @@ namespace VegyesBolt.UI.ViewModel
                     Tables.Vasarlok => this.Worker.GetVasarlo(this.selectedItem),
                     Tables.Termekek => this.Worker.GetTermek(this.selectedItem),
                     Tables.Vasarlasok => this.Worker.GetVasarlas(this.selectedItem),
-                    _ => throw new NotImplementedException(),
+                    _ => null,
                 };
             }
         }
@@ -145,7 +146,7 @@ namespace VegyesBolt.UI.ViewModel
         /// </summary>
         /// <param name="megyek">The edited megye.</param>
         /// <param name="uje"><see langword="true"/>if its new.</param>
-        public void SaveCurrent(Megyek megyek, bool uje)
+        internal void SaveCurrent(Megyek megyek, bool uje)
         {
             if (uje)
             {

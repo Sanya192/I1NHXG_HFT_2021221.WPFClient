@@ -13,15 +13,10 @@ namespace VegyesBolt.Repository
     /// </summary>
     public class MegyeRepository : IMegyeRepository
     {
-        private static readonly VegyesBoltDatabaseEntities1 VegyesBolt;
-
-        static MegyeRepository()
-        {
-            VegyesBolt = new VegyesBoltDatabaseEntities1();
-        }
+        private static readonly VegyesBoltDatabaseEntities1 VegyesBolt = new VegyesBoltDatabaseEntities1();
 
         /// <inheritdoc/>
-        public List<Megyek> Elements => VegyesBolt.Megyeks.ToList();
+        public IList<Megyek> Elements => VegyesBolt.Megyeks.ToList();
 
         /// <inheritdoc/>
         public void Create(Megyek create)
@@ -50,7 +45,7 @@ namespace VegyesBolt.Repository
             var old = VegyesBolt.Megyeks.First(p => p.Id == toUpdate.Id);
 
             // old.Id = toUpdate.Id == null ? old.Id : toUpdate.Id;
-            old.Nepesseg = toUpdate.Nepesseg == null ? old.Nepesseg : toUpdate.Nepesseg;
+            old.Nepesseg = toUpdate?.Nepesseg == null ? old.Nepesseg : toUpdate.Nepesseg;
             old.Nev = toUpdate.Nev ?? old.Nev;
             old.Szekhely = toUpdate.Szekhely ?? old.Szekhely;
             old.TelepulesekSzama = toUpdate.TelepulesekSzama == null ? old.TelepulesekSzama : toUpdate.TelepulesekSzama;

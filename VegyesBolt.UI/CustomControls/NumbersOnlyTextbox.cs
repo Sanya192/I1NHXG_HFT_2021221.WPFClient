@@ -26,7 +26,7 @@ namespace VegyesBolt.UI.CustomControls
         /// <param name="e">The input arguments.</param>
         protected override void OnPreviewTextInput(TextCompositionEventArgs e)
         {
-            if (!Regex.IsMatch(e.Text))
+            if (!Regex.IsMatch(e?.Text))
             {
                 e.Handled = true;
             }

@@ -52,6 +52,31 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:VegyesBolt.UI.Logic.Tables">
+            <summary>
+                An enum which has all of the possible tables.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.Logic.Tables.Megyek">
+            <summary>
+                The Megyek table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.Logic.Tables.Vasarlok">
+            <summary>
+                The Vasarlok table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.Logic.Tables.Termekek">
+            <summary>
+                The Termekek table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.Logic.Tables.Vasarlasok">
+            <summary>
+                The vasarlasok table.
+            </summary>
+        </member>
         <member name="T:VegyesBolt.UI.MainWindow">
             <summary>
             Interaction logic for MainWindow.xaml.
@@ -197,31 +222,6 @@
         <member name="M:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.Save">
             <summary>
             It saves the thingy.
-            </summary>
-        </member>
-        <member name="T:VegyesBolt.UI.ViewModel.Tables">
-            <summary>
-            An enum which has all of the possible tables.
-            </summary>
-        </member>
-        <member name="F:VegyesBolt.UI.ViewModel.Tables.Megyek">
-            <summary>
-            The Megyek table.
-            </summary>
-        </member>
-        <member name="F:VegyesBolt.UI.ViewModel.Tables.Vasarlok">
-            <summary>
-            The Vasarlok table.
-            </summary>
-        </member>
-        <member name="F:VegyesBolt.UI.ViewModel.Tables.Termekek">
-            <summary>
-            The Termekek table.
-            </summary>
-        </member>
-        <member name="F:VegyesBolt.UI.ViewModel.Tables.Vasarlasok">
-            <summary>
-            The vasarlasok table.
             </summary>
         </member>
     </members>

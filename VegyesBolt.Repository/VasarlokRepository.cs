@@ -16,7 +16,7 @@ namespace VegyesBolt.Repository
         private static readonly VegyesBoltDatabaseEntities1 VegyesBolt = new VegyesBoltDatabaseEntities1();
 
         /// <inheritdoc/>
-        public List<Vasarlok> Elements => VegyesBolt.Vasarloks.ToList();
+        public IList<Vasarlok> Elements => VegyesBolt.Vasarloks.ToList();
 
         /// <inheritdoc/>
         public void Create(Vasarlok create)
@@ -42,7 +42,7 @@ namespace VegyesBolt.Repository
         /// <inheritdoc/>
         public void Update(Vasarlok toUpdate)
         {
-            var old = VegyesBolt.Vasarloks.Find(toUpdate.Id);
+            var old = VegyesBolt.Vasarloks.Find(toUpdate?.Id);
             old.Email = toUpdate.Email ?? old.Email;
             old.Megye = toUpdate.Megye ?? old.Megye;
             old.MegyeNavigation = toUpdate.MegyeNavigation ?? old.MegyeNavigation;

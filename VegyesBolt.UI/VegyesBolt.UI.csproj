@@ -4,6 +4,10 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,12 +32,6 @@
   <ItemGroup>
     <ProjectReference Include="..\VegyesBolt.Data\VegyesBolt.Data.csproj" />
     <ProjectReference Include="..\VegyesBolt.Logic\VegyesBolt.Logic.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Logic\BoltLogic.cs">
-      <DependentUpon>IBoltLogic.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
 
 </Project>

@@ -175,26 +175,6 @@
             Initializes a new instance of the <see cref="T:VegyesBolt.Logic.Worker"/> class.
             </summary>
         </member>
-        <member name="P:VegyesBolt.Logic.Worker.MegyeRepository">
-            <summary>
-            Sets the Repository used only for dependency Injection.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.Logic.Worker.TermekekRepository">
-            <summary>
-            Sets the Repository used only for dependency Injection.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.Logic.Worker.VasarlasokRepository">
-            <summary>
-            Sets the Repository used only for dependency Injection.
-            </summary>
-        </member>
-        <member name="P:VegyesBolt.Logic.Worker.VasarlokRepository">
-            <summary>
-            Sets the Repository used only for dependency Injection.
-            </summary>
-        </member>
         <member name="M:VegyesBolt.Logic.Worker.GetMegyek">
             <inheritdoc/>
         </member>

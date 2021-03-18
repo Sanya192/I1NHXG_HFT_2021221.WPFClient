@@ -26,37 +26,25 @@ namespace VegyesBolt.Logic
             this.VasarlasokRepository = new VasarlasokRepository();
         }
 
-        /// <summary>
-        /// Sets the Repository used only for dependency Injection.
-        /// </summary>
-        public IMegyeRepository MegyeRepository { private get; set; }
+        private IMegyeRepository MegyeRepository { get; set; }
 
-        /// <summary>
-        /// Sets the Repository used only for dependency Injection.
-        /// </summary>
-        public ITermekekRepository TermekekRepository { private get; set; }
+        private ITermekekRepository TermekekRepository { get; set; }
 
-        /// <summary>
-        /// Sets the Repository used only for dependency Injection.
-        /// </summary>
-        public IVasarlasokRepository VasarlasokRepository { private get; set; }
+        private IVasarlasokRepository VasarlasokRepository { get; set; }
 
-        /// <summary>
-        /// Sets the Repository used only for dependency Injection.
-        /// </summary>
-        public IVasarlokRepository VasarlokRepository { private get; set; }
+        private IVasarlokRepository VasarlokRepository { get; set; }
 
         /// <inheritdoc/>
-        public List<Megyek> GetMegyek() => this.MegyeRepository.Elements;
+        public List<Megyek> GetMegyek() => this.MegyeRepository.Elements as List<Megyek>;
 
         /// <inheritdoc/>
-        public List<Termekek> GetTermekek() => this.TermekekRepository.Elements;
+        public List<Termekek> GetTermekek() => this.TermekekRepository.Elements as List<Termekek>;
 
         /// <inheritdoc/>
-        public List<Vasarlok> GetVasarlok() => this.VasarlokRepository.Elements;
+        public List<Vasarlok> GetVasarlok() => this.VasarlokRepository.Elements as List<Vasarlok>;
 
         /// <inheritdoc/>
-        public List<Vasarlasok> GetVasarlasok() => this.VasarlasokRepository.Elements;
+        public List<Vasarlasok> GetVasarlasok() => this.VasarlasokRepository.Elements as List<Vasarlasok>;
 
         /// <inheritdoc/>
         public Megyek GetMegye(int id)
