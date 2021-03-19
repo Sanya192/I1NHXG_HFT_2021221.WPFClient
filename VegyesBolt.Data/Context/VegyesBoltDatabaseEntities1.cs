@@ -4,6 +4,7 @@
 //
 //    Manual changes to this file may cause unexpected behavior in your application.
 //    Manual changes to this file will be overwritten if the code is regenerated.
+//    I still have to document it because stylecop, so it might be bad documentation.
 // </auto-generated>
 //------------------------------------------------------------------------------
 
@@ -13,31 +14,67 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace VegyesBolt.Data {
-    public partial class VegyesBoltDatabaseEntities1 : DbContext {
-        public VegyesBoltDatabaseEntities1() {
+namespace VegyesBolt.Data
+{
+    /// <summary>
+    /// The db context for the application.
+    /// </summary>
+    public partial class VegyesBoltDatabaseEntities1 : DbContext
+    {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VegyesBoltDatabaseEntities1"/> class.
+        /// </summary>
+        public VegyesBoltDatabaseEntities1()
+        {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VegyesBoltDatabaseEntities1"/> class.
+        /// </summary>
+        /// <param name="options">I dont know what happens here.</param>
         public VegyesBoltDatabaseEntities1(DbContextOptions<VegyesBoltDatabaseEntities1> options)
-            : base(options) {
+            : base(options)
+        {
         }
 
+        /// <summary>
+        /// Gets or sets the megye.
+        /// </summary>
         public virtual DbSet<Megyek> Megyeks { get; set; }
+
+        /// <summary>
+        /// Gets or sets the termekek.
+        /// </summary>
         public virtual DbSet<Termekek> Termekeks { get; set; }
+
+        /// <summary>
+        /// Gets or sets the vasarlas.
+        /// </summary>
         public virtual DbSet<Vasarlasok> Vasarlasoks { get; set; }
+
+        /// <summary>
+        /// Gets or sets the vasarlok.
+        /// </summary>
         public virtual DbSet<Vasarlok> Vasarloks { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            if (!optionsBuilder.IsConfigured) {
+        /// <inheritdoc/>
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
                 optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Vegyesbolt.mdf;Integrated Security=True");
                 optionsBuilder.UseLazyLoadingProxies();
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        /// <inheritdoc/>
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<Megyek>(entity => {
+            modelBuilder.Entity<Megyek>(entity =>
+            {
                 entity.ToTable("Megyek");
 
                 entity.Property(e => e.Nev)
@@ -50,7 +87,8 @@ namespace VegyesBolt.Data {
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Termekek>(entity => {
+            modelBuilder.Entity<Termekek>(entity =>
+            {
                 entity.ToTable("Termekek");
 
                 entity.Property(e => e.AfasAra).HasComputedColumnSql("([Ara]*(1.27))", true);
@@ -60,7 +98,8 @@ namespace VegyesBolt.Data {
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Vasarlasok>(entity => {
+            modelBuilder.Entity<Vasarlasok>(entity =>
+            {
                 entity.HasKey(e => new { e.TermekId, e.VasarloId, e.VasarlasDatuma })
                     .HasName("VASARLASOK_PK");
 
@@ -81,7 +120,8 @@ namespace VegyesBolt.Data {
                     .HasConstraintName("VASARLASOK_VASARLOK_ID_FK");
             });
 
-            modelBuilder.Entity<Vasarlok>(entity => {
+            modelBuilder.Entity<Vasarlok>(entity =>
+            {
                 entity.ToTable("Vasarlok");
 
                 entity.Property(e => e.Email)

@@ -4,30 +4,62 @@
 //
 //    Manual changes to this file may cause unexpected behavior in your application.
 //    Manual changes to this file will be overwritten if the code is regenerated.
+//    I still have to document it because stylecop, so it might be bad documentation.
 // </auto-generated>
 //------------------------------------------------------------------------------
 
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 
 #nullable disable
 
-namespace VegyesBolt.Data 
+namespace VegyesBolt.Data
+{
+
+    public partial class Megyek
     {
-
-
-    public partial class Megyek {
-        public Megyek() {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Megyek"/> class.
+        /// </summary>
+        public Megyek()
+        {
             Vasarloks = new HashSet<Vasarlok>();
         }
 
+        /// <summary>
+        /// Gets or sets the ID.
+        /// </summary>
         public double Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the ID.
+        /// </summary>
         public string Nev { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Szekhely.
+        /// </summary>
         public string Szekhely { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Numbers of towns.
+        /// </summary>
         public double? TelepulesekSzama { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Numbers of towns.
+        /// </summary>
         public double? Nepesseg { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the Numbers of size.
+        /// </summary>
         public double? Terulet { get; set; }
 
+        /// <summary>
+        /// Gets or sets a connection.
+        /// </summary>
         public virtual ICollection<Vasarlok> Vasarloks { get; set; }
     }
 
