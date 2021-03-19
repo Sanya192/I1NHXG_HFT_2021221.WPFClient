@@ -49,13 +49,12 @@ namespace VegyesBolt.UI
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            this.ViewModel.Save();
+            (this.DataContext as HonfoglaloViewModel).Save();
             this.Close();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            this.ViewModel.Save();
             this.Close();
         }
     }

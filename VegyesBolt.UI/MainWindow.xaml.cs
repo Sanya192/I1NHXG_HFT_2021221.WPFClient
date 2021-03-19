@@ -44,40 +44,45 @@ namespace VegyesBolt.UI
         public MainWindow(BoltViewModel model)
             : this()
         {
+            this.viewModel = model;
             this.DataContext = null;
             this.DataContext = model;
-            this.viewModel = null;
-            this.viewModel = model;
         }
 
         private void MegyeButton_Click(object sender, RoutedEventArgs e)
         {
+            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;
             this.viewModel.SelectedTable = Tables.Megyek;
         }
 
         private void VasarloButton_Click(object sender, RoutedEventArgs e)
         {
+            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;
             this.viewModel.SelectedTable = Tables.Vasarlok;
         }
 
         private void TermekButton_Click(object sender, RoutedEventArgs e)
         {
+            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;
             this.viewModel.SelectedTable = Tables.Termekek;
         }
 
         private void VasarlasButton_Click(object sender, RoutedEventArgs e)
         {
+            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;
             this.viewModel.SelectedTable = Tables.Vasarlasok;
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;
             this.viewModel.DeleteCurrent();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             EditHonfoglalas edit = null;
+            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;
             if (this.viewModel.SelectedTable == Tables.Megyek)
             {
                 edit = new EditHonfoglalas();
@@ -87,15 +92,17 @@ namespace VegyesBolt.UI
                 MessageBox.Show("Csak a megyéket lehet módosítani.");
             }
 
-            (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.SaveCurrent;
+            if (edit != null)
+            {
+                (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.SaveCurrent;
+            }
+
             edit?.Show();
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            /*var sajt = this.DataContext as BoltViewModel;
-            EditWindow edit = new EditWindow(new EditViewModel(sajt.SelectedObject));
-            edit.Show();*/
+            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;
             EditHonfoglalas edit = null;
             if (this.viewModel.SelectedTable == Tables.Megyek)
             {
@@ -113,7 +120,11 @@ namespace VegyesBolt.UI
                 MessageBox.Show("Csak a megyéket lehet módosítani.");
             }
 
-            (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.SaveCurrent;
+            if (edit != null)
+            {
+                (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.SaveCurrent;
+            }
+
             edit?.Show();
         }
     }
