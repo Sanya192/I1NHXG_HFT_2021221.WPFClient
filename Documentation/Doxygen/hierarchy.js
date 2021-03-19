@@ -27,6 +27,7 @@ var hierarchy =
       [ "VegyesBolt.UI.ViewModel.BoltViewModel", "class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html", null ]
     ] ],
     [ "System.Windows.Markup.InternalTypeHelper", null, [
+      [ "XamlGeneratedNamespace.GeneratedInternalTypeHelper", "class_xaml_generated_namespace_1_1_generated_internal_type_helper.html", null ],
       [ "XamlGeneratedNamespace.GeneratedInternalTypeHelper", "class_xaml_generated_namespace_1_1_generated_internal_type_helper.html", null ]
     ] ],
     [ "VegyesBolt.Repository.IRepository< T >", "interface_vegyes_bolt_1_1_repository_1_1_i_repository.html", null ],
@@ -53,6 +54,22 @@ var hierarchy =
     [ "VegyesBolt.Data.Megyek", "class_vegyes_bolt_1_1_data_1_1_megyek.html", null ],
     [ "VegyesBolt.Program.Menu", "class_vegyes_bolt_1_1_program_1_1_menu.html", null ],
     [ "VegyesBolt.Program.Program", "class_vegyes_bolt_1_1_program_1_1_program.html", null ],
+    [ "global.MicrosoftAspNetCore.Mvc.Razor.RazorPage", null, [
+      [ "AspNetCore.Views_Home_Index", "class_asp_net_core_1_1_views___home___index.html", null ],
+      [ "AspNetCore.Views_Home_Index", "class_asp_net_core_1_1_views___home___index.html", null ],
+      [ "AspNetCore.Views_Home_Privacy", "class_asp_net_core_1_1_views___home___privacy.html", null ],
+      [ "AspNetCore.Views_Home_Privacy", "class_asp_net_core_1_1_views___home___privacy.html", null ],
+      [ "AspNetCore.Views_Shared_Error", "class_asp_net_core_1_1_views___shared___error.html", null ],
+      [ "AspNetCore.Views_Shared_Error", "class_asp_net_core_1_1_views___shared___error.html", null ],
+      [ "AspNetCore.Views_Shared__Layout", "class_asp_net_core_1_1_views___shared_____layout.html", null ],
+      [ "AspNetCore.Views_Shared__Layout", "class_asp_net_core_1_1_views___shared_____layout.html", null ],
+      [ "AspNetCore.Views_Shared__ValidationScriptsPartial", "class_asp_net_core_1_1_views___shared_____validation_scripts_partial.html", null ],
+      [ "AspNetCore.Views_Shared__ValidationScriptsPartial", "class_asp_net_core_1_1_views___shared_____validation_scripts_partial.html", null ],
+      [ "AspNetCore.Views__ViewImports", "class_asp_net_core_1_1_views_____view_imports.html", null ],
+      [ "AspNetCore.Views__ViewImports", "class_asp_net_core_1_1_views_____view_imports.html", null ],
+      [ "AspNetCore.Views__ViewStart", "class_asp_net_core_1_1_views_____view_start.html", null ],
+      [ "AspNetCore.Views__ViewStart", "class_asp_net_core_1_1_views_____view_start.html", null ]
+    ] ],
     [ "VegyesBolt.Data.Termekek", "class_vegyes_bolt_1_1_data_1_1_termekek.html", null ],
     [ "VegyesBolt.Logic.Tests.Tests", "class_vegyes_bolt_1_1_logic_1_1_tests_1_1_tests.html", null ],
     [ "TextBox", null, [

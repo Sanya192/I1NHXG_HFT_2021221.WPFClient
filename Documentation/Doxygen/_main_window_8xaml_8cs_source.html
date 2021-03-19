@@ -123,80 +123,91 @@ $(document).ready(function(){initNavTree('_main_window_8xaml_8cs_source.html',''
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_u_i_1_1_main_window.html#ab874227fb0d65af92e33c78fa7d5e29c">   44</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_main_window.html#ab874227fb0d65af92e33c78fa7d5e29c">MainWindow</a>(<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html">BoltViewModel</a> model)</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            : this()</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this.DataContext = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            this.DataContext = model;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            this.viewModel = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            this.viewModel = model;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> MegyeButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this.viewModel = model;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            this.DataContext = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            this.DataContext = model;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> MegyeButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            this.viewModel = this.viewModel ?? this.DataContext as <a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html">BoltViewModel</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> = <a class="code" href="namespace_vegyes_bolt_1_1_u_i_1_1_logic.html#a83f80cbf9e76ce3b8bc94b87f89ed7b0">Tables</a>.Megyek;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> VasarloButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> = Tables.Vasarlok;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> TermekButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> = Tables.Termekek;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> VasarlasButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> = <a class="code" href="namespace_vegyes_bolt_1_1_u_i_1_1_logic.html#a83f80cbf9e76ce3b8bc94b87f89ed7b0">Tables</a>.Vasarlasok;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> DeleteButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac501ac65f373cd549ba203632a96e27e">DeleteCurrent</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> AddButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            EditHonfoglalas edit = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">if</span> (this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> == <a class="code" href="namespace_vegyes_bolt_1_1_u_i_1_1_logic.html#a83f80cbf9e76ce3b8bc94b87f89ed7b0">Tables</a>.Megyek)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                edit = <span class="keyword">new</span> EditHonfoglalas();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                MessageBox.Show(<span class="stringliteral">&quot;Csak a megyéket lehet módosítani.&quot;</span>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#a0923c9615eefa130d406d8d2341ec248">SaveCurrent</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            edit?.Show();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> UpdateButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="comment">/*var sajt = this.DataContext as BoltViewModel;</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">            EditWindow edit = new EditWindow(new EditViewModel(sajt.SelectedObject));</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">            edit.Show();*/</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            EditHonfoglalas edit = <span class="keyword">null</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> (this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> == <a class="code" href="namespace_vegyes_bolt_1_1_u_i_1_1_logic.html#a83f80cbf9e76ce3b8bc94b87f89ed7b0">Tables</a>.Megyek)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordflow">if</span> (this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#a65fec0493838d4e095cec3696bd2a9ac">SelectedObject</a> != <span class="keyword">null</span>)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    edit = <span class="keyword">new</span> EditHonfoglalas(this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#a65fec0493838d4e095cec3696bd2a9ac">SelectedObject</a> as Megyek);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    MessageBox.Show(<span class="stringliteral">&quot;Jelölj ki egy elemet.&quot;</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                MessageBox.Show(<span class="stringliteral">&quot;Csak a megyéket lehet módosítani.&quot;</span>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#a0923c9615eefa130d406d8d2341ec248">SaveCurrent</a>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            edit?.Show();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> = Tables.Vasarlok;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> TermekButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> = Tables.Termekek;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> VasarlasButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> = <a class="code" href="namespace_vegyes_bolt_1_1_u_i_1_1_logic.html#a83f80cbf9e76ce3b8bc94b87f89ed7b0">Tables</a>.Vasarlasok;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> DeleteButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac501ac65f373cd549ba203632a96e27e">DeleteCurrent</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> AddButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            EditHonfoglalas edit = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> == <a class="code" href="namespace_vegyes_bolt_1_1_u_i_1_1_logic.html#a83f80cbf9e76ce3b8bc94b87f89ed7b0">Tables</a>.Megyek)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                edit = <span class="keyword">new</span> EditHonfoglalas();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                MessageBox.Show(<span class="stringliteral">&quot;Csak a megyéket lehet módosítani.&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">if</span> (edit != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#a0923c9615eefa130d406d8d2341ec248">SaveCurrent</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            edit?.Show();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> UpdateButton_Click(<span class="keywordtype">object</span> sender, RoutedEventArgs e)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            this.viewModel = this.viewModel ?? this.DataContext as BoltViewModel;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            EditHonfoglalas edit = <span class="keyword">null</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">if</span> (this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#ac0116314327c57545ae90adb60c26f0d">SelectedTable</a> == <a class="code" href="namespace_vegyes_bolt_1_1_u_i_1_1_logic.html#a83f80cbf9e76ce3b8bc94b87f89ed7b0">Tables</a>.Megyek)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">if</span> (this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#a65fec0493838d4e095cec3696bd2a9ac">SelectedObject</a> != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    edit = <span class="keyword">new</span> EditHonfoglalas(this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#a65fec0493838d4e095cec3696bd2a9ac">SelectedObject</a> as Megyek);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    MessageBox.Show(<span class="stringliteral">&quot;Jelölj ki egy elemet.&quot;</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                MessageBox.Show(<span class="stringliteral">&quot;Csak a megyéket lehet módosítani.&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">if</span> (edit != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                (edit.DataContext as HonfoglaloViewModel).OnSave += this.viewModel.<a class="code" href="class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_bolt_view_model.html#a0923c9615eefa130d406d8d2341ec248">SaveCurrent</a>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            edit?.Show();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_u_i_1_1_main_window_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_u_i_1_1_main_window.html">VegyesBolt.UI.MainWindow</a></div><div class="ttdoc">Interaction logic for MainWindow.xaml.</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8xaml_8cs_source.html#l00028">MainWindow.xaml.cs:29</a></div></div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_u_i_1_1_main_window_html_aa772d8c859aab68978b6951215db33fc"><div class="ttname"><a href="class_vegyes_bolt_1_1_u_i_1_1_main_window.html#aa772d8c859aab68978b6951215db33fc">VegyesBolt.UI.MainWindow.InitializeComponent</a></div><div class="ttdeci">void InitializeComponent()</div><div class="ttdoc">InitializeComponent</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8g_8cs_source.html#l00108">MainWindow.g.cs:108</a></div></div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_u_i_1_1_main_window_html_aabc84f62d07a868f626f2ec2f7cd9bf0"><div class="ttname"><a href="class_vegyes_bolt_1_1_u_i_1_1_main_window.html#aabc84f62d07a868f626f2ec2f7cd9bf0">VegyesBolt.UI.MainWindow.MainWindow</a></div><div class="ttdeci">MainWindow()</div><div class="ttdoc">Initializes a new instance of the MainWindow class.</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8xaml_8cs_source.html#l00035">MainWindow.xaml.cs:35</a></div></div>
