@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Major Sándor Házi: C:/Users/major/source/repos/OENIK_PROG4HF_2021_1_I1NHXG/VegyesBolt.Data/Context/VegyesBoltDatabaseEntities1.cs Source File</title>
+<title>Major Sanyi Beadandó: C:/Users/major/source/repos/OENIK_PROG4HF_2021_1_I1NHXG/VegyesBolt.Data/Context/VegyesBoltDatabaseEntities1.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,10 +26,9 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="MSWhiteStandard text.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Major Sándor Házi
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Major Sanyi Beadandó
+   &#160;<span id="projectnumber">1.1</span>
    </div>
-   <div id="projectbrief">Házi</div>
   </td>
  </tr>
  </tbody>
@@ -94,122 +93,146 @@ $(document).ready(function(){initNavTree('_vegyes_bolt_database_entities1_8cs_so
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//    Manual changes to this file may cause unexpected behavior in your application.</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//    Manual changes to this file will be overwritten if the code is regenerated.</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// &lt;/auto-generated&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using</span> System;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> Microsoft.EntityFrameworkCore;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using</span> Microsoft.EntityFrameworkCore.Metadata;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#nullable disable</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_vegyes_bolt_1_1_data.html">VegyesBolt.Data</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">   17</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">VegyesBoltDatabaseEntities1</a> : DbContext {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">VegyesBoltDatabaseEntities1</a>() {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span> <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">VegyesBoltDatabaseEntities1</a>(DbContextOptions&lt;VegyesBoltDatabaseEntities1&gt; options)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            : base(options) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//    I still have to document it because stylecop, so it might be bad documentation.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// &lt;/auto-generated&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> System;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using</span> Microsoft.EntityFrameworkCore;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using</span> Microsoft.EntityFrameworkCore.Metadata;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#nullable disable</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_vegyes_bolt_1_1_data.html">VegyesBolt.Data</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">   22</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">partial class </span><a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">VegyesBoltDatabaseEntities1</a> : DbContext</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Megyek&gt; Megyeks { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Termekek&gt; Termekeks { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Vasarlasok&gt; Vasarlasoks { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Vasarlok&gt; Vasarloks { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> OnConfiguring(DbContextOptionsBuilder optionsBuilder) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">if</span> (!optionsBuilder.IsConfigured) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                optionsBuilder.UseSqlServer(<span class="stringliteral">&quot;Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Vegyesbolt.mdf;Integrated Security=True&quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                optionsBuilder.UseLazyLoadingProxies();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> OnModelCreating(ModelBuilder modelBuilder) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            modelBuilder.HasAnnotation(<span class="stringliteral">&quot;Relational:Collation&quot;</span>, <span class="stringliteral">&quot;SQL_Latin1_General_CP1_CI_AS&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            modelBuilder.Entity&lt;<a class="code" href="class_vegyes_bolt_1_1_data_1_1_megyek.html">Megyek</a>&gt;(entity =&gt; {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                entity.ToTable(<span class="stringliteral">&quot;Megyek&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                entity.Property(e =&gt; e.Nev)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    .IsRequired()</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    .HasMaxLength(42)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                entity.Property(e =&gt; e.Szekhely)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    .HasMaxLength(50)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            });</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            modelBuilder.Entity&lt;<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html">Termekek</a>&gt;(entity =&gt; {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                entity.ToTable(<span class="stringliteral">&quot;Termekek&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#adbdea6f1e5e1d8972d90b8607e51bcf5">   28</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#adbdea6f1e5e1d8972d90b8607e51bcf5">VegyesBoltDatabaseEntities1</a>()</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a4cce9eb0734553c89182df03c4ef1361">   36</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a4cce9eb0734553c89182df03c4ef1361">VegyesBoltDatabaseEntities1</a>(DbContextOptions&lt;VegyesBoltDatabaseEntities1&gt; options)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            : base(options)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#ab0fbd7da140c2e89f6525efa25fcef9b">   44</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Megyek&gt; <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#ab0fbd7da140c2e89f6525efa25fcef9b">Megyeks</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#af228b120b4e319717355840b378a907e">   49</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Termekek&gt; <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#af228b120b4e319717355840b378a907e">Termekeks</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a3daa4068dcc05977f22431dc4e3fc0b8">   54</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Vasarlasok&gt; <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a3daa4068dcc05977f22431dc4e3fc0b8">Vasarlasoks</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                entity.Property(e =&gt; e.AfasAra).HasComputedColumnSql(<span class="stringliteral">&quot;([Ara]*(1.27))&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                entity.Property(e =&gt; e.TermekNeve)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    .HasMaxLength(30)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            });</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            modelBuilder.Entity&lt;<a class="code" href="class_vegyes_bolt_1_1_data_1_1_vasarlasok.html">Vasarlasok</a>&gt;(entity =&gt; {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                entity.HasKey(e =&gt; <span class="keyword">new</span> { e.TermekId, e.VasarloId, e.VasarlasDatuma })</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    .HasName(<span class="stringliteral">&quot;VASARLASOK_PK&quot;</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                entity.ToTable(<span class="stringliteral">&quot;Vasarlasok&quot;</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                entity.Property(e =&gt; e.VasarlasDatuma).HasColumnType(<span class="stringliteral">&quot;datetime&quot;</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#aed62fbc74b1016f8c725459f99f6e59a">   59</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">virtual</span> DbSet&lt;Vasarlok&gt; <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#aed62fbc74b1016f8c725459f99f6e59a">Vasarloks</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a9cb5c7a6fdf5002816db22d58ad3c61a">   62</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a9cb5c7a6fdf5002816db22d58ad3c61a">OnConfiguring</a>(DbContextOptionsBuilder optionsBuilder)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span> (!optionsBuilder.IsConfigured)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                optionsBuilder.UseSqlServer(<span class="stringliteral">&quot;Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Vegyesbolt.mdf;Integrated Security=True&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                optionsBuilder.UseLazyLoadingProxies();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                entity.HasOne(d =&gt; d.Termek)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    .WithMany(p =&gt; p.Vasarlasoks)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    .HasForeignKey(d =&gt; d.TermekId)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    .OnDelete(DeleteBehavior.ClientSetNull)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    .HasConstraintName(<span class="stringliteral">&quot;VASARLASOK_TERMEKEK_ID_FK&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                entity.HasOne(d =&gt; d.Vasarlo)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    .WithMany(p =&gt; p.Vasarlasoks)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    .HasForeignKey(d =&gt; d.VasarloId)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    .OnDelete(DeleteBehavior.ClientSetNull)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    .HasConstraintName(<span class="stringliteral">&quot;VASARLASOK_VASARLOK_ID_FK&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            });</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            modelBuilder.Entity&lt;<a class="code" href="class_vegyes_bolt_1_1_data_1_1_vasarlok.html">Vasarlok</a>&gt;(entity =&gt; {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                entity.ToTable(<span class="stringliteral">&quot;Vasarlok&quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                entity.Property(e =&gt; e.Email)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    .IsRequired()</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    .HasMaxLength(30)</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                entity.Property(e =&gt; e.Nev)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    .IsRequired()</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    .HasMaxLength(30)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                entity.Property(e =&gt; e.RegDate).HasColumnType(<span class="stringliteral">&quot;datetime&quot;</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                entity.HasOne(d =&gt; d.MegyeNavigation)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    .WithMany(p =&gt; p.Vasarloks)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    .HasForeignKey(d =&gt; d.Megye)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    .HasConstraintName(<span class="stringliteral">&quot;VASARLOK_MEGYEK_ID_FK&quot;</span>);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            });</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            OnModelCreatingPartial(modelBuilder);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#abc64b4de7fd07e38b752c52808f50470">   72</a></span>&#160;        <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#abc64b4de7fd07e38b752c52808f50470">OnModelCreating</a>(ModelBuilder modelBuilder)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            modelBuilder.HasAnnotation(<span class="stringliteral">&quot;Relational:Collation&quot;</span>, <span class="stringliteral">&quot;SQL_Latin1_General_CP1_CI_AS&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            modelBuilder.Entity&lt;<a class="code" href="class_vegyes_bolt_1_1_data_1_1_megyek.html">Megyek</a>&gt;(entity =&gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                entity.ToTable(<span class="stringliteral">&quot;Megyek&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                entity.Property(e =&gt; e.Nev)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    .IsRequired()</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    .HasMaxLength(42)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                entity.Property(e =&gt; e.Szekhely)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    .HasMaxLength(50)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            });</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            modelBuilder.Entity&lt;<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html">Termekek</a>&gt;(entity =&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                entity.ToTable(<span class="stringliteral">&quot;Termekek&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                entity.Property(e =&gt; e.AfasAra).HasComputedColumnSql(<span class="stringliteral">&quot;([Ara]*(1.27))&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                entity.Property(e =&gt; e.TermekNeve)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    .HasMaxLength(30)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            });</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            modelBuilder.Entity&lt;<a class="code" href="class_vegyes_bolt_1_1_data_1_1_vasarlasok.html">Vasarlasok</a>&gt;(entity =&gt;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                entity.HasKey(e =&gt; <span class="keyword">new</span> { e.TermekId, e.VasarloId, e.VasarlasDatuma })</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    .HasName(<span class="stringliteral">&quot;VASARLASOK_PK&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                entity.ToTable(<span class="stringliteral">&quot;Vasarlasok&quot;</span>);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        partial <span class="keywordtype">void</span> OnModelCreatingPartial(ModelBuilder modelBuilder);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
-<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_megyek_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_megyek.html">VegyesBolt.Data.Megyek</a></div><div class="ttdoc">A not auto generated part for megyek.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_megyek_8cs_source.html#l00019">Megyek.cs:19</a></div></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                entity.Property(e =&gt; e.VasarlasDatuma).HasColumnType(<span class="stringliteral">&quot;datetime&quot;</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                entity.HasOne(d =&gt; d.Termek)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    .WithMany(p =&gt; p.Vasarlasoks)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    .HasForeignKey(d =&gt; d.TermekId)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    .OnDelete(DeleteBehavior.ClientSetNull)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    .HasConstraintName(<span class="stringliteral">&quot;VASARLASOK_TERMEKEK_ID_FK&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                entity.HasOne(d =&gt; d.Vasarlo)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    .WithMany(p =&gt; p.Vasarlasoks)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    .HasForeignKey(d =&gt; d.VasarloId)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    .OnDelete(DeleteBehavior.ClientSetNull)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    .HasConstraintName(<span class="stringliteral">&quot;VASARLASOK_VASARLOK_ID_FK&quot;</span>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            });</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            modelBuilder.Entity&lt;<a class="code" href="class_vegyes_bolt_1_1_data_1_1_vasarlok.html">Vasarlok</a>&gt;(entity =&gt;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                entity.ToTable(<span class="stringliteral">&quot;Vasarlok&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                entity.Property(e =&gt; e.Email)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    .IsRequired()</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    .HasMaxLength(30)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                entity.Property(e =&gt; e.Nev)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    .IsRequired()</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    .HasMaxLength(30)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    .IsUnicode(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                entity.Property(e =&gt; e.RegDate).HasColumnType(<span class="stringliteral">&quot;datetime&quot;</span>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                entity.HasOne(d =&gt; d.MegyeNavigation)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                    .WithMany(p =&gt; p.Vasarloks)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    .HasForeignKey(d =&gt; d.Megye)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    .HasConstraintName(<span class="stringliteral">&quot;VASARLOK_MEGYEK_ID_FK&quot;</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            });</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            OnModelCreatingPartial(modelBuilder);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        partial <span class="keywordtype">void</span> OnModelCreatingPartial(ModelBuilder modelBuilder);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_megyek_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_megyek.html">VegyesBolt.Data.Megyek</a></div><div class="ttdoc">A not auto generated part for megyek.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_megyek_8cs_source.html#l00020">Megyek.cs:21</a></div></div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_termekek_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_termekek.html">VegyesBolt.Data.Termekek</a></div><div class="ttdoc">A not auto generated part for termekek.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_termekek_8cs_source.html#l00018">Termekek.cs:19</a></div></div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vasarlasok_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vasarlasok.html">VegyesBolt.Data.Vasarlasok</a></div><div class="ttdoc">A not auto generated part for Vasarlasok.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_vasarlasok_8cs_source.html#l00017">Vasarlasok.cs:18</a></div></div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vasarlok_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vasarlok.html">VegyesBolt.Data.Vasarlok</a></div><div class="ttdoc">A not auto generated part for megyek.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_vasarlok_8cs_source.html#l00017">Vasarlok.cs:18</a></div></div>
-<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">VegyesBolt.Data.VegyesBoltDatabaseEntities1</a></div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00017">VegyesBoltDatabaseEntities1.cs:17</a></div></div>
-<div class="ttc" id="anamespace_vegyes_bolt_1_1_data_html"><div class="ttname"><a href="namespace_vegyes_bolt_1_1_data.html">VegyesBolt.Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_megyek_8cs_source.html#l00015">Megyek.cs:16</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">VegyesBolt.Data.VegyesBoltDatabaseEntities1</a></div><div class="ttdoc">The db context for the application.</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00022">VegyesBoltDatabaseEntities1.cs:23</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html_a3daa4068dcc05977f22431dc4e3fc0b8"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a3daa4068dcc05977f22431dc4e3fc0b8">VegyesBolt.Data.VegyesBoltDatabaseEntities1.Vasarlasoks</a></div><div class="ttdeci">virtual DbSet&lt; Vasarlasok &gt; Vasarlasoks</div><div class="ttdoc">Gets or sets the vasarlas.</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00054">VegyesBoltDatabaseEntities1.cs:54</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html_a4cce9eb0734553c89182df03c4ef1361"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a4cce9eb0734553c89182df03c4ef1361">VegyesBolt.Data.VegyesBoltDatabaseEntities1.VegyesBoltDatabaseEntities1</a></div><div class="ttdeci">VegyesBoltDatabaseEntities1(DbContextOptions&lt; VegyesBoltDatabaseEntities1 &gt; options)</div><div class="ttdoc">Initializes a new instance of the VegyesBoltDatabaseEntities1 class.</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00036">VegyesBoltDatabaseEntities1.cs:36</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html_a9cb5c7a6fdf5002816db22d58ad3c61a"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#a9cb5c7a6fdf5002816db22d58ad3c61a">VegyesBolt.Data.VegyesBoltDatabaseEntities1.OnConfiguring</a></div><div class="ttdeci">override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00062">VegyesBoltDatabaseEntities1.cs:62</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html_ab0fbd7da140c2e89f6525efa25fcef9b"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#ab0fbd7da140c2e89f6525efa25fcef9b">VegyesBolt.Data.VegyesBoltDatabaseEntities1.Megyeks</a></div><div class="ttdeci">virtual DbSet&lt; Megyek &gt; Megyeks</div><div class="ttdoc">Gets or sets the megye.</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00044">VegyesBoltDatabaseEntities1.cs:44</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html_abc64b4de7fd07e38b752c52808f50470"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#abc64b4de7fd07e38b752c52808f50470">VegyesBolt.Data.VegyesBoltDatabaseEntities1.OnModelCreating</a></div><div class="ttdeci">override void OnModelCreating(ModelBuilder modelBuilder)</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00072">VegyesBoltDatabaseEntities1.cs:72</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html_adbdea6f1e5e1d8972d90b8607e51bcf5"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#adbdea6f1e5e1d8972d90b8607e51bcf5">VegyesBolt.Data.VegyesBoltDatabaseEntities1.VegyesBoltDatabaseEntities1</a></div><div class="ttdeci">VegyesBoltDatabaseEntities1()</div><div class="ttdoc">Initializes a new instance of the VegyesBoltDatabaseEntities1 class.</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00028">VegyesBoltDatabaseEntities1.cs:28</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html_aed62fbc74b1016f8c725459f99f6e59a"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#aed62fbc74b1016f8c725459f99f6e59a">VegyesBolt.Data.VegyesBoltDatabaseEntities1.Vasarloks</a></div><div class="ttdeci">virtual DbSet&lt; Vasarlok &gt; Vasarloks</div><div class="ttdoc">Gets or sets the vasarlok.</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00059">VegyesBoltDatabaseEntities1.cs:59</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html_af228b120b4e319717355840b378a907e"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html#af228b120b4e319717355840b378a907e">VegyesBolt.Data.VegyesBoltDatabaseEntities1.Termekeks</a></div><div class="ttdeci">virtual DbSet&lt; Termekek &gt; Termekeks</div><div class="ttdoc">Gets or sets the termekek.</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00049">VegyesBoltDatabaseEntities1.cs:49</a></div></div>
+<div class="ttc" id="anamespace_vegyes_bolt_1_1_data_html"><div class="ttname"><a href="namespace_vegyes_bolt_1_1_data.html">VegyesBolt.Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_megyek_8cs_source.html#l00017">Megyek.cs:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_e28d5905075542df77d28c3f510751cd.html">major</a></li><li class="navelem"><a class="el" href="dir_ea39b7996e501ce9df9e46dad8ddf87c.html">source</a></li><li class="navelem"><a class="el" href="dir_11eb28f215677aff04c591875076a377.html">repos</a></li><li class="navelem"><a class="el" href="dir_ec6762af005d4c1e3f32305068478482.html">OENIK_PROG4HF_2021_1_I1NHXG</a></li><li class="navelem"><a class="el" href="dir_e67d1396ddb65d6c58ed05f582b2fed2.html">VegyesBolt.Data</a></li><li class="navelem"><a class="el" href="dir_1621b022e59bcf573935d603a56478c7.html">Context</a></li><li class="navelem"><b>VegyesBoltDatabaseEntities1.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_e47c469938e7590f0af9989de1706561.html">OENIK_PROG4HF_2021_1_I1NHXG</a></li><li class="navelem"><a class="el" href="dir_a010a2f2eba5f4195989424033db4339.html">VegyesBolt.Data</a></li><li class="navelem"><a class="el" href="dir_cf714bd6a85cdedc3eb5a5fb9685a7cc.html">Context</a></li><li class="navelem"><b>VegyesBoltDatabaseEntities1.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['nepesseg_247',['Nepesseg',['../class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_honfoglalo_view_model.html#a2404e52a4fd704e49f6834dc825611f4',1,'VegyesBolt::UI::ViewModel::HonfoglaloViewModel']]],
-  ['nev_248',['Nev',['../class_vegyes_bolt_1_1_u_i_1_1_view_model_1_1_honfoglalo_view_model.html#a7afab6bcbf4b509509ff42c9c7e195a8',1,'VegyesBolt::UI::ViewModel::HonfoglaloViewModel']]]
+  ['id_277',['Id',['../class_vegyes_bolt_1_1_data_1_1_megyek.html#abcab0e06626bb71f2a63023a52d6ba2a',1,'VegyesBolt.Data.Megyek.Id()'],['../class_vegyes_bolt_1_1_data_1_1_termekek.html#acac7a55e8f5d9c22433eb851d03a4534',1,'VegyesBolt.Data.Termekek.Id()'],['../class_vegyes_bolt_1_1_data_1_1_vasarlok.html#acb4cf0457466f39eedc5ec3e4c6f28e7',1,'VegyesBolt.Data.Vasarlok.Id()']]]
 ];

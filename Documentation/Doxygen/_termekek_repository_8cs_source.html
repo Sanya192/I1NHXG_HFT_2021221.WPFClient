@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Major Sándor Házi: C:/Users/major/source/repos/OENIK_PROG4HF_2021_1_I1NHXG/VegyesBolt.Repository/TermekekRepository.cs Source File</title>
+<title>Major Sanyi Beadandó: C:/Users/major/source/repos/OENIK_PROG4HF_2021_1_I1NHXG/VegyesBolt.Repository/TermekekRepository.cs Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,10 +26,9 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="MSWhiteStandard text.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Major Sándor Házi
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Major Sanyi Beadandó
+   &#160;<span id="projectnumber">1.1</span>
    </div>
-   <div id="projectbrief">Házi</div>
   </td>
  </tr>
  </tbody>
@@ -112,7 +111,7 @@ $(document).ready(function(){initNavTree('_termekek_repository_8cs_source.html',
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_repository_1_1_termekek_repository.html#a1007afa4c240f32fefcf58daa013bcf7">   29</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_vegyes_bolt_1_1_repository_1_1_termekek_repository.html#a1007afa4c240f32fefcf58daa013bcf7">Delete</a>(<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html">Termekek</a> toDelete)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            var cascade = <a class="code" href="namespace_vegyes_bolt.html">VegyesBolt</a>.Vasarlasoks.Where(p =&gt; p.TermekId == toDelete.Id);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            var cascade = <a class="code" href="namespace_vegyes_bolt.html">VegyesBolt</a>.Vasarlasoks.Where(p =&gt; p.TermekId == toDelete.<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html#acac7a55e8f5d9c22433eb851d03a4534">Id</a>);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">foreach</span> (var item <span class="keywordflow">in</span> cascade)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <a class="code" href="namespace_vegyes_bolt.html">VegyesBolt</a>.Vasarlasoks.Remove(item);</div>
@@ -126,15 +125,19 @@ $(document).ready(function(){initNavTree('_termekek_repository_8cs_source.html',
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_vegyes_bolt_1_1_repository_1_1_termekek_repository.html#a4349a66d703bc5482a75738516aa57ba">   43</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_vegyes_bolt_1_1_repository_1_1_termekek_repository.html#a4349a66d703bc5482a75738516aa57ba">Update</a>(<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html">Termekek</a> toUpdate)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            var old = <a class="code" href="namespace_vegyes_bolt.html">VegyesBolt</a>.Termekeks.Find(toUpdate?.Id);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            old.LeltarMennyiseg = toUpdate.LeltarMennyiseg == <span class="keyword">null</span> ? old.LeltarMennyiseg : toUpdate.LeltarMennyiseg;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            old.TermekNeve = toUpdate.TermekNeve ?? old.TermekNeve;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            old.Vasarlasoks = toUpdate.Vasarlasoks ?? old.Vasarlasoks;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            old.LeltarMennyiseg = toUpdate.<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html#a9e052586941649b4765fe0f7ccf020d7">LeltarMennyiseg</a> == <span class="keyword">null</span> ? old.LeltarMennyiseg : toUpdate.<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html#a9e052586941649b4765fe0f7ccf020d7">LeltarMennyiseg</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            old.TermekNeve = toUpdate.<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html#ab25e5a9308ddac3f169d5ddf3b7a6d76">TermekNeve</a> ?? old.TermekNeve;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            old.Vasarlasoks = toUpdate.<a class="code" href="class_vegyes_bolt_1_1_data_1_1_termekek.html#a3b706972cfd064753196a701e64c4d85">Vasarlasoks</a> ?? old.Vasarlasoks;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="namespace_vegyes_bolt.html">VegyesBolt</a>.SaveChanges();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_termekek_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_termekek.html">VegyesBolt.Data.Termekek</a></div><div class="ttdoc">A not auto generated part for termekek.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_termekek_8cs_source.html#l00018">Termekek.cs:19</a></div></div>
-<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">VegyesBolt.Data.VegyesBoltDatabaseEntities1</a></div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00017">VegyesBoltDatabaseEntities1.cs:17</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_termekek_html_a3b706972cfd064753196a701e64c4d85"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_termekek.html#a3b706972cfd064753196a701e64c4d85">VegyesBolt.Data.Termekek.Vasarlasoks</a></div><div class="ttdeci">virtual ICollection&lt; Vasarlasok &gt; Vasarlasoks</div><div class="ttdoc">Autogenerated.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_termekek_8cs_source.html#l00057">Termekek.cs:57</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_termekek_html_a9e052586941649b4765fe0f7ccf020d7"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_termekek.html#a9e052586941649b4765fe0f7ccf020d7">VegyesBolt.Data.Termekek.LeltarMennyiseg</a></div><div class="ttdeci">int? LeltarMennyiseg</div><div class="ttdoc">Autogenerated.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_termekek_8cs_source.html#l00052">Termekek.cs:52</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_termekek_html_ab25e5a9308ddac3f169d5ddf3b7a6d76"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_termekek.html#ab25e5a9308ddac3f169d5ddf3b7a6d76">VegyesBolt.Data.Termekek.TermekNeve</a></div><div class="ttdeci">string TermekNeve</div><div class="ttdoc">Autogenerated.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_termekek_8cs_source.html#l00037">Termekek.cs:37</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_termekek_html_acac7a55e8f5d9c22433eb851d03a4534"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_termekek.html#acac7a55e8f5d9c22433eb851d03a4534">VegyesBolt.Data.Termekek.Id</a></div><div class="ttdeci">double Id</div><div class="ttdoc">Autogenerated.</div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_termekek_8cs_source.html#l00032">Termekek.cs:32</a></div></div>
+<div class="ttc" id="aclass_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_data_1_1_vegyes_bolt_database_entities1.html">VegyesBolt.Data.VegyesBoltDatabaseEntities1</a></div><div class="ttdoc">The db context for the application.</div><div class="ttdef"><b>Definition:</b> <a href="_vegyes_bolt_database_entities1_8cs_source.html#l00022">VegyesBoltDatabaseEntities1.cs:23</a></div></div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_repository_1_1_termekek_repository_html"><div class="ttname"><a href="class_vegyes_bolt_1_1_repository_1_1_termekek_repository.html">VegyesBolt.Repository.TermekekRepository</a></div><div class="ttdoc">The repositroy for Termekek.</div><div class="ttdef"><b>Definition:</b> <a href="_termekek_repository_8cs_source.html#l00014">TermekekRepository.cs:15</a></div></div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_repository_1_1_termekek_repository_html_a1007afa4c240f32fefcf58daa013bcf7"><div class="ttname"><a href="class_vegyes_bolt_1_1_repository_1_1_termekek_repository.html#a1007afa4c240f32fefcf58daa013bcf7">VegyesBolt.Repository.TermekekRepository.Delete</a></div><div class="ttdeci">void Delete(Termekek toDelete)</div><div class="ttdef"><b>Definition:</b> <a href="_termekek_repository_8cs_source.html#l00029">TermekekRepository.cs:29</a></div></div>
 <div class="ttc" id="aclass_vegyes_bolt_1_1_repository_1_1_termekek_repository_html_a4349a66d703bc5482a75738516aa57ba"><div class="ttname"><a href="class_vegyes_bolt_1_1_repository_1_1_termekek_repository.html#a4349a66d703bc5482a75738516aa57ba">VegyesBolt.Repository.TermekekRepository.Update</a></div><div class="ttdeci">void Update(Termekek toUpdate)</div><div class="ttdef"><b>Definition:</b> <a href="_termekek_repository_8cs_source.html#l00043">TermekekRepository.cs:43</a></div></div>
@@ -142,15 +145,15 @@ $(document).ready(function(){initNavTree('_termekek_repository_8cs_source.html',
 <div class="ttc" id="aclass_vegyes_bolt_1_1_repository_1_1_termekek_repository_html_a8607567e378ef81b3906a0d709f3914e"><div class="ttname"><a href="class_vegyes_bolt_1_1_repository_1_1_termekek_repository.html#a8607567e378ef81b3906a0d709f3914e">VegyesBolt.Repository.TermekekRepository.Elements</a></div><div class="ttdeci">IList&lt; Termekek &gt; Elements</div><div class="ttdef"><b>Definition:</b> <a href="_termekek_repository_8cs_source.html#l00019">TermekekRepository.cs:19</a></div></div>
 <div class="ttc" id="ainterface_vegyes_bolt_1_1_repository_1_1_i_termekek_repository_html"><div class="ttname"><a href="interface_vegyes_bolt_1_1_repository_1_1_i_termekek_repository.html">VegyesBolt.Repository.ITermekekRepository</a></div><div class="ttdoc">The repository for Termekek Table.</div><div class="ttdef"><b>Definition:</b> <a href="_i_termekek_repository_8cs_source.html#l00012">ITermekekRepository.cs:13</a></div></div>
 <div class="ttc" id="anamespace_system_1_1_collections_1_1_generic_html"><div class="ttname"><a href="namespace_system_1_1_collections_1_1_generic.html">Generic</a></div></div>
-<div class="ttc" id="anamespace_vegyes_bolt_1_1_data_html"><div class="ttname"><a href="namespace_vegyes_bolt_1_1_data.html">VegyesBolt.Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_megyek_8cs_source.html#l00015">Megyek.cs:16</a></div></div>
+<div class="ttc" id="anamespace_vegyes_bolt_1_1_data_html"><div class="ttname"><a href="namespace_vegyes_bolt_1_1_data.html">VegyesBolt.Data</a></div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_megyek_8cs_source.html#l00017">Megyek.cs:18</a></div></div>
 <div class="ttc" id="anamespace_vegyes_bolt_1_1_repository_html"><div class="ttname"><a href="namespace_vegyes_bolt_1_1_repository.html">VegyesBolt.Repository</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_megye_repository_8cs_source.html#l00005">IMegyeRepository.cs:6</a></div></div>
-<div class="ttc" id="anamespace_vegyes_bolt_html"><div class="ttname"><a href="namespace_vegyes_bolt.html">VegyesBolt</a></div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_megyek_8cs_source.html#l00015">Megyek.cs:16</a></div></div>
+<div class="ttc" id="anamespace_vegyes_bolt_html"><div class="ttname"><a href="namespace_vegyes_bolt.html">VegyesBolt</a></div><div class="ttdef"><b>Definition:</b> <a href="_auto_generated_models_2_megyek_8cs_source.html#l00017">Megyek.cs:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_e28d5905075542df77d28c3f510751cd.html">major</a></li><li class="navelem"><a class="el" href="dir_ea39b7996e501ce9df9e46dad8ddf87c.html">source</a></li><li class="navelem"><a class="el" href="dir_11eb28f215677aff04c591875076a377.html">repos</a></li><li class="navelem"><a class="el" href="dir_ec6762af005d4c1e3f32305068478482.html">OENIK_PROG4HF_2021_1_I1NHXG</a></li><li class="navelem"><a class="el" href="dir_c9e06496ec1224c7123d7a4c8848bf0a.html">VegyesBolt.Repository</a></li><li class="navelem"><b>TermekekRepository.cs</b></li>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_da92606663f4ecb03aa66c183f15dac3.html">repos</a></li><li class="navelem"><a class="el" href="dir_e47c469938e7590f0af9989de1706561.html">OENIK_PROG4HF_2021_1_I1NHXG</a></li><li class="navelem"><a class="el" href="dir_da69a155601b9302238237b10ec0dae5.html">VegyesBolt.Repository</a></li><li class="navelem"><b>TermekekRepository.cs</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
