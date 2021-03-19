@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿// <copyright file="MegyeController.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
 
 namespace Vegyesbolt.MVC.Controllers
 {
-    public class HomeController1 : Controller
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+
+    public class MegyeController : Controller
     {
         // GET: HomeController1
         public ActionResult Index()
