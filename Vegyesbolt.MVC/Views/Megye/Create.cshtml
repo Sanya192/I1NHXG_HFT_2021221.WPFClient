@@ -1,0 +1,51 @@
+﻿@model VegyesBolt.Data.Megyek
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Megye/MegyeLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Megyek</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nev" class="control-label"></label>
+                <input asp-for="Nev" class="form-control" />
+                <span asp-validation-for="Nev" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Szekhely" class="control-label"></label>
+                <input asp-for="Szekhely" class="form-control" />
+                <span asp-validation-for="Szekhely" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelepulesekSzama" class="control-label"></label>
+                <input asp-for="TelepulesekSzama" class="form-control" />
+                <span asp-validation-for="TelepulesekSzama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nepesseg" class="control-label"></label>
+                <input asp-for="Nepesseg" class="form-control" />
+                <span asp-validation-for="Nepesseg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Terulet" class="control-label"></label>
+                <input asp-for="Terulet" class="form-control" />
+                <span asp-validation-for="Terulet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

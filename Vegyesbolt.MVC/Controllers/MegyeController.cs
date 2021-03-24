@@ -10,19 +10,28 @@ namespace Vegyesbolt.MVC.Controllers
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using Vegyesbolt.MVC.Models;
+    using VegyesBolt.Data;
+    using VegyesBolt.Logic;
 
     public class MegyeController : Controller
     {
         // GET: HomeController1
+        private static Worker worker = VegyesBoltModelConnector.Worker;
+
+        /// <summary>
+        /// The index of the controller.
+        /// </summary>
+        /// <returns>An actionResult.</returns>
         public ActionResult Index()
         {
-            return View();
+            return this.View(worker.GetMegyek());
         }
 
         // GET: HomeController1/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return this.View(worker.GetMegye(id));
         }
 
         // GET: HomeController1/Create
@@ -34,15 +43,16 @@ namespace Vegyesbolt.MVC.Controllers
         // POST: HomeController1/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Megyek megye)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                worker.CreateMegye(megye);
+                return this.RedirectToAction(nameof(this.Index));
             }
             catch
             {
-                return View();
+                return this.View();
             }
         }
 
