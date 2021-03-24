@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vegyesbolt.MVC</name>
+    </assembly>
+    <members>
+        <member name="M:Vegyesbolt.MVC.Controllers.MegyeController.Index">
+            <summary>
+            The index of the controller.
+            </summary>
+            <returns>An actionResult.</returns>
+        </member>
+        <member name="T:Vegyesbolt.MVC.Models.VegyesBoltModelConnector">
+            <summary>
+            A class to manage the Logic of the application between controllers.
+            </summary>
+        </member>
+    </members>
+</doc>

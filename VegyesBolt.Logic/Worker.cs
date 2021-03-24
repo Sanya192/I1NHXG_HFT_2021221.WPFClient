@@ -49,25 +49,25 @@ namespace VegyesBolt.Logic
         /// <inheritdoc/>
         public Megyek GetMegye(int id)
         {
-            return this.MegyeRepository.Elements[id];
+            return this.MegyeRepository.Elements[id - 1];
         }
 
         /// <inheritdoc/>
         public Termekek GetTermek(int id)
         {
-            return this.TermekekRepository.Elements[id];
+            return this.TermekekRepository.Elements[id - 1];
         }
 
         /// <inheritdoc/>
         public Vasarlok GetVasarlo(int id)
         {
-            return this.VasarlokRepository.Elements[id];
+            return this.VasarlokRepository.Elements[id - 1];
         }
 
         /// <inheritdoc/>
         public Vasarlasok GetVasarlas(int id)
         {
-            return this.VasarlasokRepository.Elements[id];
+            return this.VasarlasokRepository.Elements[id - 1];
         }
 
         /// <inheritdoc/>
@@ -75,6 +75,11 @@ namespace VegyesBolt.Logic
         {
             try
             {
+                if (create != null)
+                {
+                    create.Id = this.GetMegyek().OrderBy(p => p.Id).Last().Id + 1;
+                }
+
                 this.MegyeRepository.Create(create);
             }
             catch (Exception)
@@ -90,6 +95,11 @@ namespace VegyesBolt.Logic
         {
             try
             {
+                if (create != null)
+                {
+                    create.Id = this.GetTermekek().OrderBy(p => p.Id).Last().Id + 1;
+                }
+
                 this.TermekekRepository.Create(create);
             }
             catch (Exception)
@@ -105,7 +115,10 @@ namespace VegyesBolt.Logic
         {
             try
             {
-                this.VasarlasokRepository.Create(create);
+                if (create != null)
+                {
+                    this.VasarlasokRepository.Create(create);
+                }
             }
             catch (Exception)
             {
@@ -120,6 +133,11 @@ namespace VegyesBolt.Logic
         {
             try
             {
+                if (create != null)
+                {
+                    create.Id = this.GetVasarlok().OrderBy(p => p.Id).Last().Id + 1;
+                }
+
                 this.VasarlokRepository.Create(create);
             }
             catch (Exception)
