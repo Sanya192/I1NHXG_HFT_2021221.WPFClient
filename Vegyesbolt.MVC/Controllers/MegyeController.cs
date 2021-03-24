@@ -26,6 +26,7 @@ namespace Vegyesbolt.MVC.Controllers
         /// The index of the controller.
         /// </summary>
         /// <returns>The index view.</returns>
+        [HttpGet]
         public ActionResult Index()
         {
             return this.View(worker.GetMegyek());
@@ -37,6 +38,7 @@ namespace Vegyesbolt.MVC.Controllers
         /// <param name="id">The id of the Megye.</param>
         /// <returns>The view of the details.</returns>
         // GET: HomeController1/Details/5
+        [HttpGet]
         public ActionResult Details(int id)
         {
             return this.View(worker.GetMegye(id));
@@ -47,6 +49,7 @@ namespace Vegyesbolt.MVC.Controllers
         /// </summary>
         /// <returns>The view of megye creation.</returns>
         // GET: HomeController1/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return this.View();
@@ -79,6 +82,7 @@ namespace Vegyesbolt.MVC.Controllers
         /// <param name="id">The ID of edited Megye.</param>
         /// <returns>The view of edition.</returns>
         // GET: HomeController1/Edit/5
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             return this.View(worker.GetMegye(id));
@@ -111,6 +115,8 @@ namespace Vegyesbolt.MVC.Controllers
         /// <param name="id">The id of the megye.</param>
         /// <returns>The view of the delete.</returns>
         // GET: HomeController1/Delete/5
+        [HttpGet]
+
         public ActionResult Delete(int id)
         {
             return this.View(worker.GetMegye(id));

@@ -22,6 +22,7 @@ namespace Vegyesbolt.MVC.Controllers
         /// The index page.
         /// </summary>
         /// <returns>The view of the index.</returns>
+        [HttpGet]
         public IActionResult Index()
         {
             return this.View();
@@ -31,6 +32,7 @@ namespace Vegyesbolt.MVC.Controllers
         /// If there is an error this page handles it.
         /// </summary>
         /// <returns>The view of the error.</returns>
+        [HttpGet]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
