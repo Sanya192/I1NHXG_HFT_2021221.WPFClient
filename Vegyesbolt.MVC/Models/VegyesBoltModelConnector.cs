@@ -1,4 +1,8 @@
-﻿namespace Vegyesbolt.MVC.Models
+﻿// <copyright file="VegyesBoltModelConnector.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
+
+namespace Vegyesbolt.MVC.Models
 {
     using System;
     using System.Collections.Generic;
@@ -11,6 +15,9 @@
     /// </summary>
     public static class VegyesBoltModelConnector
     {
-        public static Worker Worker = new Worker();
+        /// <summary>
+        /// Gets the worker.
+        /// </summary>
+        public static Worker Worker => new Worker();
     }
 }
