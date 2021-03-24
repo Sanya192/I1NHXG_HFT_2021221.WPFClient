@@ -59,16 +59,17 @@ namespace Vegyesbolt.MVC.Controllers
         // GET: HomeController1/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(worker.GetMegye(id));
         }
 
         // POST: HomeController1/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Megyek megye)
         {
             try
             {
+                worker.UpdateMegye(megye);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -80,7 +81,7 @@ namespace Vegyesbolt.MVC.Controllers
         // GET: HomeController1/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(worker.GetMegye(id));
         }
 
         // POST: HomeController1/Delete/5
