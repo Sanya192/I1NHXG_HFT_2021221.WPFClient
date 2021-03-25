@@ -11,10 +11,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: checkout
-      uses: actions/checkout@v2
-      env:
-        message: ${{ github.event.head_commit.message }}
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
@@ -44,6 +40,6 @@ jobs:
           # Should this release be marked as a pre-release?
           #prerelease: # optional, default is true
           # Release title (for automatic releases)
-          title: "${{env.message}}"
+          title: Latest automatic build
           # Assets to upload to the release
           files: build.zip
