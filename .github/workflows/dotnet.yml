@@ -24,9 +24,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore -o build
-    - uses: montudor/action-zip@v0.1.1
+    - uses: papeloto/action-zip@v1
       with:
-        args: zip -qq -r build.zip build
+          files: build/ 
+          dest: build.zip
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Automatic Releases
