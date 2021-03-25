@@ -24,6 +24,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore -o build
+    - uses: montudor/action-zip@v0.1.1
+      with:
+        args: zip -qq -r build.zip build
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Automatic Releases
@@ -38,6 +41,6 @@ jobs:
           # Should this release be marked as a pre-release?
           #prerelease: # optional, default is true
           # Release title (for automatic releases)
-          title: $message
+          title: env.message
           # Assets to upload to the release
-          files: build/*
+          files: build.zip
