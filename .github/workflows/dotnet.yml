@@ -11,7 +11,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: checkout
+      uses: actions/checkout@v2
+      env:
+        message: ${{ github.event.head_commit.message }}
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
@@ -19,6 +22,21 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore -o build
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Automatic Releases
+      uses: marvinpinto/action-automatic-releases@v1.1.1
+      with:
+          # GitHub secret token
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          # Git tag (for automatic releases)
+          automatic_release_tag: latestdev
+          # Should this release be marked as a draft?
+          #draft: # optional
+          # Should this release be marked as a pre-release?
+          #prerelease: # optional, default is true
+          # Release title (for automatic releases)
+          title: $message
+          # Assets to upload to the release
+          files: build/*
