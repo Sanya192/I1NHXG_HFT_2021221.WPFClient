@@ -1,10 +1,10 @@
-name: GitStatLatestRelease
+name: LatestRelease
 
 on:
   push:
-    branches: [ ReleaseForGitStat ]
+    branches: [ Release ]
   pull_request:
-    branches: [ ReleaseForGitStat ]
+    branches: [ Release ]
 jobs:
   build:
 
