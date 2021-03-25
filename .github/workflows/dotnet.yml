@@ -25,7 +25,7 @@ jobs:
     - name: Build UI
       run: dotnet build VegyesBolt.UI/VegyesBolt.UI.csproj --no-restore -o build/UI
     - name: Build MVC
-      run: dotnet build VegyesBolt.UI/VegyesBolt.MVC.csproj --no-restore -o build/MVC
+      run: dotnet build VegyesBolt.MVC/VegyesBolt.MVC.csproj --no-restore -o build/MVC
     - uses: papeloto/action-zip@v1
       with:
           files: build/ 
