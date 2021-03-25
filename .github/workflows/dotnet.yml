@@ -22,8 +22,10 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore -o build
+    - name: Build UI
+      run: dotnet build VegyesBolt.UI/VegyesBolt.UI.csproj --no-restore -o build/UI
+    - name: Build MVC
+      run: dotnet build VegyesBolt.UI/VegyesBolt.MVC.csproj --no-restore -o build/MVC
     - uses: papeloto/action-zip@v1
       with:
           files: build/ 
@@ -42,6 +44,6 @@ jobs:
           # Should this release be marked as a pre-release?
           #prerelease: # optional, default is true
           # Release title (for automatic releases)
-          title: env.message
+          title: "${{env.message}}"
           # Assets to upload to the release
           files: build.zip
