@@ -1,10 +1,9 @@
-name: .NET
+name: VersionRelease
 
 on:
   push:
-    branches: [ ReleaseForGitStat ]
-  pull_request:
-    branches: [ ReleaseForGitStat ]
+    tags:
+        - "v*"
 jobs:
   build:
 

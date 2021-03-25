@@ -1,0 +1,45 @@
+name: GitStatLatestRelease
+
+on:
+  push:
+    branches: [ ReleaseForGitStat ]
+  pull_request:
+    branches: [ ReleaseForGitStat ]
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build UI
+      run: dotnet build VegyesBolt.UI/VegyesBolt.UI.csproj --no-restore -o build/UI
+    - name: Build MVC
+      run: dotnet build VegyesBolt.MVC/VegyesBolt.MVC.csproj --no-restore -o build/MVC
+    - uses: papeloto/action-zip@v1
+      with:
+          files: build/ 
+          dest: build.zip
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    - name: Automatic Releases
+      uses: marvinpinto/action-automatic-releases@v1.1.1
+      with:
+          # GitHub secret token
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          # Git tag (for automatic releases)
+          automatic_release_tag: GitHubRelease
+          # Should this release be marked as a draft?
+          #draft: # optional
+          # Should this release be marked as a pre-release?
+          #prerelease: # optional, default is true
+          # Release title (for automatic releases)
+          title: Latest build for GitStat
+          # Assets to upload to the release
+          files: build.zip
