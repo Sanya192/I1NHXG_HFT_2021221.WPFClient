@@ -14,4 +14,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VegyesBolt.Data\VegyesBolt.Data.csproj" />
+    <ProjectReference Include="..\VegyesBolt.Logic\VegyesBolt.Logic.csproj" />
+  </ItemGroup>
+
 </Project>
