@@ -1,5 +1,5 @@
 class HtmlCreator {
-    static rest = new RestHandler("https://localhost", 7207);
+  static rest = new RestHandler("https://localhost", 7207);
 
   static async DrawHTMLMegyek() {
     const megyek = await this.rest.fetchGetMegyek();
@@ -29,9 +29,9 @@ class HtmlCreator {
                         <td><button class="btn btn-outline-info" data-megye-id="${
                           element.id
                         }">${HtmlResources.editIcon}</button></td>
-                        <td><button class="btn btn-outline-danger" data-megye-id="${
+                        <td><button class="btn btn-outline-danger" onclick="HtmlCreator.DeleteMegye(${
                           element.id
-                        }">${HtmlResources.deleteIcon}
+                        })" ">${HtmlResources.deleteIcon}
                         </button></td>
                     </tr>`
                       )
@@ -40,8 +40,7 @@ class HtmlCreator {
             </table>`;
   }
 
-  static async DeleteMegye(id){
-      const request = await this.rest.fetchGetMegyek();
-
+  static async DeleteMegye(id) {
+    await this.rest.fetchDeleteMegye(id).then(() => loaded());
   }
 }

@@ -14,6 +14,12 @@ class RestHandler {
     return await (await response).json();
   }
 
+  async fetchDeleteSomething(args) {
+    const response = fetch(`${this._getApiUrl()}/${args}`, {
+      method: "DELETE",
+    });
+    return (await response).status;
+  }
 
   /**
    *
@@ -25,4 +31,7 @@ class RestHandler {
     );
   }
 
+  async fetchDeleteMegye(id) {
+    return this.fetchDeleteSomething(`Megye/${id}`);
+  }
 }
