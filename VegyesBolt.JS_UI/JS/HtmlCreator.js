@@ -1,18 +1,47 @@
- class HtmlCreator{
-    static rest=new RestHandler("https://localhost",7207);
-    static async CreateHTMLMegyek(){
-        const megyek=(await this.rest.fetchGetMegyek());
-        return `
-            <div class="container">
-            ${megyek.map((element)=>`
-                <div class="row">
-                ${Array.from(element,x=>`
-                    <div class="col-sm">${x.getValue()}</div>`)} 
-                </div>`)}
-            </div>
-             `;
-    }
-    static {
-        console.log(`${this.name} is a static class`);
-    }
+class HtmlCreator {
+    static rest = new RestHandler("https://localhost", 7207);
+
+  static async DrawHTMLMegyek() {
+    const megyek = await this.rest.fetchGetMegyek();
+    return `
+            <table class="table ">
+                <thead class="thead-dark">
+                    <tr>
+                        ${MegyeHandler.header
+                          .map(
+                            (element) => `
+                            <th scope="col">${element}</th>`
+                          )
+                          .join("")} 
+                         <th scope="col"></th>
+                         <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${megyek
+                      .map(
+                        (element) => `
+                    <tr id="#megye-${element.id}">
+                        ${Array.from(
+                          element,
+                          (x) => `<td>${x.getValue()}</td>`
+                        ).join("")}
+                        <td><button class="btn btn-outline-info" data-megye-id="${
+                          element.id
+                        }">${HtmlResources.editIcon}</button></td>
+                        <td><button class="btn btn-outline-danger" data-megye-id="${
+                          element.id
+                        }">${HtmlResources.deleteIcon}
+                        </button></td>
+                    </tr>`
+                      )
+                      .join("")}
+                </tbody>
+            </table>`;
+  }
+
+  static async DeleteMegye(id){
+      const request = await this.rest.fetchGetMegyek();
+
+  }
 }
