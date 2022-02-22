@@ -64,7 +64,7 @@ namespace VegyesBolt.Data
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Vegyesbolt.mdf;Integrated Security=True");
-                optionsBuilder.UseLazyLoadingProxies();
+               // optionsBuilder.UseLazyLoadingProxies();
             }
         }
 
