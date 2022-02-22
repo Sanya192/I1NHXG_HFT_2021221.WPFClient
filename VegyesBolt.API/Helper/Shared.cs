@@ -1,9 +1,16 @@
-﻿using VegyesBolt.Logic;
+﻿// <copyright file="Shared.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
 
 namespace VegyesBolt.API.Helper
 {
-    public static class Shared
+    using VegyesBolt.Logic;
+
+    /// <summary>
+    /// A class which made for shared values and methods.
+    /// </summary>
+    internal static class Shared
     {
-        public static Worker Worker=new();
+        internal static Worker Worker => new();
     }
 }

@@ -1,46 +1,45 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using VegyesBolt.API.Helper;
-using VegyesBolt.Data;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+﻿// <copyright file="MegyeController.cs" company="MSanyi">
+// Copyright (c) MSanyi.All rights reserved.
+// </copyright>
 
 namespace VegyesBolt.API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class MegyeController : ControllerBase
+    using Microsoft.AspNetCore.Mvc;
+    using VegyesBolt.API.Helper;
+    using VegyesBolt.Data;
+
+    /// <inheritdoc/>
+    public class MegyeController : BaseController<Megyek>
     {
-        // GET: api/<MegyeController>
-        [HttpGet]
-        public IEnumerable<Megyek> Get()
+        /// <inheritdoc/>.
+        public override IEnumerable<Megyek> Get()
         {
             return Shared.Worker.GetMegyek();
         }
 
-        // GET api/<MegyeController>/5
-        [HttpGet("{id}")]
-        public Megyek Get(int id)
+        /// <inheritdoc/>.
+        public override Megyek Get(int id)
         {
             return Shared.Worker.GetMegye(id);
         }
 
-        // POST api/<MegyeController>
-        [HttpPost]
-        public void Post([FromBody] Megyek megye)
+        /// <inheritdoc/>.
+        public override void Post([FromBody] Megyek megye)
         {
             Shared.Worker.UpdateMegye(megye);
         }
 
-        // PUT api/<MegyeController>/5
-        [HttpPut()]
-        public void Put([FromBody] Megyek value)
+        /// <inheritdoc/>.
+        public override void Put([FromBody] Megyek value)
         {
-            Shared.Worker.CreateMegye(value);
+            if (Shared.Worker.CreateMegye(value))
+                this.Response.StatusCode = 201;
+            else
+                this.Response.StatusCode = 500;
         }
 
-        // DELETE api/<MegyeController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        /// <inheritdoc/>.
+        public override void Delete(int id)
         {
             Shared.Worker.DeleteMegyek(new Megyek() { Id = id });
         }

@@ -11,6 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.Logic", "VegyesB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F3805604-A234-4F75-BA46-BB131AA9C02B}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		stylecop.json = stylecop.json
 		TODO.txt = TODO.txt
 	EndProjectSection
@@ -19,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.UI", "VegyesBolt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegyesbolt.MVC", "Vegyesbolt.MVC\Vegyesbolt.MVC.csproj", "{D00B7A16-7C4D-46CB-AA0A-FB4A5F4C9C96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegyesBolt.API", "VegyesBolt.API\VegyesBolt.API.csproj", "{D8BDA913-09BA-45F0-AB95-C460C4284B95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.API", "VegyesBolt.API\VegyesBolt.API.csproj", "{D8BDA913-09BA-45F0-AB95-C460C4284B95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
