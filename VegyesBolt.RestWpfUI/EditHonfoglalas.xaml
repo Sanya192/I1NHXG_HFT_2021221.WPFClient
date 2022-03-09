@@ -1,0 +1,36 @@
+﻿<Window x:Class="VegyesBolt.UI.EditHonfoglalas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VegyesBolt.UI" xmlns:customcontrols="clr-namespace:VegyesBolt.UI.CustomControls" xmlns:viewmodel="clr-namespace:VegyesBolt.UI.ViewModel"
+        mc:Ignorable="d"
+        Title="EditHonfoglalas" Height="721" Width="476">
+    <Window.DataContext>
+        <viewmodel:HonfoglaloViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition/>
+            <RowDefinition Height=".1*"/>
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36">Megye szerkesztése</Label>
+        <UniformGrid Grid.Row="1" Columns="2">
+            <Label>Név</Label>
+            <TextBox Text="{Binding Path=Nev}"/>
+            <Label>Székhely</Label>
+            <TextBox Text="{Binding Path=Szekhely}"/>
+            <Label>Települések száma</Label>
+            <customcontrols:NumbersOnlyTextbox Text="{Binding Path=TelepulesekSzama}"/>
+            <Label>Népesség</Label>
+            <customcontrols:NumbersOnlyTextbox Text="{Binding Path=Nepesseg}"/>
+            <Label>Terulet</Label>
+            <customcontrols:NumbersOnlyTextbox Text="{Binding Path=Terulet}"/>
+        </UniformGrid>
+        <UniformGrid Grid.Row="2">
+            <Button Name="Save" Click="Save_Click">Save</Button>
+            <Button Name="Cancel" Click="Cancel_Click">Cancel</Button>
+        </UniformGrid>
+    </Grid>
+</Window>

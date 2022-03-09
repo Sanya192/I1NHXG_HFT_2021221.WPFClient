@@ -1,0 +1,38 @@
+﻿<Window x:Class="VegyesBolt.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VegyesBolt.UI"
+        xmlns:viewmodel="clr-namespace:VegyesBolt.UI.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+       
+        >
+    <Window.DataContext>
+        <viewmodel:BoltViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition/>
+            <RowDefinition Height=".3*"/>
+        </Grid.RowDefinitions>
+        <!-- Table Buttons-->
+        <UniformGrid Grid.Row="0" Columns="4">
+            <Button Grid.Column="0" Content="Megyék" Name="MegyeButton" Click="MegyeButton_Click"/>
+            <Button Grid.Column="1" Content="Vásárlók" Name="VasarloButton" Click="VasarloButton_Click"/>
+            <Button Grid.Column="2" Content="Termékek" Name="TermekButton" Click="TermekButton_Click"/>
+            <Button Grid.Column="3" Content="Vásárlások" Name="VasarlasButton" Click="VasarlasButton_Click"/>
+        </UniformGrid>
+        <!---->
+        <ListBox Grid.Row="1" SelectedIndex="{Binding Path=SelectedItem}" ItemsSource="{Binding Path=AllCurrentToString}">
+
+        </ListBox>
+        <UniformGrid Grid.Row="2" Columns="3">
+            <Button Grid.Column="0" Content="Add" Name="AddButton" Click="AddButton_Click"/>
+            <Button Grid.Column="1" Content="Update" Name="UpdateButton" Click="UpdateButton_Click"/>
+            <Button Grid.Column="2" Content="Delete" Name="DeleteButton" Click="DeleteButton_Click"/>
+        </UniformGrid>
+    </Grid>
+</Window>

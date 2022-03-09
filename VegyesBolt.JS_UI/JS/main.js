@@ -19,5 +19,8 @@ function loaded() {
   HtmlCreator.DrawHTMLMegyek().then(
     (x) => (document.getElementById("MegyePlacement").innerHTML = x)
   );
+  HtmlCreator.CreateMegyeModal().then(
+      (x) =>{document.getElementById("form-modal").innerHTML=x}
+  )
 }
 console.log("lol");
