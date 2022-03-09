@@ -11,6 +11,7 @@ namespace VegyesBolt.UI.ViewModel
     using System.Text;
     using VegyesBolt.Data;
     using VegyesBolt.Logic;
+    using VegyesBolt.RestWpfUi.Logic;
     using VegyesBolt.UI.Logic;
 
     /// <summary>
@@ -26,7 +27,7 @@ namespace VegyesBolt.UI.ViewModel
         /// </summary>
         public BoltViewModel()
         {
-            this.Worker = new Worker();
+            this.Worker = new RestWorker();
             this.SelectedTable = Tables.Megyek;
             this.selectedItem = 0;
         }
@@ -70,7 +71,7 @@ namespace VegyesBolt.UI.ViewModel
         /// </summary>
         public int SelectedItem
         {
-            get => this.selectedItem + 1; set
+            get => this.selectedItem ; set
             {
                 if (value <= 0)
                 {
@@ -78,7 +79,7 @@ namespace VegyesBolt.UI.ViewModel
                 }
                 else
                 {
-                    this.selectedItem = value - 1;
+                    this.selectedItem = value ;
                 }
 
                 this.OnPropertyChanged();
@@ -103,7 +104,7 @@ namespace VegyesBolt.UI.ViewModel
             }
         }
 
-        private Worker Worker { get; }
+        private ILogic Worker { get; }
 
         private List<Megyek> MegyekList { get => this.Worker.GetMegyek(); }
 

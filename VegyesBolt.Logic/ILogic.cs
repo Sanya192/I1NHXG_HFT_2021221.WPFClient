@@ -10,7 +10,7 @@ namespace VegyesBolt.Logic
     /// <summary>
     /// The Logic interface.
     /// </summary>
-    internal interface ILogic
+    public interface ILogic
     {
         /// <summary>
         /// Gets all Megye.

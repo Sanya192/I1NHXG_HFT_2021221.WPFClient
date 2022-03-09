@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VegyesBolt.RestWpfUi</name>
+    </assembly>
+    <members>
+        <member name="T:VegyesBolt.UI.App">
+            <summary>
+            Interaction logic for App.xaml.
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.UI.CustomControls.NumbersOnlyTextbox">
+            <summary>
+            A textbox allowing only Numbers.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.CustomControls.NumbersOnlyTextbox.OnPreviewTextInput(System.Windows.Input.TextCompositionEventArgs)">
+            <summary>
+            If the text is other than what Regex is allows then the event won't proceed.
+            </summary>
+            <param name="e">The input arguments.</param>
+        </member>
+        <member name="T:VegyesBolt.UI.EditHonfoglalas">
+            <summary>
+            Interaction logic for EditHonfoglalas.xaml.
+            </summary>
+            <summary>
+            EditHonfoglalas
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.EditHonfoglalas.#ctor(VegyesBolt.Data.Megyek)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.EditHonfoglalas"/> class.
+            </summary>
+            <param name="megye">The megye which is edited.Optional.</param>
+        </member>
+        <member name="M:VegyesBolt.UI.EditHonfoglalas.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.UI.Logic.Tables">
+            <summary>
+                An enum which has all of the possible tables.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.Logic.Tables.Megyek">
+            <summary>
+                The Megyek table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.Logic.Tables.Vasarlok">
+            <summary>
+                The Vasarlok table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.Logic.Tables.Termekek">
+            <summary>
+                The Termekek table.
+            </summary>
+        </member>
+        <member name="F:VegyesBolt.UI.Logic.Tables.Vasarlasok">
+            <summary>
+                The vasarlasok table.
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.UI.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml.
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.MainWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.MainWindow"/> class.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.MainWindow.#ctor(VegyesBolt.UI.ViewModel.BoltViewModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.MainWindow"/> class.
+            </summary>
+            <param name="model">The Boltmodel Datacontext.</param>
+        </member>
+        <member name="M:VegyesBolt.UI.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.UI.ViewModel.BoltViewModel">
+            <summary>
+            The ViewModel For the APP.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.BoltViewModel"/> class.
+            </summary>
+        </member>
+        <member name="E:VegyesBolt.UI.ViewModel.BoltViewModel.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.AllCurrentToString">
+            <summary>
+            Gets all of the current items as String.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.SelectedTable">
+            <summary>
+            Gets or sets the currently selected table.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.SelectedItem">
+            <summary>
+            Gets or sets the currently selected item.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.BoltViewModel.SelectedObject">
+            <summary>
+            Gets the currently selected object.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.DeleteCurrent">
+            <summary>
+            Delete the currently selected object.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.SaveCurrent(VegyesBolt.Data.Megyek,System.Boolean)">
+            <summary>
+            Saves the current megye. Not Implemented for other things.
+            </summary>
+            <param name="megyek">The edited megye.</param>
+            <param name="uje"><see langword="true"/>if its new.</param>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.OnPropertyChanged(System.String)">
+            <summary>
+            Create the OnPropertyChanged method to raise the event
+            The calling member's name will be used as the parameter.
+            </summary>
+            <param name="name">The property name.</param>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.ShowAll">
+            <summary>
+            Shows all members of the currently selected table.
+            </summary>
+            <returns>all members of the currently table.</returns>
+        </member>
+        <member name="T:VegyesBolt.UI.ViewModel.HonfoglaloViewModel">
+            <summary>
+            Ezzel kezeljük a megye tablat.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.HonfoglaloViewModel"/> class.
+            The standard method for creating a megye.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.#ctor(VegyesBolt.Data.Megyek)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VegyesBolt.UI.ViewModel.HonfoglaloViewModel"/> class.
+            The standard method for editing a megye.
+            </summary>
+            <param name="editedMegye">The megye needs to be edited.</param>
+        </member>
+        <member name="T:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.MegyeDelegate">
+            <summary>
+            A delegate for megye Input Events.
+            </summary>
+            <param name="megye">The edited megye.</param>
+            <param name="uje">True if new.</param>
+        </member>
+        <member name="E:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.OnSave">
+            <summary>
+            An event which fires if saved.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.Nev">
+            <summary>
+            Gets or sets the edited name.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.Szekhely">
+            <summary>
+            Gets or sets the edited szekhely.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.TelepulesekSzama">
+            <summary>
+            Gets or sets the edited town numbers.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.Nepesseg">
+            <summary>
+            Gets or sets the edited pops numbers.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.Terulet">
+            <summary>
+            Gets or sets the edited size.
+            </summary>
+        </member>
+        <member name="P:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.EditedMegye">
+            <summary>
+            Gets or sets the currently edited megye.
+            </summary>
+        </member>
+        <member name="M:VegyesBolt.UI.ViewModel.HonfoglaloViewModel.Save">
+            <summary>
+            It saves the thingy.
+            </summary>
+        </member>
+        <member name="T:VegyesBolt.RestWpfUi.Logic.RestWorker">
+            <summary>
+            A Rest Implementation of the Logic interface. It communicates with a JSON API.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
