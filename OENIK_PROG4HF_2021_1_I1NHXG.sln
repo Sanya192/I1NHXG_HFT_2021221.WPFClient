@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vegyesbolt.MVC", "Vegyesbol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.API", "VegyesBolt.API\VegyesBolt.API.csproj", "{D8BDA913-09BA-45F0-AB95-C460C4284B95}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegyesBolt.RestWpfUi", "VegyesBolt.RestWpfUI\VegyesBolt.RestWpfUi.csproj", "{C84F653D-5AEC-4E6E-8D6B-3E47963EC06E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{D8BDA913-09BA-45F0-AB95-C460C4284B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8BDA913-09BA-45F0-AB95-C460C4284B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8BDA913-09BA-45F0-AB95-C460C4284B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84F653D-5AEC-4E6E-8D6B-3E47963EC06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84F653D-5AEC-4E6E-8D6B-3E47963EC06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84F653D-5AEC-4E6E-8D6B-3E47963EC06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84F653D-5AEC-4E6E-8D6B-3E47963EC06E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
