@@ -49,19 +49,19 @@ namespace VegyesBolt.Logic
         /// <inheritdoc/>
         public Megyek GetMegye(int id)
         {
-            return this.MegyeRepository.Elements[id - 1];
+            return this.MegyeRepository.Elements[id];
         }
 
         /// <inheritdoc/>
         public Termekek GetTermek(int id)
         {
-            return this.TermekekRepository.Elements[id - 1];
+            return this.TermekekRepository.Elements[id];
         }
 
         /// <inheritdoc/>
         public Vasarlok GetVasarlo(int id)
         {
-            return this.VasarlokRepository.Elements[id - 1];
+            return this.VasarlokRepository.Elements[id];
         }
 
         /// <inheritdoc/>

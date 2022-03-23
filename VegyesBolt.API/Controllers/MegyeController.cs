@@ -26,12 +26,14 @@ namespace VegyesBolt.API.Controllers
         /// <inheritdoc/>.
         public override void Post([FromBody] Megyek megye)
         {
+            base.Post(megye);
             Shared.Worker.UpdateMegye(megye);
         }
 
         /// <inheritdoc/>.
         public override void Put([FromBody] Megyek value)
         {
+            base.Put(value);
             if (Shared.Worker.CreateMegye(value))
                 this.Response.StatusCode = 201;
             else
@@ -41,6 +43,7 @@ namespace VegyesBolt.API.Controllers
         /// <inheritdoc/>.
         public override void Delete(int id)
         {
+            base.Delete(id);
             Shared.Worker.DeleteMegyek(new Megyek() { Id = id });
         }
     }

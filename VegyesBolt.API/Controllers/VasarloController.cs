@@ -14,6 +14,7 @@ namespace VegyesBolt.API.Controllers
         /// <inheritdoc/>.
         public override void Delete(int id)
         {
+            base.Delete(id);
             Shared.Worker.DeleteVasarlo(new Vasarlok() { Id = id });
         }
 
@@ -32,12 +33,14 @@ namespace VegyesBolt.API.Controllers
         /// <inheritdoc/>.
         public override void Post([FromBody] Vasarlok value)
         {
+            base.Post(value);
             Shared.Worker.UpdateVasarlo(value);
         }
 
         /// <inheritdoc/>.
         public override void Put([FromBody] Vasarlok value)
         {
+            base.Put(value);
             if (Shared.Worker.CreateVasarlo(value))
             this.Response.StatusCode = 201;
             else

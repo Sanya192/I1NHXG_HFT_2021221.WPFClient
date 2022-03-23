@@ -5,6 +5,8 @@
 namespace VegyesBolt.API.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.SignalR;
+    using VegyesBolt.API.Services;
 
     /// <summary>
     /// Creates a Base ControllerClass from which the other cruds methods are derived.
@@ -14,6 +16,7 @@ namespace VegyesBolt.API.Controllers
     [ApiController]
     public abstract class BaseController<T> : ControllerBase
     {
+        IHubContext<SignalRHub> hub;
         /// <summary>
         /// Gets all of the entities of the <typeparamref name="T"/>.
         /// </summary>
@@ -34,7 +37,10 @@ namespace VegyesBolt.API.Controllers
         /// </summary>
         /// <param name="value">From the messagebody the object we edit. The ID should be the one we edit.</param>
         [HttpPost]
-        public abstract void Post([FromBody] T value);
+        public virtual void Post([FromBody] T value)
+        {
+            this.hub.Clients.All.SendAsync("Changed");
+        }
 
         /// <summary>
         /// Edits 1 of the entities of the <typeparamref name="T"/>.
@@ -42,13 +48,19 @@ namespace VegyesBolt.API.Controllers
         /// <param name="value">From the messagebody the object we edit. The ID doesn't matter.</param>
         [HttpPut]
         [ProducesResponseType(201)]
-        public abstract void Put([FromBody] T value);
+        public virtual void Put([FromBody] T value)
+        {
+            this.hub.Clients.All.SendAsync("Changed");
+        }
 
         /// <summary>
         /// Deletes 1 of the entities of the <typeparamref name="T"/>.
         /// </summary>
         /// <param name="id"> The ID should be the one we delete.</param>
         [HttpDelete("{id}")]
-        public abstract void Delete(int id);
+        public virtual void Delete(int id)
+        {
+            this.hub.Clients.All.SendAsync("Changed");
+        }
     }
 }

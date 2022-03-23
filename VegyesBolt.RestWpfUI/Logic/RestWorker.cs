@@ -17,7 +17,7 @@ namespace VegyesBolt.RestWpfUi.Logic
     {
         public RestWorker()
         {
-            this.RestClient = new RestClient(new Uri("https://localhost:5001/api/"));
+            this.RestClient = new RestClient(new Uri("https://localhost:7207/api/"));
         }
 
         public bool CreateMegye(Megyek create)

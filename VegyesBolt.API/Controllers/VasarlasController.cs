@@ -19,6 +19,7 @@ namespace VegyesBolt.API.Controllers
         [HttpDelete("{termekId}/{vasarloId}")]
         public void Delete(int termekId, int vasarloId)
         {
+            base.Delete(termekId);
             Shared.Worker.DeleteVasarlasok(new Vasarlasok() { TermekId = termekId, VasarloId = vasarloId });
         }
 

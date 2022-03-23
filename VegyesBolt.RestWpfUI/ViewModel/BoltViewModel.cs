@@ -4,6 +4,7 @@
 
 namespace VegyesBolt.UI.ViewModel
 {
+    using Microsoft.AspNetCore.SignalR.Client;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace VegyesBolt.UI.ViewModel
     using VegyesBolt.RestWpfUi.Logic;
     using VegyesBolt.UI.Logic;
 
+
     /// <summary>
     /// The ViewModel For the APP.
     /// </summary>
@@ -21,6 +23,7 @@ namespace VegyesBolt.UI.ViewModel
     {
         private Tables selectedTable;
         private int selectedItem;
+        private HubConnection connection;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BoltViewModel"/> class.
@@ -30,6 +33,16 @@ namespace VegyesBolt.UI.ViewModel
             this.Worker = new RestWorker();
             this.SelectedTable = Tables.Megyek;
             this.selectedItem = 0;
+            connection = new HubConnectionBuilder()
+               .WithUrl("https://localhost:7207/hub")
+               .WithAutomaticReconnect()
+               .Build();
+            this.connection.On<string>("Changed", (accounts) =>
+            {
+                this.Refresh();
+            });
+            //connection.StartAsync();
+
         }
 
         /// <inheritdoc/>
@@ -71,7 +84,7 @@ namespace VegyesBolt.UI.ViewModel
         /// </summary>
         public int SelectedItem
         {
-            get => this.selectedItem ; set
+            get => this.selectedItem; set
             {
                 if (value <= 0)
                 {
@@ -79,7 +92,7 @@ namespace VegyesBolt.UI.ViewModel
                 }
                 else
                 {
-                    this.selectedItem = value ;
+                    this.selectedItem = value;
                 }
 
                 this.OnPropertyChanged();
