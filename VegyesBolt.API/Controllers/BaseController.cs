@@ -39,7 +39,7 @@ namespace VegyesBolt.API.Controllers
         [HttpPost]
         public virtual void Post([FromBody] T value)
         {
-            this.hub.Clients.All.SendAsync("Changed");
+            this.hub?.Clients?.All?.SendAsync("Changed");
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace VegyesBolt.API.Controllers
         [ProducesResponseType(201)]
         public virtual void Put([FromBody] T value)
         {
-            this.hub.Clients.All.SendAsync("Changed");
+            this.hub?.Clients?.All?.SendAsync("Changed");
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace VegyesBolt.API.Controllers
         [HttpDelete("{id}")]
         public virtual void Delete(int id)
         {
-            this.hub.Clients.All.SendAsync("Changed");
+            this.hub?.Clients?.All?.SendAsync("Changed");
         }
     }
 }
