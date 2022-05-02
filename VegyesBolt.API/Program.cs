@@ -1,6 +1,8 @@
 // <copyright file="Program.cs" company="MSanyi">
 // Copyright (c) MSanyi.All rights reserved.
 // </copyright>
+using Microsoft.AspNet.SignalR;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using VegyesBolt.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,11 +15,15 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSignalR();
-
+builder.Services.AddCors();
 var app = builder.Build();
-app.UseCors(builder => builder.WithOrigins("*")
+
+app.UseCors(builder =>
+                        builder
                                 .AllowAnyMethod()
-                                .AllowAnyHeader());
+                                .AllowAnyHeader()
+                                .AllowAnyOrigin()
+                                );
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -26,10 +32,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
 app.MapHub<SignalRHub>("/hub");
+
 app.Run();

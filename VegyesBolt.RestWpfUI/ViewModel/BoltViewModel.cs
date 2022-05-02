@@ -5,6 +5,7 @@
 namespace VegyesBolt.UI.ViewModel
 {
     using Microsoft.AspNetCore.SignalR.Client;
+    using Microsoft.Toolkit.Mvvm.ComponentModel;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -19,7 +20,7 @@ namespace VegyesBolt.UI.ViewModel
     /// <summary>
     /// The ViewModel For the APP.
     /// </summary>
-    public class BoltViewModel : INotifyPropertyChanged
+    public class BoltViewModel : ObservableRecipient
     {
         private Tables selectedTable;
         private int selectedItem;
@@ -33,16 +34,16 @@ namespace VegyesBolt.UI.ViewModel
             this.Worker = new RestWorker();
             this.SelectedTable = Tables.Megyek;
             this.selectedItem = 0;
-            this.connection = new HubConnectionBuilder()
-               .WithUrl("https://localhost:7207/hub")
-               .WithAutomaticReconnect()
-               .Build();
-            this.connection.On<string>("Changed", (accounts) =>
-            {
-                this.Refresh();
-            });
+             connection = new HubConnectionBuilder()
+                .WithUrl("https://localhost:7207/hub")
+                .WithAutomaticReconnect()
+                .Build();
+             this.connection.On<string>("Changed", (accounts) =>
+             {
+                 this.Refresh();
+             });
             connection.StartAsync();
-            
+            (this.Worker as RestWorker).CollectionChanged += (a, b) => { this.Refresh(); };
         }
 
         /// <inheritdoc/>
@@ -174,15 +175,15 @@ namespace VegyesBolt.UI.ViewModel
             this.Refresh();
         }
 
-        /// <summary>
-        /// Create the OnPropertyChanged method to raise the event
-        /// The calling member's name will be used as the parameter.
-        /// </summary>
-        /// <param name="name">The property name.</param>
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
+        /* /// <summary>
+         /// Create the OnPropertyChanged method to raise the event
+         /// The calling member's name will be used as the parameter.
+         /// </summary>
+         /// <param name="name">The property name.</param>
+         protected void OnPropertyChanged([CallerMemberName] string name = null)
+         {
+             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+         }*/
 
         private void Refresh()
         {

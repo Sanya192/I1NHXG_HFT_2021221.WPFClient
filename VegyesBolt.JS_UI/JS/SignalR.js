@@ -1,6 +1,7 @@
 function setupSignalR() {
+    //Dat S was missing and I debugged it for a long time :(
     connection = new signalR.HubConnectionBuilder()
-        .withUrl("http://localhost:7207/hub")
+        .withUrl("http"+"s"+"://localhost:7207/hub")
         .configureLogging(signalR.LogLevel.Information)
         .build();
 
@@ -17,9 +18,9 @@ function setupSignalR() {
 async function start() {
     try {
         await connection.start();
-        log("SignalR Connected.");
+        console.log("SignalR Connected.");
     } catch (err) {
-        log(err);
+        console.log(err);
         setTimeout(start, 5000);
     }
 };

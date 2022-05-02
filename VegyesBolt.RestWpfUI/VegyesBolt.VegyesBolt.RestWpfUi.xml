@@ -146,13 +146,6 @@
             <param name="megyek">The edited megye.</param>
             <param name="uje"><see langword="true"/>if its new.</param>
         </member>
-        <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.OnPropertyChanged(System.String)">
-            <summary>
-            Create the OnPropertyChanged method to raise the event
-            The calling member's name will be used as the parameter.
-            </summary>
-            <param name="name">The property name.</param>
-        </member>
         <member name="M:VegyesBolt.UI.ViewModel.BoltViewModel.ShowAll">
             <summary>
             Shows all members of the currently selected table.

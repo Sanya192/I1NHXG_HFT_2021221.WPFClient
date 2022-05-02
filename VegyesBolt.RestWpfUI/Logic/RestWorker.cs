@@ -6,6 +6,7 @@ namespace VegyesBolt.RestWpfUi.Logic
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.Specialized;
     using RestSharp;
     using VegyesBolt.Data;
     using VegyesBolt.Logic;
@@ -15,9 +16,20 @@ namespace VegyesBolt.RestWpfUi.Logic
     /// </summary>
     internal class RestWorker : ILogic
     {
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
+        public NotifyService notifyService { get; private set; }
+
         public RestWorker()
         {
             this.RestClient = new RestClient(new Uri("https://localhost:7207/api/"));
+            /*CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            notifyService = new NotifyService("https://localhost:7207/hub");
+            notifyService.AddHandler("Changed", (object item) =>
+            {
+                CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            });
+            notifyService.Init();*/
+
         }
 
         public bool CreateMegye(Megyek create)
@@ -29,6 +41,7 @@ namespace VegyesBolt.RestWpfUi.Logic
                 var response = this.RestClient.PutAsync(request);
                 response.Wait();
                 var result = response.Result;
+                this.CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
                 return true;
             }
             catch (Exception e)
@@ -58,6 +71,7 @@ namespace VegyesBolt.RestWpfUi.Logic
             var response = this.RestClient.DeleteAsync(request);
             response.Wait();
             var result = response.Result;
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
             return true;
         }
 
@@ -67,6 +81,7 @@ namespace VegyesBolt.RestWpfUi.Logic
             var response = this.RestClient.DeleteAsync(request);
             response.Wait();
             var result = response.Result;
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
             return true;
         }
 
@@ -76,6 +91,8 @@ namespace VegyesBolt.RestWpfUi.Logic
             var response = this.RestClient.DeleteAsync(request);
             response.Wait();
             var result = response.Result;
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+
             return true;
         }
 
@@ -85,6 +102,8 @@ namespace VegyesBolt.RestWpfUi.Logic
             var response = this.RestClient.DeleteAsync(request);
             response.Wait();
             var result = response.Result;
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+
             return true;
         }
 

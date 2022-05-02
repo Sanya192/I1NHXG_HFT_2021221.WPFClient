@@ -4,6 +4,7 @@
 
 namespace VegyesBolt.API.Controllers
 {
+    using Microsoft.AspNet.SignalR.Infrastructure;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.SignalR;
     using VegyesBolt.API.Services;
@@ -45,7 +46,7 @@ namespace VegyesBolt.API.Controllers
         [HttpPost]
         public virtual void Post([FromBody] T value)
         {
-            this.hub?.Clients?.All?.SendAsync("Changed","Hello");
+            this.hub?.Clients?.All?.SendAsync("Changed", "Hello");
         }
 
         /// <summary>
