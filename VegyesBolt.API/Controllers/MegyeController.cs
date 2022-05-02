@@ -18,28 +18,28 @@ namespace VegyesBolt.API.Controllers
         }
 
         /// <inheritdoc/>.
-        public override IEnumerable<Megyek> Get()
+        public override async Task<IEnumerable<Megyek>> Get()
         {
             return Shared.Worker.GetMegyek();
         }
 
         /// <inheritdoc/>.
-        public override Megyek Get(int id)
+        public override async Task<Megyek> Get(int id)
         {
             return Shared.Worker.GetMegye(id);
         }
 
         /// <inheritdoc/>.
-        public override void Post([FromBody] Megyek megye)
+        public override async Task Post([FromBody] Megyek megye)
         {
-            base.Post(megye);
+            await base.Post(megye);
             Shared.Worker.UpdateMegye(megye);
         }
 
         /// <inheritdoc/>.
-        public override void Put([FromBody] Megyek value)
+        public override async Task Put([FromBody] Megyek value)
         {
-            base.Put(value);
+            await base.Put(value);
             if (Shared.Worker.CreateMegye(value))
                 this.Response.StatusCode = 201;
             else
@@ -47,9 +47,9 @@ namespace VegyesBolt.API.Controllers
         }
 
         /// <inheritdoc/>.
-        public override void Delete(int id)
+        public override async Task Delete(int id)
         {
-            base.Delete(id);
+            await base.Delete(id);
             Shared.Worker.DeleteMegyek(new Megyek() { Id = id });
         }
     }

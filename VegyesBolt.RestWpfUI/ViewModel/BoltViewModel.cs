@@ -43,7 +43,7 @@ namespace VegyesBolt.UI.ViewModel
                  this.Refresh();
              });
             connection.StartAsync();
-            (this.Worker as RestWorker).CollectionChanged += (a, b) => { this.Refresh(); };
+            //(this.Worker as RestWorker).CollectionChanged += (a, b) => { this.Refresh(); };
         }
 
         /// <inheritdoc/>

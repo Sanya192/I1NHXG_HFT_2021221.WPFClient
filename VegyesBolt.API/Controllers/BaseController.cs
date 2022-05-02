@@ -29,7 +29,7 @@ namespace VegyesBolt.API.Controllers
         /// </summary>
         /// <returns>The list of the <typeparamref name="T"/>.</returns>
         [HttpGet]
-        public abstract IEnumerable<T> Get();
+        public abstract Task<IEnumerable<T>> Get();
 
         /// <summary>
         /// Gets 1 of the entities of the <typeparamref name="T"/>.
@@ -37,14 +37,14 @@ namespace VegyesBolt.API.Controllers
         /// <param name="id">The id of the id we get.</param>
         /// <returns>The list of the <typeparamref name="T"/>.</returns>
         [HttpGet("{id}")]
-        public abstract T Get(int id);
+        public abstract Task<T> Get(int id);
 
         /// <summary>
         /// Edits 1 of the entities of the <typeparamref name="T"/>.
         /// </summary>
         /// <param name="value">From the messagebody the object we edit. The ID should be the one we edit.</param>
         [HttpPost]
-        public virtual void Post([FromBody] T value)
+        public async virtual Task Post([FromBody] T value)
         {
             this.hub?.Clients?.All?.SendAsync("Changed", "Hello");
         }
@@ -55,7 +55,7 @@ namespace VegyesBolt.API.Controllers
         /// <param name="value">From the messagebody the object we edit. The ID doesn't matter.</param>
         [HttpPut]
         [ProducesResponseType(201)]
-        public virtual void Put([FromBody] T value)
+        public async virtual Task Put([FromBody] T value)
         {
             this.hub?.Clients?.All?.SendAsync("Changed", "hello");
         }
@@ -65,7 +65,7 @@ namespace VegyesBolt.API.Controllers
         /// </summary>
         /// <param name="id"> The ID should be the one we delete.</param>
         [HttpDelete("{id}")]
-        public virtual void Delete(int id)
+        public async virtual Task Delete(int id)
         {
             this.hub?.Clients?.All?.SendAsync("Changed", "hello");
         }

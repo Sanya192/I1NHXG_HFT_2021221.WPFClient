@@ -23,9 +23,9 @@ namespace VegyesBolt.API.Controllers
         /// <param name="termekId">The termekID to be deleted.</param>
         /// <param name="vasarloId">The vasarlasID to be deleted.</param>
         [HttpDelete("{termekId}/{vasarloId}")]
-        public void Delete(int termekId, int vasarloId)
+        public async Task Delete(int termekId, int vasarloId)
         {
-            base.Delete(termekId);
+            await base.Delete(termekId);
             Shared.Worker.DeleteVasarlasok(new Vasarlasok() { TermekId = termekId, VasarloId = vasarloId });
         }
 
@@ -34,31 +34,31 @@ namespace VegyesBolt.API.Controllers
         /// </summary>
         /// <param name="id">Does not matter.</param>
         [ProducesResponseType(405)]
-        public override void Delete(int id)
+        public override async Task Delete(int id)
         {
             this.Response.StatusCode = 405;
         }
 
         /// <inheritdoc/>.
-        public override IEnumerable<Vasarlasok> Get()
+        public override async Task<IEnumerable<Vasarlasok>> Get()
         {
             return Shared.Worker.GetVasarlasok();
         }
 
         /// <inheritdoc/>.
-        public override Vasarlasok Get(int id)
+        public override async Task<Vasarlasok> Get(int id)
         {
             return Shared.Worker.GetVasarlas(id);
         }
 
         /// <inheritdoc/>.
-        public override void Post([FromBody] Vasarlasok megye)
+        public override async Task Post([FromBody] Vasarlasok megye)
         {
             throw new NotImplementedException();
         }
 
         /// <inheritdoc/>.
-        public override void Put([FromBody] Vasarlasok value)
+        public override async Task Put([FromBody] Vasarlasok value)
         {
             throw new NotImplementedException();
         }
