@@ -96,10 +96,12 @@ class RestHandler {
 
   async formEditMegye(e){
      await this.fetchEditMegye(RestHandler.getFormData($("#megyeEdit-form")))
+    window.location.reload();
   }
 
   async formCreateMegye(){
     await this.fetchAddMegye(RestHandler.getFormData($("#megyeCreate-form")))
+    window.location.reload();
   }
   static getFormData(form){
     var unindexed_array = form.serializeArray();

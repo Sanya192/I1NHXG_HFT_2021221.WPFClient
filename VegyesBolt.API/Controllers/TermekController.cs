@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using VegyesBolt.API.Helper;
+using VegyesBolt.API.Services;
 using VegyesBolt.Data;
 
 namespace VegyesBolt.API.Controllers
@@ -7,6 +9,10 @@ namespace VegyesBolt.API.Controllers
     /// <inheritdoc/>.
     public class TermekController : BaseController<Termekek>
     {
+        public TermekController(IHubContext<SignalRHub> hub) : base(hub)
+        {
+        }
+
         /// <inheritdoc/>.
         public override void Delete(int id)
         {

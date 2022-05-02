@@ -5,12 +5,18 @@
 namespace VegyesBolt.API.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.SignalR;
     using VegyesBolt.API.Helper;
+    using VegyesBolt.API.Services;
     using VegyesBolt.Data;
 
     /// <inheritdoc/>.
     public class VasarlasController : BaseController<Vasarlasok>
     {
+        public VasarlasController(IHubContext<SignalRHub> hub) : base(hub)
+        {
+        }
+
         /// <summary>
         /// Deletes a vasarlas.
         /// </summary>

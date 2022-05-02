@@ -5,12 +5,18 @@
 namespace VegyesBolt.API.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.SignalR;
     using VegyesBolt.API.Helper;
+    using VegyesBolt.API.Services;
     using VegyesBolt.Data;
 
     /// <inheritdoc/>.
     public class VasarloController : BaseController<Vasarlok>
     {
+        public VasarloController(IHubContext<SignalRHub> hub) : base(hub)
+        {
+        }
+
         /// <inheritdoc/>.
         public override void Delete(int id)
         {

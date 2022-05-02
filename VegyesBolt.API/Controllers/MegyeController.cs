@@ -5,12 +5,18 @@
 namespace VegyesBolt.API.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.SignalR;
     using VegyesBolt.API.Helper;
+    using VegyesBolt.API.Services;
     using VegyesBolt.Data;
 
     /// <inheritdoc/>
     public class MegyeController : BaseController<Megyek>
     {
+        public MegyeController(IHubContext<SignalRHub> hub) : base(hub)
+        {
+        }
+
         /// <inheritdoc/>.
         public override IEnumerable<Megyek> Get()
         {

@@ -17,6 +17,12 @@ namespace VegyesBolt.API.Controllers
     public abstract class BaseController<T> : ControllerBase
     {
         IHubContext<SignalRHub> hub;
+
+        protected BaseController(IHubContext<SignalRHub> hub)
+        {
+            this.hub = hub;
+        }
+
         /// <summary>
         /// Gets all of the entities of the <typeparamref name="T"/>.
         /// </summary>
@@ -39,7 +45,7 @@ namespace VegyesBolt.API.Controllers
         [HttpPost]
         public virtual void Post([FromBody] T value)
         {
-            this.hub?.Clients?.All?.SendAsync("Changed");
+            this.hub?.Clients?.All?.SendAsync("Changed","Hello");
         }
 
         /// <summary>
@@ -50,7 +56,7 @@ namespace VegyesBolt.API.Controllers
         [ProducesResponseType(201)]
         public virtual void Put([FromBody] T value)
         {
-            this.hub?.Clients?.All?.SendAsync("Changed");
+            this.hub?.Clients?.All?.SendAsync("Changed", "hello");
         }
 
         /// <summary>
@@ -60,7 +66,7 @@ namespace VegyesBolt.API.Controllers
         [HttpDelete("{id}")]
         public virtual void Delete(int id)
         {
-            this.hub?.Clients?.All?.SendAsync("Changed");
+            this.hub?.Clients?.All?.SendAsync("Changed", "hello");
         }
     }
 }

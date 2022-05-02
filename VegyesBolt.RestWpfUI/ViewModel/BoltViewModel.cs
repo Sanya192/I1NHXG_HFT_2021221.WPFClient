@@ -33,7 +33,7 @@ namespace VegyesBolt.UI.ViewModel
             this.Worker = new RestWorker();
             this.SelectedTable = Tables.Megyek;
             this.selectedItem = 0;
-            connection = new HubConnectionBuilder()
+            this.connection = new HubConnectionBuilder()
                .WithUrl("https://localhost:7207/hub")
                .WithAutomaticReconnect()
                .Build();
@@ -41,8 +41,8 @@ namespace VegyesBolt.UI.ViewModel
             {
                 this.Refresh();
             });
-            //connection.StartAsync();
-
+            connection.StartAsync();
+            
         }
 
         /// <inheritdoc/>
@@ -92,7 +92,7 @@ namespace VegyesBolt.UI.ViewModel
                 }
                 else
                 {
-                    this.selectedItem = value;
+                    this.selectedItem = value-1;
                 }
 
                 this.OnPropertyChanged();
@@ -135,19 +135,19 @@ namespace VegyesBolt.UI.ViewModel
             switch (this.SelectedTable)
             {
                 case Tables.Megyek:
-                    this.Worker.DeleteMegyek(this.Worker.GetMegye(this.selectedItem));
+                    this.Worker.DeleteMegyek(this.MegyekList[this.SelectedItem]);
                     this.Refresh();
                     break;
                 case Tables.Vasarlok:
-                    this.Worker.DeleteVasarlo(this.Worker.GetVasarlo(this.selectedItem));
+                    this.Worker.DeleteVasarlo(this.VasarlokList[this.SelectedItem]);
                     this.Refresh();
                     break;
                 case Tables.Termekek:
-                    this.Worker.DeleteTermek(this.Worker.GetTermek(this.selectedItem));
+                    this.Worker.DeleteTermek(this.TermekekList[this.SelectedItem]);
                     this.Refresh();
                     break;
                 case Tables.Vasarlasok:
-                    this.Worker.DeleteVasarlasok(this.Worker.GetVasarlas(this.selectedItem));
+                    this.Worker.DeleteVasarlasok(this.VasarlasokList[this.SelectedItem]);
                     this.Refresh();
                     break;
                 default:
@@ -216,5 +216,7 @@ namespace VegyesBolt.UI.ViewModel
                 _ => throw new NotSupportedException(),
             };
         }
+
+        
     }
 }
